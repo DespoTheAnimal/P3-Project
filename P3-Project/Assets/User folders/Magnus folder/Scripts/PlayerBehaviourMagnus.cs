@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerBehaviourMagnus : MonoBehaviour
@@ -17,39 +18,32 @@ public class PlayerBehaviourMagnus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        if (Input.GetKeyDown(KeyCode.Space) && jump)
         {
-            jump = true;
+            Jump();
         }
-    }
-
-    private void FixedUpdate()
-    {
-        Jump();
     }
 
     void Jump()
     {
-        if (jump)
+       
+         rb.AddForce(Vector3.up * jumpheight, ForceMode.Impulse);
+         jump = false;
+       
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(GameObject.FindGameObjectWithTag("ILikeToMoveItMoveIt"))
         {
-            rb.AddForce(Vector3.up * jumpheight, ForceMode.Impulse);
+            jump = true;
+            Debug.Log("Jump is possible");
+        }
+        else
+        {
             jump = false;
+            Debug.Log("Jump is not possible");
         }
     }
 
-    private bool IsGrounded()
-    {
-        if (Physics.Raycast(transform.position, Vector3.down, distanceToGround))
-        {
-            Debug.Log("Hallo");
-            return true;
-        }
-        else 
-        {
-            Debug.Log("Oi");
-            return false;
-           
-        }
-        
-    }
-}
+};
