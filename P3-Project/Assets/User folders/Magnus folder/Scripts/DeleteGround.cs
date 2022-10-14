@@ -10,7 +10,7 @@ public class DeleteGround : MonoBehaviour
         if (other.gameObject.CompareTag("ILikeToMoveItMoveIt"))
         {
             Destroy(other.gameObject);
-            MagicNumberScript1.movables.Remove(other.gameObject);
+            EndlessCreator.movables.Remove(other.gameObject);
         }
     }
 }
