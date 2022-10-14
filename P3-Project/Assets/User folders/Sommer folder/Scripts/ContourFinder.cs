@@ -12,7 +12,7 @@ public class ContourFinder : WebCamera
     [SerializeField] private bool showProcessedImage = true;
 
     private Mat image;
-    private Mat processedImage;
+    private Mat processedImage = new Mat();
 
 
     protected override bool ProcessTexture(WebCamTexture input, ref Texture2D output)
@@ -20,7 +20,7 @@ public class ContourFinder : WebCamera
         image = OpenCvSharp.Unity.TextureToMat(input);
         //Do IP stuff here
 
-        Cv2.Flip(image, image, imageFlip);
+        //Cv2.Flip(image, image, imageFlip);
         Cv2.CvtColor(image, processedImage, ColorConversionCodes.BGR2GRAY);
         Cv2.Threshold(processedImage, processedImage, threshold, 255, ThresholdTypes.BinaryInv);
 
