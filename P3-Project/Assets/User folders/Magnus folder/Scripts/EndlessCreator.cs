@@ -24,6 +24,8 @@ public class EndlessCreator : MonoBehaviour
     //The spawn position of each new plane
     Vector3 spawnPosition;
 
+    int spawnCount = 0;
+
     // Update is called once per frame
     void Start()
     {
@@ -37,15 +39,15 @@ public class EndlessCreator : MonoBehaviour
     {
         //This controlls the time for when a new plane will be instantiated 
         timer -= Time.deltaTime;
-        if(timer <= 0)
+        if (timer <= 0)
         {
             newGround = Instantiate(ground, spawnPosition, Quaternion.identity);
             movables.Add(newGround);
             planeStartPoint += 50;
             timer = 2f;
+            spawnCount++;
         }
-
-      MovePlayer();
+        MovePlayer();
     }
 
     /// <summary>

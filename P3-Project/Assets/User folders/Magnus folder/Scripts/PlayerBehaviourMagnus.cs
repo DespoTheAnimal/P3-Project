@@ -9,6 +9,7 @@ public class PlayerBehaviourMagnus : MonoBehaviour
     public bool jump;
     public Rigidbody rb;
     public float jumpheight = 5f;
+    public int speed = 2;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class PlayerBehaviourMagnus : MonoBehaviour
         {
             Jump();
         }
+        MovementKeyboard();
     }
 
     void Jump()
@@ -30,6 +32,16 @@ public class PlayerBehaviourMagnus : MonoBehaviour
          rb.AddForce(Vector3.up * jumpheight, ForceMode.Impulse);
          jump = false;
        
+    }
+
+    void MovementKeyboard()
+    {
+        float horizontal = Input.GetAxis("Horizontal") * speed *Time.deltaTime;
+        Vector3 pos = transform.position;
+
+        pos.x = Mathf.Clamp(horizontal + pos.x, -4f, 4f);
+        transform.position = pos;
+
     }
 
     private void OnCollisionEnter(Collision collision)
