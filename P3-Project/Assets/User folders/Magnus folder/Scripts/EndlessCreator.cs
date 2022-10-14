@@ -47,13 +47,13 @@ public class EndlessCreator : MonoBehaviour
             timer = 2f;
             spawnCount++;
         }
-        MovePlayer();
+        MovePlane();
     }
 
     /// <summary>
     /// Takes each element of movables and translates them according to the speed variable
     /// </summary>
-    void MovePlayer()
+    void MovePlane()
     {
         foreach (GameObject go in movables)
         {
