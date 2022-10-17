@@ -12,7 +12,7 @@ public class ContourFinder : WebCamera
     [SerializeField] private bool showProcessedImage = true;
     [SerializeField] private float curveAccuracy = 10f;
     [SerializeField] private float minArea = 5000f;
-    [SerializeField] private PolygonCollider2D collider;
+    [SerializeField] private PolygonCollider2D PolygonCollider;
 
     private Mat image;
     private Mat processedImage = new Mat();
@@ -31,20 +31,20 @@ public class ContourFinder : WebCamera
         Cv2.Threshold(processedImage, processedImage, threshold, 255, ThresholdTypes.BinaryInv);
         Cv2.FindContours(processedImage, out contours, out hierarchy, RetrievalModes.Tree, ContourApproximationModes.ApproxSimple, null);
 
-        collider.pathCount = 0;
+        PolygonCollider.pathCount = 0;
 
         foreach(Point[] contour in contours)
         {
             Point[] points = Cv2.ApproxPolyDP(contour, curveAccuracy, true);
             var area = Cv2.ContourArea(contour);
 
-            if(area < minArea)
+            if(area > minArea)
             {
                 DrawContour(processedImage, new Scalar(127, 127, 127), 2, points);
 
                 //Her smider vi lige collideren på de linjer vi har tegner ovenfor.
-                collider.pathCount++;
-                collider.SetPath(collider.pathCount - 1, toVector2(points));
+                PolygonCollider.pathCount++;
+                PolygonCollider.SetPath(PolygonCollider.pathCount - 1, toVector2(points));
             }
         }
 
