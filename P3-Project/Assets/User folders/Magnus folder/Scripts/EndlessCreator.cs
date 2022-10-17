@@ -34,6 +34,7 @@ public class EndlessCreator : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
+        movables.Clear();
         //Start by adding the first plane to the list
         movables.Add(GameObject.FindGameObjectWithTag("ILikeToMoveItMoveIt"));
         spawnPosition = new Vector3(0, 0, 0 + planeStartPoint);
