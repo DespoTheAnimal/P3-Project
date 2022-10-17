@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6558893245730708648}
   - component: {fileID: 1658994806446021506}
   - component: {fileID: -8367092477132465401}
+  - component: {fileID: -6861428857436721384}
   m_Layer: 0
   m_Name: Cube
   m_TagString: ILikeToMoveItMoveIt
@@ -114,3 +115,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-6861428857436721384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8038210697474645068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93bcb82c0d382e0408c40cf39226543e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

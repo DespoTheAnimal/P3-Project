@@ -10,6 +10,8 @@ public class PlayerBehaviourMagnus : MonoBehaviour
     public Rigidbody rb;
     public float jumpheight = 5f;
     public int speed = 2;
+    public static int lives = 3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,7 @@ public class PlayerBehaviourMagnus : MonoBehaviour
             Jump();
         }
         MovementKeyboard();
+        Debug.Log(lives);
     }
 
     void Jump()
@@ -58,4 +61,11 @@ public class PlayerBehaviourMagnus : MonoBehaviour
         }
     }
 
+    void LoseCondition()
+    {
+        if(lives == 0)
+        {
+
+        }
+    }
 };
