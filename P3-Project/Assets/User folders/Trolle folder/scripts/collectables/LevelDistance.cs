@@ -8,7 +8,7 @@ public class LevelDistance : MonoBehaviour
     public GameObject distanceDisplay;
     public int DistanceRun;
     public bool addingDistance = false;
-    public float timerForAddingDistance = 0.05f;  
+    public float timerForAddingDistance = 0.15f;  
 
 
     void Update()
