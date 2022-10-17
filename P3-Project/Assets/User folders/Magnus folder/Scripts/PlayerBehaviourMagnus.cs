@@ -4,6 +4,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
+using TMPro;
 
 public class PlayerBehaviourMagnus : MonoBehaviour
 {
@@ -14,7 +16,9 @@ public class PlayerBehaviourMagnus : MonoBehaviour
     public int speed = 2;
 
     public static int lives = 3;
+    private int score;
 
+    public TextMeshProUGUI text;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +36,7 @@ public class PlayerBehaviourMagnus : MonoBehaviour
         MovementKeyboard();
         Debug.Log(lives);
         LoseCondition();
+        ScoreSystem();
     }
 
     void Jump()
@@ -70,7 +75,14 @@ public class PlayerBehaviourMagnus : MonoBehaviour
     {
         if(lives == 0)
         {
+            PlayerPrefs.SetInt("NewScore", score);
             SceneManager.LoadScene("YouDied");
         }
+    }
+
+    void ScoreSystem()
+    {
+        score += 1;
+        text.text = score.ToString();
     }
 };
