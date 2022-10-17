@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehaviourMagnus : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class PlayerBehaviourMagnus : MonoBehaviour
     public Rigidbody rb;
     public float jumpheight = 5f;
     public int speed = 2;
+
     public static int lives = 3;
 
     // Start is called before the first frame update
@@ -27,6 +30,7 @@ public class PlayerBehaviourMagnus : MonoBehaviour
         }
         MovementKeyboard();
         Debug.Log(lives);
+        LoseCondition();
     }
 
     void Jump()
@@ -65,7 +69,7 @@ public class PlayerBehaviourMagnus : MonoBehaviour
     {
         if(lives == 0)
         {
-
+            SceneManager.LoadScene("YouDied");
         }
     }
 };
