@@ -152,10 +152,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 361bd195796aab645a99bcf6f29a6d69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movables: []
   speed: 5
   ground: {fileID: 5906249888222807161, guid: 27523e0dab7186e4d98c2007028639c5, type: 3}
+  newGround: {fileID: 0}
   planeStartPoint: 50
+  obstacle: {fileID: 8038210697474645068, guid: e175ddb6a747f114cba468f3d447dbdd,
+    type: 3}
+  newObstacle: {fileID: 0}
 --- !u!4 &142607674
 Transform:
   m_ObjectHideFlags: 0
@@ -206,7 +209,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 16
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!136 &298428253
 CapsuleCollider:
@@ -303,6 +306,7 @@ MonoBehaviour:
   jump: 0
   rb: {fileID: 298428252}
   jumpheight: 5
+  speed: 2
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,7 +592,7 @@ Transform:
   m_GameObject: {fileID: 715225805}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -50}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.873717, y: 1.7378203, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
