@@ -19,8 +19,8 @@ public class ContourFinder : WebCamera
     private Point[][] contours;
     private HierarchyIndex[] hierarchy;
     private Vector2[] vectorList;
-    private Mat element = new Mat(30,30, MatType.CV_8U);
-
+    private Mat element = new Mat(15,15, MatType.CV_8U);
+    
 
     protected override bool ProcessTexture(WebCamTexture input, ref Texture2D output)
     {
@@ -28,10 +28,20 @@ public class ContourFinder : WebCamera
         //Do IP stuff here
 
         //Cv2.Flip(image, image, imageFlip);
-        //Billedet bliver thresholdet så vi har et binary imats.
-        Cv2.CvtColor(image, processedImage, ColorConversionCodes.BGR2GRAY);
-        Cv2.Threshold(processedImage, processedImage, threshold, 255, ThresholdTypes.BinaryInv);
-        
+
+
+        //Threshhold imats binary (black and white)
+        //Cv2.CvtColor(image, processedImage, ColorConversionCodes.BGR2GRAY);
+        //Cv2.Threshold(processedImage, processedImage, threshold, 255, ThresholdTypes.BinaryInv);
+
+
+        //To detect blue colOr.
+        Cv2.CvtColor(image, processedImage, ColorConversionCodes.BGR2HSV);
+        Cv2.InRange(processedImage, new Scalar(110, 50, 50), new Scalar (130,255,255), processedImage);
+
+
+
+
         //Closing function ved at dilate først og derefter erode.
         Cv2.Dilate(processedImage, processedImage, element);
         Cv2.Erode(processedImage, processedImage, element);
@@ -58,7 +68,7 @@ public class ContourFinder : WebCamera
         }
 
         //then we output imats
-        if(output == null)
+        if (output == null)
         {
             output = OpenCvSharp.Unity.MatToTexture(showProcessedImage ? processedImage : image);
         }
