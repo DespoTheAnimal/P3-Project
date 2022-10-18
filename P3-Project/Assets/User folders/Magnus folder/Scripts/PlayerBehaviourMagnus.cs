@@ -15,14 +15,14 @@ public class PlayerBehaviourMagnus : MonoBehaviour
     public float jumpheight = 5f;
     public int speed = 2;
 
-    public static int lives = 3;
+    public static int lives = 1;
     private int score;
 
     public TextMeshProUGUI text;
     // Start is called before the first frame update
     void Start()
     {
-        lives = 3;
+        lives = 1;
         rb = GetComponent<Rigidbody>();
     }
 
