@@ -14,21 +14,35 @@ public class PlayerBehaviourMagnus : MonoBehaviour
     public Rigidbody rb;
     public float jumpheight = 5f;
     public int speed = 2;
+    public GameObject[] Hearts;
 
-    public static int lives = 1;
+    public static int lives = 3;
     private int score;
 
     public TextMeshProUGUI text;
     // Start is called before the first frame update
     void Start()
     {
-        lives = 1;
+        lives = 3;
         rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (lives < 1)
+        {
+            Destroy(Hearts[0].gameObject);
+        }
+        else if (lives < 2)
+        {
+            Destroy(Hearts[1].gameObject);
+        }
+        else if (lives < 3)
+        {
+            Destroy(Hearts[2].gameObject);
+        }
+
         if (Input.GetKeyDown(KeyCode.Space) && jump)
         {
             Jump();
@@ -37,6 +51,8 @@ public class PlayerBehaviourMagnus : MonoBehaviour
         Debug.Log(lives);
         LoseCondition();
         ScoreSystem();
+
+
     }
 
     void Jump()
