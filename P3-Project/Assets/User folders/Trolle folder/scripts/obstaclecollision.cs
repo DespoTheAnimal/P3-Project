@@ -7,8 +7,6 @@ public class obstaclecollision : MonoBehaviour
     public GameObject thePlayer;
     public AudioSource gameOver;
     public GameObject MainCamera;
-    public GameObject blood;
-    //
     public GameObject fadeOut;
     public GameObject Respawn;
 
@@ -26,8 +24,8 @@ public class obstaclecollision : MonoBehaviour
     {
        this.gameObject.GetComponent<BoxCollider>().enabled = false;
        thePlayer.GetComponent<PlayerMove>().enabled = false;
-        gameOver.Play();
-        StartCoroutine(Countsequence());
+       // gameOver.Play();
+       // StartCoroutine(Countsequence());
         //blood.GetComponent<emission>().enabled = true;
         MainCamera.GetComponent<Animator>().enabled = true;
     }
