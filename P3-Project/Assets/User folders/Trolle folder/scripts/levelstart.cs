@@ -27,10 +27,6 @@ public class levelstart : MonoBehaviour
         countDown1.SetActive(true);
         yield return new WaitForSeconds(1);
         countDownGO.SetActive(true);
-        //player can first move after the sound effects
-
-        //MovementKeyboard.canMove = true;
-
     }
 }
 
