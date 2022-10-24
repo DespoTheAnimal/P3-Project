@@ -39,11 +39,11 @@ public class JsonFilehandler : MonoBehaviour
     }
 }
 
-public static class JsonHelper
+/*public static class JsonHelper
 {
     public static T[] FromJson<T> (string json)
     {
         Wrapper<T>
         
     }
-}
+}*/
