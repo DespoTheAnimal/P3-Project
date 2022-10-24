@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Linq;
-public class JsonFilehandler : MonoBehaviour
-{
+public class JsonFilehandler : MonoBehaviour { }
+/*{
     public void SaveToJson<T>(List<T> toSave, string fileName)
     {
         string content = "";
@@ -43,7 +43,7 @@ public static class JsonHelper
 {
     public static T[] FromJson<T> (string json)
     {
-        Wrapper<T>
+//        Wrapper<T>
         
     }
-}
+}*/
