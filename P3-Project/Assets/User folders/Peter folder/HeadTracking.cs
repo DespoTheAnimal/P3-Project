@@ -20,8 +20,8 @@ public class HeadTracking : MonoBehaviour
 
         string[] points = data.Split(',');
 
-        float x = (float.Parse(points[0])-320) / 100;
-        float y = (float.Parse(points[1])-240) / 100;
+        float x = (320 - float.Parse(points[0])) / 100;
+        float y = (400 - float.Parse(points[1])) / 100;
         xList.Add(x);
         yList.Add(y);
 
