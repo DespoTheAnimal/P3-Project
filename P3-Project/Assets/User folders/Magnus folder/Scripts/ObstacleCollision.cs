@@ -5,8 +5,12 @@ using UnityEngine;
 
 public class ObstacleCollision : MonoBehaviour
 {
-    public GameObject Maincamera;
-   
+    private GameObject Maincamera;
+    private void Start()
+    {
+        Maincamera = GameObject.FindGameObjectWithTag("MainCamera");
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -16,6 +20,8 @@ public class ObstacleCollision : MonoBehaviour
             // Her der skal være en linje kode med animatoren fra main camera så hver gang man bliver ramt så kommer der en animation
             EndlessCreator.movables.Remove(gameObject);
             Destroy(gameObject);
+            // Maincamera.GetComponent<Animator>().enabled = false;
+            
         }
     }
 }
