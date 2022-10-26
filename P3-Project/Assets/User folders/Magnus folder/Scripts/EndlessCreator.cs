@@ -27,9 +27,12 @@ public class EndlessCreator : MonoBehaviour
 
     //The time for which the plane will be created
     float timer = 2f;
+    float originalTimer = 2f;
+
+    // time for speed
+    float timerForSpeed = 10;
     //The spawn position of each new plane
     Vector3 spawnPosition;
-
 
     // Update is called once per frame
     void Start()
@@ -44,6 +47,7 @@ public class EndlessCreator : MonoBehaviour
     {
         //This controlls the time for when a new plane will be instantiated 
         timer -= Time.deltaTime;
+        timerForSpeed -= Time.deltaTime;
         if (timer <= 0)
         {
             newGround = Instantiate(ground, spawnPosition, Quaternion.identity);
@@ -51,9 +55,10 @@ public class EndlessCreator : MonoBehaviour
             movables.Add(newGround);
             movables.Add(newObstacle);
             planeStartPoint += 50;
-            timer = 2f;
+            timer = originalTimer;
         }
         MovePlane();
+
     }
 
     /// <summary>
@@ -64,6 +69,12 @@ public class EndlessCreator : MonoBehaviour
         foreach (GameObject go in movables)
         {
             go.transform.Translate(Vector3.back * (speed * Time.deltaTime));
+            if (timerForSpeed <= 0)
+            {
+                speed += 5;
+                originalTimer = 1f;
+                timerForSpeed = 10f;
+            }
         }
     }
 }
