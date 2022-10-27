@@ -30,7 +30,7 @@ public class EndlessCreator : MonoBehaviour
     float originalTimer = 2f;
 
     // time for speed
-    float timerForSpeed = 10;
+    public static float timerForSpeed = 10;
     //The spawn position of each new plane
     Vector3 spawnPosition;
 
@@ -51,7 +51,7 @@ public class EndlessCreator : MonoBehaviour
         if (timer <= 0)
         {
             newGround = Instantiate(ground, spawnPosition, Quaternion.identity);
-            newObstacle = Instantiate(obstacle, new Vector3(Random.Range(-4f,4), Random.Range(1,2),25f), Quaternion.identity);
+            newObstacle = Instantiate(obstacle, new Vector3(Random.Range(-4f,4), Random.Range(1,4),25f), Quaternion.identity);
             movables.Add(newGround);
             movables.Add(newObstacle);
             planeStartPoint += 50;

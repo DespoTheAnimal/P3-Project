@@ -70,7 +70,10 @@ public class PlayerBehaviourMagnus : MonoBehaviour
 
         pos.x = Mathf.Clamp(horizontal + pos.x, -4f, 4f);
         transform.position = pos;
-
+        if(EndlessCreator.timerForSpeed <= 0)
+        {
+            speed += 1;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
