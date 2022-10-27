@@ -13,17 +13,21 @@ public class HeadTracking : MonoBehaviour
     public float xPosAdjust = 320;
     public float yPosAdjust = 400;
 
+    private bool isGrounded = false;
+    public float distanceToHit = 2f;
+
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        uDPReceive = GameObject.FindGameObjectWithTag("Server");
-
+        uDPReceive = GameObject.FindGameObjectWithTag("Server");   
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        {
-            string data = uDPReceive.GetComponent<UDPReceive>().data;
+        Grounded();
+        Debug.DrawRay(player.transform.position, Vector3.down, Color.cyan);
+
+        string data = uDPReceive.GetComponent<UDPReceive>().data;
             //The two below lines are removing the brackets in the first and last place
             data = data.Remove(0, 1);
             data = data.Remove(data.Length - 1, 1);
@@ -41,10 +45,24 @@ public class HeadTracking : MonoBehaviour
             float xAverage = Queryable.Average(xList.AsQueryable());
             float yAverage = Queryable.Average(yList.AsQueryable());
 
+            if (yAverage > 2f && Grounded())
+            {
+                player.GetComponent<Rigidbody>().AddForce(Vector3.up * 5, ForceMode.Impulse);
+            }
+
             Vector3 playerPos = player.transform.localPosition;
 
-            player.transform.localPosition = new Vector3(xAverage, yAverage, playerPos.z);
+            xAverage = Mathf.Clamp(xAverage, -4f, 4f);
+            player.transform.localPosition = new Vector3(xAverage, playerPos.y, playerPos.z);
 
-        }
+        Debug.Log(isGrounded);
+
+    }
+
+    private bool Grounded()
+    {
+        RaycastHit hit;
+        //Ray landingRay = new Ray(player.transform.position, new Vector3(0f,-1f,0f));
+        return Physics.Raycast(player.transform.position, Vector3.down, distanceToHit + 0.1f);
     }
 }
