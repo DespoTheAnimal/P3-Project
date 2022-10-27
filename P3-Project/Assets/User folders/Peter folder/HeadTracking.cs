@@ -10,7 +10,8 @@ public class HeadTracking : MonoBehaviour
     private GameObject player;
     List<float> xList = new List<float>();
     List<float> yList = new List<float>();
-
+    public float xPosAdjust = 320;
+    public float yPosAdjust = 400;
 
     private void Awake()
     {
@@ -29,8 +30,8 @@ public class HeadTracking : MonoBehaviour
 
             string[] points = data.Split(',');
 
-            float x = (320 - float.Parse(points[0])) / 100;
-            float y = (400 - float.Parse(points[1])) / 100;
+            float x = (xPosAdjust - float.Parse(points[0])) / 100;
+            float y = (yPosAdjust - float.Parse(points[1])) / 100;
             xList.Add(x);
             yList.Add(y);
 
