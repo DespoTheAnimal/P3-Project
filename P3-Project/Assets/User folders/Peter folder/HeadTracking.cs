@@ -47,7 +47,7 @@ public class HeadTracking : MonoBehaviour
 
             if (yAverage > 2f && Grounded())
             {
-                player.GetComponent<Rigidbody>().AddForce(Vector3.up * 5, ForceMode.Impulse);
+                player.GetComponent<Rigidbody>().AddForce(Vector3.up * 2, ForceMode.Impulse);
             }
 
             Vector3 playerPos = player.transform.localPosition;
@@ -55,13 +55,12 @@ public class HeadTracking : MonoBehaviour
             xAverage = Mathf.Clamp(xAverage, -4f, 4f);
             player.transform.localPosition = new Vector3(xAverage, playerPos.y, playerPos.z);
 
-        Debug.Log(isGrounded);
+        Debug.Log(Grounded());
 
     }
 
     private bool Grounded()
     {
-        RaycastHit hit;
         //Ray landingRay = new Ray(player.transform.position, new Vector3(0f,-1f,0f));
         return Physics.Raycast(player.transform.position, Vector3.down, distanceToHit + 0.1f);
     }
