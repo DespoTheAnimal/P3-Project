@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class pausemenu : MonoBehaviour
 {
@@ -25,18 +26,31 @@ public class pausemenu : MonoBehaviour
             }
         }
     }
-    void Resume()
+    public void Resume()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1;
         GameIsPaused = false;
     }
 
-    void Pause()
+    public void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
+        StopCoroutine(GetComponent<LevelDistance>().AddingDistance());
+        GetComponent<LevelDistance>().enabled = false;
+        LevelDistance.addingDistance = false;
         GameIsPaused = true;
     }
-
+    public void LoadMenu()
+    {
+        Debug.Log("loading scene...");
+        SceneManager.LoadScene(0);
+        Resume();
+    }
+    public void QuitGame()
+    {
+        Debug.Log("Quitting game...");
+        Application.Quit();
+    }
 }

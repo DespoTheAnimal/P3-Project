@@ -7,15 +7,15 @@ public class LevelDistance : MonoBehaviour
 {
     public GameObject distanceDisplay;
     public int DistanceRun;
-    public bool addingDistance = false;
+    public static bool addingDistance = false;
     public float timerForAddingDistance = 0.15f;  
 
 
     void Update()
     {
-        while (pausemenu.GameIsPaused)
+        if (pausemenu.GameIsPaused)
         {
-          StopCoroutine(AddingDistance());
+            Time.timeScale = 0f;
         }
 
         if (addingDistance == false)
