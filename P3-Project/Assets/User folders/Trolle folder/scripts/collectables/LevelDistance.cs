@@ -13,12 +13,19 @@ public class LevelDistance : MonoBehaviour
 
     void Update()
     {
+        while (pausemenu.GameIsPaused)
+        {
+          StopCoroutine(AddingDistance());
+        }
+
         if (addingDistance == false)
         {
             addingDistance = true;
             StartCoroutine(AddingDistance());
         }
     }
+
+ 
 
     public IEnumerator AddingDistance()
     {
