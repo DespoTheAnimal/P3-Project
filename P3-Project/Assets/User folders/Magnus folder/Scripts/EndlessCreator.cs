@@ -58,6 +58,10 @@ public class EndlessCreator : MonoBehaviour
             movables.Add(newObstacle);
             planeStartPoint += 50;
             timer = originalTimer;
+            if(PlayerBehaviourMagnus.speed == 5)
+              {
+                 originalTimer = 1f;
+              }
         }
         MovePlane();
 

@@ -692,6 +692,7 @@ GameObject:
   - component: {fileID: 2868732903337651344}
   - component: {fileID: 5287759238768800589}
   - component: {fileID: 7860057721430562329}
+  - component: {fileID: 4309523889197524253}
   m_Layer: 0
   m_Name: Wall
   m_TagString: ILikeToMoveItMoveIt
@@ -801,6 +802,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4309523889197524253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8677031667479744345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93bcb82c0d382e0408c40cf39226543e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8682029127398042779
 GameObject:
   m_ObjectHideFlags: 0
