@@ -291,9 +291,10 @@ MonoBehaviour:
   ground: {fileID: 5906249888222807161, guid: 27523e0dab7186e4d98c2007028639c5, type: 3}
   newGround: {fileID: 0}
   planeStartPoint: 50
-  obstacle: {fileID: 8038210697474645068, guid: e175ddb6a747f114cba468f3d447dbdd,
-    type: 3}
-  newObstacle: {fileID: 0}
+  obstacle:
+  - {fileID: 8038210697474645068, guid: e175ddb6a747f114cba468f3d447dbdd, type: 3}
+  - {fileID: 8677031667479744345, guid: 11769d797a2bead40a011e47408cddb1, type: 3}
+  - {fileID: 8862913231212527512, guid: 6b4aa726c10e3524c9929e97799ee769, type: 3}
 --- !u!4 &142607674
 Transform:
   m_ObjectHideFlags: 0
@@ -578,6 +579,7 @@ MonoBehaviour:
   uDPReceive: {fileID: 0}
   xPosAdjust: 320
   yPosAdjust: 400
+  distanceToHit: 2
 --- !u!114 &192125550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1694,7 +1696,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1522775008
 RectTransform:
   m_ObjectHideFlags: 0

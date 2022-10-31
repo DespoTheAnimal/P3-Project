@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Experimental.AI;
 using Random = UnityEngine.Random;
 public class EndlessCreator : MonoBehaviour
 {
@@ -21,9 +22,9 @@ public class EndlessCreator : MonoBehaviour
     private int planeStartPoint = 25;
 
     //The original Prefab of the Obstacle
-    public GameObject obstacle;
+    public List<GameObject> obstacle = new List<GameObject>();
     //The temporary name of the instantiated obstacle getting added
-    public GameObject newObstacle;
+    private GameObject newObstacle;
 
     //The time for which the plane will be created
     float timer = 2f;
@@ -51,7 +52,8 @@ public class EndlessCreator : MonoBehaviour
         if (timer <= 0)
         {
             newGround = Instantiate(ground, spawnPosition, Quaternion.identity);
-            newObstacle = Instantiate(obstacle, new Vector3(Random.Range(-4f,4), Random.Range(1,4),25f), Quaternion.identity);
+            SpawnObstacles();
+            //newObstacle = Instantiate(obstacle[Random.Range(0,obstacle.Count)], new Vector3(Random.Range(-4f,4), Random.Range(1,4),25f), Quaternion.identity);
             movables.Add(newGround);
             movables.Add(newObstacle);
             planeStartPoint += 50;
@@ -75,6 +77,26 @@ public class EndlessCreator : MonoBehaviour
                 originalTimer = 1f;
                 timerForSpeed = 10f;
             }
+        }
+    }
+
+    void SpawnObstacles()
+    {
+        //newObstacle = Instantiate(obstacle[Random.Range(0, obstacle.Count)], new Vector3(Random.Range(-4f, 4), Random.Range(1, 4), 25f), Quaternion.identity);
+        switch (Random.Range(0,obstacle.Count))
+        {
+            case 0:
+                newObstacle = Instantiate(obstacle[0], new Vector3(Random.Range(-4f, 4), Random.Range(1, 4), 25f), Quaternion.identity);
+                break;
+            case 1:
+                newObstacle = Instantiate(obstacle[1], new Vector3(0, 0.5f, 25f), Quaternion.identity);
+                break;
+            case 2:
+                newObstacle = Instantiate(obstacle[2], new Vector3(Random.Range(-4f, 4), Random.Range(1, 4), 25f), Quaternion.identity);
+                break;
+            default:
+                break;
+
         }
     }
 }
