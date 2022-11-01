@@ -36,10 +36,8 @@ public class pausemenu : MonoBehaviour
     public void Pause()
     {
         pauseMenuUI.SetActive(true);
+        //StopCoroutine(GetComponent<LevelDistance>().co);
         Time.timeScale = 0f;
-        StopCoroutine(GetComponent<LevelDistance>().AddingDistance());
-        GetComponent<LevelDistance>().enabled = false;
-        LevelDistance.addingDistance = false;
         GameIsPaused = true;
     }
     public void LoadMenu()
