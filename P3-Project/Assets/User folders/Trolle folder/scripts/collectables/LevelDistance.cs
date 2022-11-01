@@ -9,7 +9,7 @@ public class LevelDistance : MonoBehaviour
     public GameObject distanceDisplay;
     public int DistanceRun;
     public static bool addingDistance = false;
-    public float timerForAddingDistance = 0.15f;
+    public float timerForAddingDistance = 0.5f;
     //public IEnumerator co;
 
     private void Start()
@@ -21,13 +21,13 @@ public class LevelDistance : MonoBehaviour
         /*if (pausemenu.GameIsPaused)
         {
             Time.timeScale = 0f;
-        }
+        }*/
 
         if (addingDistance == false)
         {
             addingDistance = true;
-            StartCoroutine(co);
-        }*/
+            //StartCoroutine(co);
+        }
     }
 
  
