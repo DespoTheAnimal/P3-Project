@@ -92,7 +92,7 @@ public class PlayerBehaviourMagnus : MonoBehaviour
 
     void LoseCondition()
     {
-        if(lives == 0)
+        if(lives <= 0)
         {
             PlayerPrefs.SetInt("NewScore", score);
             SceneManager.LoadScene("YouDied");
