@@ -33,10 +33,13 @@ public class PlayerBehaviourMagnus : MonoBehaviour
         if (lives < 1)
         {
             Destroy(Hearts[0].gameObject);
+            Destroy(Hearts[1].gameObject);
+            Destroy(Hearts[2].gameObject);
         }
         else if (lives < 2)
         {
             Destroy(Hearts[1].gameObject);
+            Destroy(Hearts[2].gameObject);
         }
         else if (lives < 3)
         {
