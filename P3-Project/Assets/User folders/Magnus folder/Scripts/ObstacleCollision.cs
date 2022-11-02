@@ -16,6 +16,7 @@ public class ObstacleCollision : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             //Maincamera.GetComponent<Animator>().enabled = true;
+
             PlayerBehaviourMagnus.lives -= 1;
             // Her der skal være en linje kode med animatoren fra main camera så hver gang man bliver ramt så kommer der en animation
             EndlessCreator.movables.Remove(gameObject);
