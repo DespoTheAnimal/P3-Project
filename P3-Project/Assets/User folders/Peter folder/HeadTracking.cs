@@ -45,7 +45,7 @@ public class HeadTracking : MonoBehaviour
             float xAverage = Queryable.Average(xList.AsQueryable());
             float yAverage = Queryable.Average(yList.AsQueryable());
 
-            if (yAverage > 2f && Grounded())
+            if (yAverage > 1.75f && Grounded())
             {
                 player.GetComponent<Rigidbody>().AddForce(Vector3.up * 2, ForceMode.Impulse);
             }
@@ -62,6 +62,6 @@ public class HeadTracking : MonoBehaviour
     private bool Grounded()
     {
         //Ray landingRay = new Ray(player.transform.position, new Vector3(0f,-1f,0f));
-        return Physics.Raycast(player.transform.position, Vector3.down, distanceToHit + 0.1f, LayerMask.GetMask("Ignore Raycast"));
+        return Physics.Raycast(player.transform.position, Vector3.down, distanceToHit + 0.1f);//LayerMask.GetMask("Ignore Raycast"));
     }
 }
