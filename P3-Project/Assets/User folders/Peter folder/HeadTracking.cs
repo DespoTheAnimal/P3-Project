@@ -62,6 +62,6 @@ public class HeadTracking : MonoBehaviour
     private bool Grounded()
     {
         //Ray landingRay = new Ray(player.transform.position, new Vector3(0f,-1f,0f));
-        return Physics.Raycast(player.transform.position, Vector3.down, distanceToHit + 0.1f);
+        return Physics.Raycast(player.transform.position, Vector3.down, distanceToHit + 0.1f, LayerMask.GetMask("Ignore Raycast"));
     }
 }
