@@ -6,6 +6,10 @@ TagManager:
   tags:
   - ILikeToMoveItMoveIt
   - Server
+  - Cursor
+  - Lever1
+  - Lever2
+  - Lever3
   layers:
   - Default
   - TransparentFX
