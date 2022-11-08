@@ -38,12 +38,15 @@ public class MazeControl : MonoBehaviour
         float xAverage = Queryable.Average(xList.AsQueryable());
         float yAverage = Queryable.Average(yList.AsQueryable());
 
+        Debug.Log(xAverage);
+        Debug.Log(yAverage);
+
         //En god omgang spaghetti carbonarra...
         if (xAverage > 1.75f)
         {
             player.GetComponent<Rigidbody>().AddForce(Vector3.right * 2f, ForceMode.Acceleration);
         }
-        if (xAverage < -1.75f)
+        if (xAverage < -.7f)
         {
             player.GetComponent<Rigidbody>().AddForce(Vector3.left * 2f, ForceMode.Acceleration);
         }
@@ -51,7 +54,7 @@ public class MazeControl : MonoBehaviour
         {
             player.GetComponent<Rigidbody>().AddForce(Vector3.up * 2f, ForceMode.Acceleration);
         }
-        if (yAverage < -1.75f)
+        if (yAverage < -.6f)
         {
             player.GetComponent<Rigidbody>().AddForce(Vector3.down * 2f, ForceMode.Acceleration);
         }
