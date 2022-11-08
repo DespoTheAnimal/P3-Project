@@ -60,9 +60,9 @@ public class PlayerBehaviourMagnus : MonoBehaviour
 
     void Jump()
     {
-       
-         rb.AddForce(Vector3.up * jumpheight, ForceMode.Impulse);
-         jump = false;
+
+        rb.AddForce(new Vector3(0, 10 * rb.mass, 0), ForceMode.Impulse);
+        jump = false;
        
     }
 
@@ -106,5 +106,12 @@ public class PlayerBehaviourMagnus : MonoBehaviour
     {
         score += 1;
         text.text = score.ToString();
+    }
+
+    private float gravityFactor = 10f;
+
+    private void FixedUpdate()
+    {
+        rb.AddForce(new Vector3(0, -1, 0) * gravityFactor, ForceMode.Acceleration);
     }
 };
