@@ -23,7 +23,7 @@ public class ColliderLever : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ILikeToClickItClickIt();
+        //ILikeToClickItClickIt();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,7 +32,6 @@ public class ColliderLever : MonoBehaviour
         {
             Debug.Log("Hit");
             enableClick = true;
-           
         }
     }
 
@@ -44,13 +43,16 @@ public class ColliderLever : MonoBehaviour
         }
     }
 
-    void ILikeToClickItClickIt()
+    /*void ILikeToClickItClickIt()
     {
         if (enableClick && Input.GetMouseButtonDown(0))
         {
             lever1 = true;
             Debug.Log(lever1);
+
         }
-    }
+    }*/
+
+    //Vi fucking cool ez plebs 
 }
 

@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEditor;
 using UnityEngine;
-
+using UnityEngine.Windows;
+using Input = UnityEngine.Input;
 public class LeverPuzzle : MonoBehaviour
 {
     public float offset = 3f;
@@ -26,45 +28,51 @@ public class LeverPuzzle : MonoBehaviour
         Vector3 cursorPos = Input.mousePosition;
         cursorPos.z = offset;
         transform.position = Camera.main.ScreenToWorldPoint(cursorPos);
-      
+
+        Debug.Log(lever1);
+        Debug.Log(lever2);
+        Debug.Log(lever3);
     }
 
-    //Vi fucking cool ez plebs 
 
-   /* void OnTriggerEnter(Collider other)
+
+    //Vi fucking cool ez plebs 
+   void OnTriggerStay(Collider other)
     {
-        if (ColliderLever.enableClick && Input.GetMouseButtonDown(1))
+        if (ColliderLever.enableClick && other.gameObject.CompareTag("Lever1"))
         {
-            if (other.gameObject.CompareTag("Lever1"))
+            if (Input.GetMouseButtonDown(0))
             {
-                lever1 = true;
                 if (lever1 == true)
                 {
                     lever1 = false;
                 }
-                Debug.Log(lever1);
+                else lever1 = true;
             }
-
-
-            if (other.gameObject.CompareTag("Lever2"))
+                
+        }
+        else if (ColliderLever.enableClick && other.gameObject.CompareTag("Lever2"))
+        {
+            if (Input.GetMouseButtonDown(0))
             {
-                lever2 = true;
                 if (lever2 == true)
                 {
                     lever2 = false;
                 }
-                Debug.Log(lever2);
+                else lever2 = true;
             }
+        }
 
-            if (other.gameObject.CompareTag("Lever3"))
+        else if (ColliderLever.enableClick && other.gameObject.CompareTag("Lever3"))
+        {
+            if (Input.GetMouseButtonDown(0))
             {
-                lever3 = true;
                 if (lever3 == true)
                 {
                     lever3 = false;
                 }
-                Debug.Log(lever3);
+                else lever3 = true;
             }
         }
-    }*/
+    }
 }
