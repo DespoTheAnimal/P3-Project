@@ -14,7 +14,7 @@ public class HeadTracking : MonoBehaviour
     public float yPosAdjust = 400;
 
     private bool isGrounded = false;
-    public float distanceToHit = 2f;
+    public float distanceToHit = 0.9f;
 
     private void Awake()
     {

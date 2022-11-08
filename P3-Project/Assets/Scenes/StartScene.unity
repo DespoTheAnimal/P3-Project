@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1112,13 +1112,13 @@ Rigidbody:
   m_GameObject: {fileID: 298428251}
   serializedVersion: 2
   m_Mass: 2
-  m_Drag: 3
+  m_Drag: 1
   m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &298428253
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1746,11 +1746,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5597519054703911638, guid: 27523e0dab7186e4d98c2007028639c5,
-        type: 3}
-      propertyPath: m_Mass
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5906249888222807161, guid: 27523e0dab7186e4d98c2007028639c5,
         type: 3}
       propertyPath: m_Name
