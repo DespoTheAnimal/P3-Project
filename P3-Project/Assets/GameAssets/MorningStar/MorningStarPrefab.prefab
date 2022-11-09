@@ -673,6 +673,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4319197769333532676}
+  - component: {fileID: 1917841542669612061}
+  - component: {fileID: -8005774925543139296}
   m_Layer: 0
   m_Name: MorningStarPrefab
   m_TagString: Untagged
@@ -709,6 +711,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1917841542669612061
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3511417721188823742}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.58
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-8005774925543139296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3511417721188823742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93bcb82c0d382e0408c40cf39226543e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4229481003797443696
 GameObject:
   m_ObjectHideFlags: 0

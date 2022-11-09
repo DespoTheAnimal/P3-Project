@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
 {
+    //Gradually increase speed
+    public static float forwardMovement = 10f;
+    private float maxSpeed = 500f;
+    private float acceleration = 10f;
+    private float deceleration = 10f;
+
+
     private Rigidbody rb;
     private static int movementSpeed = 5;
-    public static float forwardMovement = 10f;
     private float distanceToGround = 1f;
     private float gravityFactor = 10f;
 
@@ -36,7 +42,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         rb.MovePosition(transform.position + new Vector3(horizontal * movementSpeed, 0f, forwardMovement) * Time.deltaTime);
 
-        if(Input.GetKeyDown(KeyCode.Space) && Jump())
+        if (Input.GetKeyDown(KeyCode.Space) && Jump())
         {
             rb.AddForce(new Vector3(0, 10 * rb.mass, 0), ForceMode.Impulse);
         }
