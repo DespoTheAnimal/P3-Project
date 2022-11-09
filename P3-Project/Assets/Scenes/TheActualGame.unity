@@ -345,10 +345,10 @@ MonoBehaviour:
   speed: 5
   ground: {fileID: 5906249888222807161, guid: 27523e0dab7186e4d98c2007028639c5, type: 3}
   newGround: {fileID: 0}
-  planeStartPoint: 75
   obstacle:
   - {fileID: 7316407424166556290, guid: 8d9828aec3b034a1d95d868872a1ec3a, type: 3}
-  - {fileID: 325250558563837207, guid: 32de5fb27e019463db978544d5251eff, type: 3}
+  - {fileID: 919132149155446097, guid: abb238af0a67047929a082759c58f9ad, type: 3}
+  - {fileID: 3511417721188823742, guid: b0b3e6fb7e8de448089dcc533624d8a1, type: 3}
 --- !u!4 &1692609219
 Transform:
   m_ObjectHideFlags: 0
