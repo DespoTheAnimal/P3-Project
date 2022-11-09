@@ -12,6 +12,8 @@ public class RotatePuzzle : MonoBehaviour
     List<float> xList = new List<float>();
     public float xPosAdjust = 320;
 
+    private List<GameObject> KeyList = new List<GameObject>();
+
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -45,9 +47,20 @@ public class RotatePuzzle : MonoBehaviour
         player.transform.Rotate(player.transform.rotation.x, player.transform.rotation.y, zAverage, Space.Self);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("test");
         win.SetActive(true);
+        if (Input.GetButtonDown("Space"))
+        {
+            NewKey();
+        }
+    }
+
+    private void NewKey()
+    {
+        key.SetActive(false);
+        int random = Random.Range(0, KeyList.Count);
+        
     }
 }

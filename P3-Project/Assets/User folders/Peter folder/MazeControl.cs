@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class MazeControl : MonoBehaviour
 {
@@ -19,6 +20,28 @@ public class MazeControl : MonoBehaviour
     }
 
     private void FixedUpdate()
+    {
+        MoveControl();
+
+        /*
+        Vector3 playerPos = player.transform.localPosition;
+
+        xAverage = Mathf.Clamp(xAverage, -20f, 20f);
+        yAverage = Mathf.Clamp(yAverage, -20f, 20f);
+        player.transform.localPosition = new Vector3(xAverage, yAverage, playerPos.z);*/
+
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (Input.GetButtonDown("Space"))
+        {
+            SceneManager.LoadScene("1");
+        }
+    }
+
+
+    private void MoveControl()
     {
         string data = uDPReceive.GetComponent<UDPReceive>().data;
         //The two below lines are removing the brackets in the first and last place
@@ -58,16 +81,5 @@ public class MazeControl : MonoBehaviour
         {
             player.GetComponent<Rigidbody>().AddForce(Vector3.down * 2f, ForceMode.Acceleration);
         }
-
-        /*
-        Vector3 playerPos = player.transform.localPosition;
-
-        xAverage = Mathf.Clamp(xAverage, -20f, 20f);
-        yAverage = Mathf.Clamp(yAverage, -20f, 20f);
-        player.transform.localPosition = new Vector3(xAverage, yAverage, playerPos.z);*/
-
     }
-
-
-
 }

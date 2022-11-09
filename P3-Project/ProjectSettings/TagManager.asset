@@ -11,6 +11,7 @@ TagManager:
   - Lever2
   - Lever3
   - Floor
+  - Keys
   layers:
   - Default
   - TransparentFX
