@@ -7,10 +7,10 @@ public class DeleteGround : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("ILikeToMoveItMoveIt"))
+        if (other.gameObject.CompareTag("ILikeToMoveItMoveIt") || other.gameObject.CompareTag("Floor"))
         {
             Destroy(other.gameObject);
-            EndlessCreator.movables.Remove(other.gameObject);
+            //EndlessCreator.movables.Remove(other.gameObject);
         }
     }
 }

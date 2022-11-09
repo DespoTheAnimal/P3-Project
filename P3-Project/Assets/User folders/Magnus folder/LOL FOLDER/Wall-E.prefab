@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1746669161449349179}
   - component: {fileID: 2728208257720687313}
   - component: {fileID: 6532954075662268842}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Krop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 2645149391437141200}
   - component: {fileID: 7327431051499314344}
   - component: {fileID: 7534858515094962684}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Krop (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 3093904211232727083}
   - component: {fileID: 6742080941788818723}
   - component: {fileID: -232124508805441381}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wall-E
   m_TagString: ILikeToMoveItMoveIt
   m_Icon: {fileID: 0}

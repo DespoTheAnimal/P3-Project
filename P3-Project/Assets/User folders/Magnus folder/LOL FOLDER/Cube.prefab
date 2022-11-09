@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6558893245730708648}
   - component: {fileID: 1658994806446021506}
   - component: {fileID: -8367092477132465401}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube
   m_TagString: ILikeToMoveItMoveIt
   m_Icon: {fileID: 0}
@@ -48,7 +48,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93bcb82c0d382e0408c40cf39226543e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Maincamera: {fileID: 0}
 --- !u!33 &2933561799211788623
 MeshFilter:
   m_ObjectHideFlags: 0
