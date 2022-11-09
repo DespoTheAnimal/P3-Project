@@ -427,8 +427,8 @@ MonoBehaviour:
   planeStartPoint: 50
   obstacle:
   - {fileID: 8038210697474645068, guid: e175ddb6a747f114cba468f3d447dbdd, type: 3}
-  - {fileID: 8677031667479744345, guid: 11769d797a2bead40a011e47408cddb1, type: 3}
-  - {fileID: 8862913231212527512, guid: 6b4aa726c10e3524c9929e97799ee769, type: 3}
+  - {fileID: 7591591834044512265, guid: 588231d36cfe041fb82298c7ae10550d, type: 3}
+  - {fileID: 7316407424166556290, guid: 8d9828aec3b034a1d95d868872a1ec3a, type: 3}
 --- !u!4 &142607674
 Transform:
   m_ObjectHideFlags: 0
