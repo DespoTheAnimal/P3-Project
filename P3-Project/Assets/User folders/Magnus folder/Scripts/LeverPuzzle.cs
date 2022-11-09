@@ -32,6 +32,11 @@ public class LeverPuzzle : MonoBehaviour
         Debug.Log(lever1);
         Debug.Log(lever2);
         Debug.Log(lever3);
+
+        if(lever1 && lever2 && lever3)
+        {
+            doorOpen=true;
+        }
     }
 
 

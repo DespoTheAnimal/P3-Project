@@ -792,7 +792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   port: 5052
-  startRecieving: 1
+  startRecieving: 0
   printToConsole: 0
   data: 
 --- !u!4 &2057370853
