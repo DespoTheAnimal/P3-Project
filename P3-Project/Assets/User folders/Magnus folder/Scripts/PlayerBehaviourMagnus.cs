@@ -13,7 +13,7 @@ public class PlayerBehaviourMagnus : MonoBehaviour
     public bool jump;
     public Rigidbody rb;
     public float jumpheight = 5f;
-    public static int speed = 2;
+    public static int speed = 5;
     public GameObject[] Hearts;
 
     public static int lives = 3;
