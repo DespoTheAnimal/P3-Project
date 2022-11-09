@@ -10,6 +10,7 @@ TagManager:
   - Lever1
   - Lever2
   - Lever3
+  - Floor
   layers:
   - Default
   - TransparentFX

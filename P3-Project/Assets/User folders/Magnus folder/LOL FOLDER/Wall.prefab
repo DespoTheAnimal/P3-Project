@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5287759238768800589}
   - component: {fileID: 7860057721430562329}
   - component: {fileID: 4309523889197524253}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wall
   m_TagString: ILikeToMoveItMoveIt
   m_Icon: {fileID: 0}
