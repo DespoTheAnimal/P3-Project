@@ -843,7 +843,7 @@ GameObject:
   - component: {fileID: -7410763485178791337}
   m_Layer: 0
   m_Name: SkullBladePrefab
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -28,6 +28,11 @@ public class PlayerBehaviour : MonoBehaviour
         //Camera.main.transform.position = cameraMoveMaybe;
         //cameraMoveMaybe = new Vector3(0f, 5f, transform.position.z - 10f);
         //Camera.main.transform.rotation = Quaternion.identity;
+
+        if (Input.GetKeyDown(KeyCode.Space) && Jump())
+        {
+            rb.AddForce(new Vector3(0, 10 * rb.mass, 0), ForceMode.Impulse);
+        }
     }
 
     private void FixedUpdate()
@@ -42,10 +47,6 @@ public class PlayerBehaviour : MonoBehaviour
 
         rb.MovePosition(transform.position + new Vector3(horizontal * movementSpeed, 0f, forwardMovement) * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.Space) && Jump())
-        {
-            rb.AddForce(new Vector3(0, 10 * rb.mass, 0), ForceMode.Impulse);
-        }
     }
 
     private bool Jump()
