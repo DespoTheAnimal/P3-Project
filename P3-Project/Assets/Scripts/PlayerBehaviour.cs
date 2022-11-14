@@ -4,16 +4,15 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
+using Unity.VisualScripting;
 
 public class PlayerBehaviour : MonoBehaviour
 {
     //Gradually increase speed
     public static float forwardMovement = 10f;
-    private float currentSpeed = 0f;
+    public static float currentSpeed = 0f;
     private float minSpeed;
     private float maxSpeed = 50f;
-    private float acceleration = 10f;
-    private float deceleration = 10f;
     private float timeForSpeed;
     private int accelerationTime = 60;
 
@@ -24,43 +23,29 @@ public class PlayerBehaviour : MonoBehaviour
     private float gravityFactor = 10f;
     private int jumpHeight = 10;
 
-    public static int lives = 3;
-    public TextMeshProUGUI text;
-    public GameObject[] Hearts;
-    private int score;
+    private void Awake()
+    {
+        if(UDPReceive.getStartRecieving == true)
+        {
+            gameObject.GetComponent<PlayerBehaviour>().enabled = false;
+        }
+    }
 
     void Start()
     {
         timeForSpeed = 0f;
         minSpeed = currentSpeed;
-        lives = 3;
         rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
-        if (lives < 1)
-        {
-            Destroy(Hearts[0].gameObject);
-            Destroy(Hearts[1].gameObject);
-            Destroy(Hearts[2].gameObject);
-        }
-        else if (lives < 2)
-        {
-            Destroy(Hearts[1].gameObject);
-            Destroy(Hearts[2].gameObject);
-        }
-        else if (lives < 3)
-        {
-            Destroy(Hearts[2].gameObject);
-        }
 
         if (Input.GetKeyDown(KeyCode.Space) && Jump())
         {
             rb.AddForce(new Vector3(0, jumpHeight * rb.mass, 0), ForceMode.Impulse);
         }
 
-        LoseCondition();
         IncreaseSpeed();
     }
 
@@ -87,15 +72,6 @@ public class PlayerBehaviour : MonoBehaviour
         else
         {
             return false;
-        }
-    }
-
-    void LoseCondition()
-    {
-        if (lives <= 0)
-        {
-            PlayerPrefs.SetInt("NewScore", score);
-            SceneManager.LoadScene("YouDied");
         }
     }
 
