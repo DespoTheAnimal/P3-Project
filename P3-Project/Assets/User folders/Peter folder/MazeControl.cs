@@ -13,12 +13,22 @@ public class MazeControl : MonoBehaviour
     public float xPosAdjust = 320;
     public float yPosAdjust = 400;
 
+    [SerializeField] private GameObject winText;
+    private bool isWinPossible;
+
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         uDPReceive = GameObject.FindGameObjectWithTag("Server");
     }
 
+    private void Update()
+    {
+        if (isWinPossible && Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene(1);
+        }
+    }
     private void FixedUpdate()
     {
         MoveControl();
@@ -30,14 +40,6 @@ public class MazeControl : MonoBehaviour
         yAverage = Mathf.Clamp(yAverage, -20f, 20f);
         player.transform.localPosition = new Vector3(xAverage, yAverage, playerPos.z);*/
 
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (Input.GetButtonDown("Space"))
-        {
-            SceneManager.LoadScene("1");
-        }
     }
 
 
@@ -81,5 +83,17 @@ public class MazeControl : MonoBehaviour
         {
             player.GetComponent<Rigidbody>().AddForce(Vector3.down * 2f, ForceMode.Acceleration);
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {  
+        winText.SetActive(true);
+        isWinPossible = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        winText.SetActive(false);
+        isWinPossible = false;
     }
 }
