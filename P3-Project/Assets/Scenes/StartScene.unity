@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -824,7 +824,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 192125551}
-  - component: {fileID: 192125550}
   - component: {fileID: 192125549}
   m_Layer: 0
   m_Name: MovementManager
@@ -849,22 +848,6 @@ MonoBehaviour:
   xPosAdjust: 320
   yPosAdjust: 400
   distanceToHit: 2
---- !u!114 &192125550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 192125548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d34e7a4e50bbc4578a4207b4160d26fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  port: 5052
-  startRecieving: 1
-  printToConsole: 0
-  data: 
 --- !u!4 &192125551
 Transform:
   m_ObjectHideFlags: 0

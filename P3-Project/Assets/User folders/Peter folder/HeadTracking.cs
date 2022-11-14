@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 //Made from tutorial: https://www.youtube.com/watch?v=m-CHTkMW_ho&ab_channel=Murtaza%27sWorkshop-RoboticsandAIk
 public class HeadTracking : MonoBehaviour
@@ -18,6 +19,10 @@ public class HeadTracking : MonoBehaviour
 
     private void Awake()
     {
+        if(UDPReceive.getStartRecieving == false)
+        {
+            gameObject.GetComponent<HeadTracking>().enabled = false;
+        }
         player = GameObject.FindGameObjectWithTag("Player");
         uDPReceive = GameObject.FindGameObjectWithTag("Server");   
     }
@@ -54,6 +59,7 @@ public class HeadTracking : MonoBehaviour
 
             xAverage = Mathf.Clamp(xAverage, -4f, 4f);
             player.transform.localPosition = new Vector3(xAverage, playerPos.y, playerPos.z);
+            player.GetComponent<Rigidbody>().MovePosition(playerPos + new Vector3(xAverage, yAverage, PlayerBehaviour.currentSpeed) * Time.deltaTime);
 
         Debug.Log(Grounded());
 

@@ -13,6 +13,7 @@ public class UDPReceive : MonoBehaviour
     UdpClient client;
     public int port = 5052;
     public bool startRecieving = true;
+    public static bool getStartRecieving; 
     public bool printToConsole = false;
     public string data;
     
@@ -28,6 +29,12 @@ public class UDPReceive : MonoBehaviour
             new ThreadStart(ReceiveData));
         receiveThread.IsBackground = true;
         receiveThread.Start();
+    }
+
+    private void Update()
+    {
+        getStartRecieving = startRecieving;
+        Debug.Log(getStartRecieving);
     }
 
 
@@ -52,6 +59,18 @@ public class UDPReceive : MonoBehaviour
                 }
             }
         
+    }
+
+    public void EnableBool()
+    {
+        if(startRecieving == false)
+        {
+            startRecieving=true;
+        }
+        else
+        {
+            startRecieving = false;
+        }
     }
 
 }
