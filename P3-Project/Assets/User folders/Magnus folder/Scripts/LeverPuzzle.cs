@@ -1,24 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
-using Unity.VisualScripting.Antlr3.Runtime;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.Windows;
 using Input = UnityEngine.Input;
+using UnityEngine.SceneManagement;
 public class LeverPuzzle : MonoBehaviour
 {
     public float offset = 3f;
 
-    public bool lever1;
-    public bool lever2;
-    public bool lever3;
+    public int lever1;
+    public int lever2;
+    public int lever3;
+    public int leverCheck1;
+    public int leverCheck2;
+    public int leverCheck3;
     public bool doorOpen;
+
+
     // Start is called before the first frame update
     void Start()
     {
         doorOpen = false;
+        lever1 = Random.Range(0, 2);
+        lever2 = Random.Range(0, 2);
+        lever3 = Random.Range(0, 2);
+
+        leverCheck1 = Random.Range(0, 2);
+        leverCheck2 = Random.Range(0, 2);
+        leverCheck3 = Random.Range(0, 2);
     }
 
     // Update is called once per frame
@@ -29,17 +35,22 @@ public class LeverPuzzle : MonoBehaviour
         cursorPos.z = offset;
         transform.position = Camera.main.ScreenToWorldPoint(cursorPos);
 
+        if(lever1 == leverCheck1 &&  lever2 == leverCheck2 && lever3 == leverCheck3)
+        {
+            doorOpen=true;
+            SceneManager.LoadScene(1);
+        }
+
+
         Debug.Log(lever1);
         Debug.Log(lever2);
         Debug.Log(lever3);
 
-        if(lever1 && lever2 && lever3)
-        {
-            doorOpen=true;
-        }
+        Debug.Log(leverCheck1);
+        Debug.Log(leverCheck2);
+        Debug.Log(leverCheck3);
+
     }
-
-
 
     //Vi fucking cool ez plebs 
    void OnTriggerStay(Collider other)
@@ -48,11 +59,11 @@ public class LeverPuzzle : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if (lever1 == true)
+                if (lever1 == 0)
                 {
-                    lever1 = false;
+                    lever1 = 1;
                 }
-                else lever1 = true;
+                else lever1 = 0;
             }
                 
         }
@@ -60,11 +71,11 @@ public class LeverPuzzle : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if (lever2 == true)
+                if (lever2 == 0)
                 {
-                    lever2 = false;
+                    lever2 = 1;
                 }
-                else lever2 = true;
+                else lever2 = 0;
             }
         }
 
@@ -72,11 +83,11 @@ public class LeverPuzzle : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if (lever3 == true)
+                if (lever3 == 0)
                 {
-                    lever3 = false;
+                    lever3 = 1;
                 }
-                else lever3 = true;
+                else lever3 = 0;
             }
         }
     }
