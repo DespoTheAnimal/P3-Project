@@ -7,9 +7,14 @@ using UnityEngine.UIElements;
 
 public class ColliderLever : MonoBehaviour
 {
+    LeverPuzzle puzzler;
 
     public static bool enableClick;
-    
+
+    private void Start()
+    {
+        puzzler = GameObject.Find("Cube").GetComponent<LeverPuzzle>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -25,6 +30,40 @@ public class ColliderLever : MonoBehaviour
         if (other.gameObject.CompareTag("Cursor"))
         {
             enableClick = false;
+        }
+    }
+
+    private void OnMouseDown()
+    {
+        if (enableClick && gameObject.tag == "Lever1")
+        {
+            if (puzzler.lever1 == 0)
+            {
+                puzzler.lever1 = 1;
+                puzzler.leverb1.GetComponent<Animator>().Play("LeverUp");
+            }
+            else puzzler.lever1 = 0;
+            puzzler.leverb1.GetComponent<Animator>().Play("Idle");
+        }
+        else if (enableClick && gameObject.tag == "Lever2")
+        {
+            if (puzzler.lever2 == 0)
+            {
+                puzzler.lever2 = 1;
+                puzzler.leverb2.GetComponent<Animator>().Play("LeverUp");
+            }
+            else puzzler.lever2 = 0;
+            puzzler.leverb2.GetComponent<Animator>().Play("Idle");
+        }
+        else if (enableClick && gameObject.tag == "Lever3")
+        {
+            if (puzzler.lever3 == 0)
+            {
+                puzzler.lever3 = 1;
+                puzzler.leverb3.GetComponent<Animator>().Play("LeverUp");
+            }
+            else puzzler.lever3 = 0;
+            puzzler.leverb3.GetComponent<Animator>().Play("Idle");
         }
     }
 }

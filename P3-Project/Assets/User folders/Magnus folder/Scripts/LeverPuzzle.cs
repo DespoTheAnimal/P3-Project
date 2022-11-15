@@ -20,9 +20,9 @@ public class LeverPuzzle : MonoBehaviour
     public bool lever2Active;
     public bool lever3Active;
 
-    [SerializeField] private GameObject leverb1;
-    [SerializeField] private GameObject leverb2;
-    [SerializeField] private GameObject leverb3;
+    [SerializeField] public GameObject leverb1;
+    [SerializeField] public GameObject leverb2;
+    [SerializeField] public GameObject leverb3;
 
     // Start is called before the first frame update
     void Start()
@@ -107,71 +107,5 @@ public class LeverPuzzle : MonoBehaviour
             }
         }
     }*/
-
-    private void OnMouseDown()
-    {
-        if(lever1Active)
-        {
-            if (lever1 == 0)
-            {
-                lever1 = 1;
-                leverb1.GetComponent<Animator>().Play("LeverUp");
-            }
-            else lever1 = 0;
-            leverb1.GetComponent<Animator>().Play("Idle");
-        }
-        else if (lever2Active)
-        {
-            if (lever2 == 0)
-            {
-                lever2 = 1;
-                leverb2.GetComponent<Animator>().Play("LeverUp");
-            }
-            else lever2 = 0;
-            leverb2.GetComponent<Animator>().Play("Idle");
-        }
-        else if (lever3Active)
-        {
-            if (lever3 == 0)
-                {
-                    lever3 = 1;
-                    leverb3.GetComponent<Animator>().Play("LeverUp");
-                }
-                else lever3 = 0;
-                leverb3.GetComponent<Animator>().Play("Idle");
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.CompareTag("Lever1"))
-        {
-            lever1Active = true;
-        }
-        else if (other.gameObject.CompareTag("Lever2"))
-        {
-            lever2Active = true;
-        }
-        else if (other.gameObject.CompareTag("Lever3"))
-        {
-            lever3Active = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Lever1"))
-        {
-            lever1Active = false;
-        }
-        else if (other.gameObject.CompareTag("Lever2"))
-        {
-            lever2Active = false;
-        }
-        else if (other.gameObject.CompareTag("Lever3"))
-        {
-            lever3Active = false;
-        }
-    }
     //Vi fucking cool ez plebs 
 }
