@@ -69,11 +69,14 @@ public class HeadTracking : MonoBehaviour
                 player.GetComponent<Rigidbody>().AddForce(Vector3.up * 10, ForceMode.Impulse);
             }
 
+            // this vector clamps the x-values and gets the position of the player
             Vector3 playerPos = new Vector3(Mathf.Clamp(xAverage, -4f, 4f), player.transform.position.y, player.transform.position.z);
 
             //xAverage = Mathf.Clamp(xAverage, -4f, 4f);
             //player.transform.localPosition = new Vector3(xAverage, playerPos.y, playerPos.z);
             //player.transform.localPosition = new Vector3(xAverage, player.transform.localPosition.y, transform.localPosition.z);
+
+            // Here the player's rigidbody gets moved by using its position in addition to a vector that moves the Player-GameObject forward with the currentSpeed 
             player.GetComponent<Rigidbody>().MovePosition(playerPos + new Vector3(0f, 0f, currentSpeed) * Time.deltaTime);
 
         Debug.Log(Grounded());
@@ -85,12 +88,22 @@ public class HeadTracking : MonoBehaviour
         IncreaseSpeed();
     }
 
+
+
+    /// <summary>
+    /// Checks if the player is currently close enough to initiate a jump
+    /// </summary>
+    /// <returns></returns>
     private bool Grounded()
     {
         //Ray landingRay = new Ray(player.transform.position, new Vector3(0f,-1f,0f));
         return Physics.Raycast(player.transform.position, Vector3.down, distanceToHit + 0.1f);//LayerMask.GetMask("Ignore Raycast"));
     }
 
+
+    /// <summary>
+    /// Increases the speed from a minSpeed to a maxSpeed while game is in session
+    /// </summary>
     void IncreaseSpeed()
     {
         currentSpeed = Mathf.Lerp(minSpeed, maxSpeed, timeForSpeed / accelerationTime);
