@@ -17,6 +17,14 @@ public class HeadTracking : MonoBehaviour
     private bool isGrounded = false;
     public float distanceToHit = 0.9f;
 
+    private int movementSpeed = 2;
+    public static float forwardMovement = 10f;
+    public static float currentSpeed = 0f;
+    private float minSpeed;
+    private float maxSpeed = 50f;
+    private float timeForSpeed;
+    private int accelerationTime = 60;
+
     private void Awake()
     {
         if(UDPReceive.getStartRecieving == false)
@@ -25,6 +33,12 @@ public class HeadTracking : MonoBehaviour
         }
         player = GameObject.FindGameObjectWithTag("Player");
         uDPReceive = GameObject.FindGameObjectWithTag("Server");   
+    }
+
+    private void Start()
+    {
+        timeForSpeed = 0f;
+        minSpeed = currentSpeed;
     }
 
     private void FixedUpdate()
@@ -52,22 +66,34 @@ public class HeadTracking : MonoBehaviour
 
             if (yAverage > 1.75f && Grounded())
             {
-                player.GetComponent<Rigidbody>().AddForce(Vector3.up * 2, ForceMode.Impulse);
+                player.GetComponent<Rigidbody>().AddForce(Vector3.up * 10, ForceMode.Impulse);
             }
 
-            Vector3 playerPos = player.transform.localPosition;
+            Vector3 playerPos = new Vector3(Mathf.Clamp(xAverage, -4f, 4f), player.transform.position.y, player.transform.position.z);
 
-            xAverage = Mathf.Clamp(xAverage, -4f, 4f);
-            player.transform.localPosition = new Vector3(xAverage, playerPos.y, playerPos.z);
-            player.GetComponent<Rigidbody>().MovePosition(playerPos + new Vector3(xAverage, yAverage, PlayerBehaviour.currentSpeed) * Time.deltaTime);
+            //xAverage = Mathf.Clamp(xAverage, -4f, 4f);
+            //player.transform.localPosition = new Vector3(xAverage, playerPos.y, playerPos.z);
+            //player.transform.localPosition = new Vector3(xAverage, player.transform.localPosition.y, transform.localPosition.z);
+            player.GetComponent<Rigidbody>().MovePosition(playerPos + new Vector3(0f, 0f, currentSpeed) * Time.deltaTime);
 
         Debug.Log(Grounded());
 
+    }
+
+    private void Update()
+    {
+        IncreaseSpeed();
     }
 
     private bool Grounded()
     {
         //Ray landingRay = new Ray(player.transform.position, new Vector3(0f,-1f,0f));
         return Physics.Raycast(player.transform.position, Vector3.down, distanceToHit + 0.1f);//LayerMask.GetMask("Ignore Raycast"));
+    }
+
+    void IncreaseSpeed()
+    {
+        currentSpeed = Mathf.Lerp(minSpeed, maxSpeed, timeForSpeed / accelerationTime);
+        timeForSpeed += Time.deltaTime;
     }
 }
