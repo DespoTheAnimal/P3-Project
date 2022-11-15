@@ -1803,10 +1803,10 @@ Animator:
   m_GameObject: {fileID: 916218935}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7adba42e4133d2846ac5433a21102af5, type: 2}
+  m_Controller: {fileID: 9100000, guid: 99c47d791d251744aae4b5aa1c9cc937, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -3299,12 +3299,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 602b6f850753c1e4fa29debdfd101c26,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.43
+      value: 9.306
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 602b6f850753c1e4fa29debdfd101c26,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 22.06
+      value: 22.663
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 602b6f850753c1e4fa29debdfd101c26,
         type: 3}
@@ -3341,10 +3341,80 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5738099386740791124, guid: 602b6f850753c1e4fa29debdfd101c26,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.057071503
+      objectReference: {fileID: 0}
+    - target: {fileID: -5738099386740791124, guid: 602b6f850753c1e4fa29debdfd101c26,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0012204803
+      objectReference: {fileID: 0}
+    - target: {fileID: -5738099386740791124, guid: 602b6f850753c1e4fa29debdfd101c26,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.021347817
+      objectReference: {fileID: 0}
+    - target: {fileID: -5738099386740791124, guid: 602b6f850753c1e4fa29debdfd101c26,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.9981411
+      objectReference: {fileID: 0}
+    - target: {fileID: -5738099386740791124, guid: 602b6f850753c1e4fa29debdfd101c26,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -2.45
+      objectReference: {fileID: 0}
+    - target: {fileID: -5738099386740791124, guid: 602b6f850753c1e4fa29debdfd101c26,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5738099386740791124, guid: 602b6f850753c1e4fa29debdfd101c26,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -173.455
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 602b6f850753c1e4fa29debdfd101c26,
         type: 3}
       propertyPath: m_Name
       value: Alucard Sword Animation
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250409095508506177, guid: 602b6f850753c1e4fa29debdfd101c26,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9967399
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250409095508506177, guid: 602b6f850753c1e4fa29debdfd101c26,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.08056155
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250409095508506177, guid: 602b6f850753c1e4fa29debdfd101c26,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0024253295
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250409095508506177, guid: 602b6f850753c1e4fa29debdfd101c26,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0036819933
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250409095508506177, guid: 602b6f850753c1e4fa29debdfd101c26,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -9.243
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250409095508506177, guid: 602b6f850753c1e4fa29debdfd101c26,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -0.246
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250409095508506177, guid: 602b6f850753c1e4fa29debdfd101c26,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -0.403
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 602b6f850753c1e4fa29debdfd101c26, type: 3}
