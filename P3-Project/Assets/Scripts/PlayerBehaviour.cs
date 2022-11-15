@@ -18,7 +18,7 @@ public class PlayerBehaviour : MonoBehaviour
 
 
     private Rigidbody rb;
-    private static int movementSpeed = 5;
+    private int movementSpeed = 5;
     private float distanceToGround = 1f;
     private float gravityFactor = 10f;
     private int jumpHeight = 10;
