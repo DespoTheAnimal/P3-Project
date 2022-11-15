@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class ObstacleCollision : MonoBehaviour
 {
+    public AudioSource source;
+    public AudioClip clip;
     private GameObject Maincamera;
     private void Start()
     {
@@ -17,6 +19,7 @@ public class ObstacleCollision : MonoBehaviour
         { 
 
             GameLogic.lives -= 1;
+            source.PlayOneShot(clip);
             // Her der skal være en linje kode med animatoren fra main camera så hver gang man bliver ramt så kommer der en animation
             EndlessCreator.movables.Remove(gameObject);
             Destroy(gameObject);
