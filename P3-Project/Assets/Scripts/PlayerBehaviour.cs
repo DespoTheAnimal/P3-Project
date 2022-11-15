@@ -25,7 +25,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void Awake()
     {
-        if(UDPReceive.getStartRecieving == true)
+        if(UDPReceive.getStartRecieving == true) // Happens before anything else, checks if UDP is active, if so then this script will not be active.
         {
             gameObject.GetComponent<PlayerBehaviour>().enabled = false;
         }
@@ -55,6 +55,10 @@ public class PlayerBehaviour : MonoBehaviour
         rb.AddForce(new Vector3(0, -1, 0) * gravityFactor, ForceMode.Acceleration);
     }
 
+
+    /// <summary>
+    /// Moves the player with the input from the keyboard from the player's current position. 
+    /// </summary>
     private void Movement()
     {
         float horizontal = Input.GetAxis("Horizontal");
