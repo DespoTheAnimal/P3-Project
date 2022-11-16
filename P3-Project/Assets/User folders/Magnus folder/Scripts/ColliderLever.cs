@@ -9,7 +9,7 @@ public class ColliderLever : MonoBehaviour
 {
     LeverPuzzle puzzler;
 
-    public static bool enableClick;
+    public bool enableClick;
 
     private void Start()
     {
