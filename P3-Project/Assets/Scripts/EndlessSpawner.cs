@@ -22,7 +22,7 @@ public class EndlessSpawner : MonoBehaviour
     public GameObject newGround;
 
     // The startpoint of the plane
-    private float planeStartPoint = 90f;        //74.5f;
+    private float planeStartPoint = 150f;        //74.5f; Original value for timer spawn
     public static float timerForSpeed = 10;
 
     // The original wall for the level 
@@ -100,10 +100,10 @@ public class EndlessSpawner : MonoBehaviour
     public void SpawnWall()
     {
         { 
-            newGround = Instantiate(ground, spawnPosition, Quaternion.identity);
+            newGround = Instantiate(ground, new Vector3(spawnPosition.x,spawnPosition.y, spawnPosition.z + 24.5f), Quaternion.identity);
             newWall = Instantiate(wall, spawnPosition, Quaternion.identity);
             spawnPosition.z += 50;
-            spawnWall.transform.position = new Vector3(spawnWall.transform.position.x, spawnWall.transform.position.y, spawnPosition.z);
+            //spawnWall.transform.position = new Vector3(spawnWall.transform.position.x, spawnWall.transform.position.y, spawnPosition.z);
         }
         
     }
