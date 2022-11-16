@@ -29192,6 +29192,7 @@ GameObject:
   - component: {fileID: 8708506391904956250}
   - component: {fileID: 5837127620925722682}
   - component: {fileID: 5837127620925722681}
+  - component: {fileID: 8276068608935436620}
   m_Layer: 0
   m_Name: BothWalls
   m_TagString: Floor
@@ -29252,6 +29253,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 16.15, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &8276068608935436620
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4033023158259005457}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9, y: 6.09, z: 1}
+  m_Center: {x: 0, y: 3.44, z: 25}
 --- !u!1 &4034396178290479920
 GameObject:
   m_ObjectHideFlags: 0

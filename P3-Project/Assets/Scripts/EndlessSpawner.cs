@@ -8,6 +8,8 @@ public class EndlessSpawner : MonoBehaviour
     PlayerBehaviour playerBehaviour;
     [SerializeField]
     Collider spawnWall;
+    [SerializeField]
+    GameObject player;
 
     //The list of new gameobject in the scene
     public static List<GameObject> movables = new List<GameObject>();
@@ -20,7 +22,7 @@ public class EndlessSpawner : MonoBehaviour
     public GameObject newGround;
 
     // The startpoint of the plane
-    private float planeStartPoint = 74.5f;
+    private float planeStartPoint = 90f;        //74.5f;
     public static float timerForSpeed = 10;
 
     // The original wall for the level 
@@ -70,7 +72,7 @@ public class EndlessSpawner : MonoBehaviour
                 originalTimer = 2f;
             }
         }
-        SpawnWall();
+        
     }
 
     void SpawnObstacles()
@@ -95,10 +97,9 @@ public class EndlessSpawner : MonoBehaviour
         }
     }
 
-    void SpawnWall()
+    public void SpawnWall()
     {
-        if(Collision.Equals(gameObject, spawnWall))
-        {
+        { 
             newGround = Instantiate(ground, spawnPosition, Quaternion.identity);
             newWall = Instantiate(wall, spawnPosition, Quaternion.identity);
             spawnPosition.z += 50;
