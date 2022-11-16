@@ -81,7 +81,7 @@ public class EndlessSpawner : MonoBehaviour
         {
             //Case 0 the blade, new vector represents the spawn position being mid on X, 6.5 on Y to fit the ceiling, and z in relation to the player
             case 0:
-                newObstacle = Instantiate(obstacle[0], new Vector3(0, 6.5f, spawnPosition.z +25f), Quaternion.identity);
+                newObstacle = Instantiate(obstacle[0], new Vector3(0, 10f, spawnPosition.z +25f), Quaternion.identity);
                 break;
             //Case 1 the spiked log, new vector represents the spawn position being mid on X, 1 on Y and z in relation to the player
             case 1:

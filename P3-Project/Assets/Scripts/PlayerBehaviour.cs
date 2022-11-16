@@ -61,7 +61,7 @@ public class PlayerBehaviour : MonoBehaviour
     private void Movement()
     {
         float horizontal = Input.GetAxis("Horizontal");
-        Vector3 pos = new Vector3(Mathf.Clamp(transform.position.x, -4f, 4f), transform.position.y, transform.position.z);       
+        Vector3 pos = new Vector3(Mathf.Clamp(transform.position.x, -8f, 8f), transform.position.y, transform.position.z);       
         rb.MovePosition(pos + new Vector3(horizontal * movementSpeed, 0f, currentSpeed) * Time.deltaTime);
 
     }
