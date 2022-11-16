@@ -74,14 +74,17 @@ public class EndlessSpawner : MonoBehaviour
     {
         switch (Random.Range(0, obstacle.Count))
         {
+            //Case 0 the blade, new vector represents the spawn position being mid on X, 6.5 on Y to fit the ceiling, and z in relation to the player
             case 0:
-                newObstacle = Instantiate(obstacle[0], new Vector3(Random.Range(-4f, 4), Random.Range(1, 4), spawnPosition.z +25f), Quaternion.identity);
+                newObstacle = Instantiate(obstacle[0], new Vector3(0, 6.5f, spawnPosition.z +25f), Quaternion.identity);
                 break;
+            //Case 1 the spiked log, new vector represents the spawn position being mid on X, 1 on Y and z in relation to the player
             case 1:
-                newObstacle = Instantiate(obstacle[1], new Vector3(0, 0.5f, spawnPosition.z), Quaternion.identity);
+                newObstacle = Instantiate(obstacle[1], new Vector3(0, 1, spawnPosition.z), Quaternion.identity);
                 break;
+            //Case 2 the morningstar, new vector represents the spawn position being random on X axis, 10 on Y to fit the ceiling, and z in relation to the player
             case 2:
-                newObstacle = Instantiate(obstacle[2], new Vector3(Random.Range(-4f, 4), Random.Range(1, 4), spawnPosition.z), Quaternion.identity);
+                newObstacle = Instantiate(obstacle[2], new Vector3(Random.Range(-4f, 4), 10, spawnPosition.z), Quaternion.identity);
                 break;
             default:
                 break;

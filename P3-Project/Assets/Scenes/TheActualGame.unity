@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028544, g: 0.22571726, b: 0.30692512, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028502, g: 0.22571643, b: 0.30692405, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -467,9 +467,9 @@ MonoBehaviour:
   wall: {fileID: 4033023158259005457, guid: baab0893bd58be04c9a939806581a6c4, type: 3}
   newWall: {fileID: 0}
   obstacle:
-  - {fileID: 7316407424166556290, guid: 8d9828aec3b034a1d95d868872a1ec3a, type: 3}
+  - {fileID: 7526065890326349821, guid: f5f4686ca58d6f04582e9fced87efded, type: 3}
   - {fileID: 7591591834044512265, guid: 588231d36cfe041fb82298c7ae10550d, type: 3}
-  - {fileID: 3511417721188823742, guid: b0b3e6fb7e8de448089dcc533624d8a1, type: 3}
+  - {fileID: 2840797803620340842, guid: af8156db891e53a4eb5f1ba72ce216f2, type: 3}
 --- !u!4 &1692609219
 Transform:
   m_ObjectHideFlags: 0
