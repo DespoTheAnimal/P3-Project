@@ -5,6 +5,8 @@ using UnityEngine;
 public class EndlessSpawner : MonoBehaviour
 {
 
+    PlayerBehaviour playerBehaviour;
+
     //The list of new gameobject in the scene
     public static List<GameObject> movables = new List<GameObject>();
     // The speed at which the ground is traveling
@@ -14,9 +16,15 @@ public class EndlessSpawner : MonoBehaviour
     public GameObject ground;
     //The temporary name of the instantiated ground getting added to the list
     public GameObject newGround;
+
     // The startpoint of the plane
     private float planeStartPoint = 74.5f;
     public static float timerForSpeed = 10;
+
+    // The original wall for the level 
+    public GameObject wall;
+    // The temporary name of the instantiated wall getting added
+    public GameObject newWall;
 
     //The original Prefab of the Obstacle
     public List<GameObject> obstacle = new List<GameObject>();
@@ -24,8 +32,8 @@ public class EndlessSpawner : MonoBehaviour
     private GameObject newObstacle;
 
     //The time for which the plane will be created
-    float timer = 2f;
-    float originalTimer = 2f;
+    float timer = 4f;
+    float originalTimer = 4f;
 
     // time for speed
 
@@ -40,6 +48,7 @@ public class EndlessSpawner : MonoBehaviour
         //Start by adding the first plane to the list
         movables.Add(GameObject.FindGameObjectWithTag("Floor"));
         spawnPosition = new Vector3(0, 0, 0 + planeStartPoint);
+        playerBehaviour = GameObject.Find("Player").GetComponent<PlayerBehaviour>();
     }
 
     void Update()
@@ -50,20 +59,19 @@ public class EndlessSpawner : MonoBehaviour
         if (timer <= 0)
         {
             newGround = Instantiate(ground, spawnPosition, Quaternion.identity);
+            newWall = Instantiate(wall, spawnPosition, Quaternion.identity);
             SpawnObstacles();
-            //newObstacle = Instantiate(obstacle[Random.Range(0,obstacle.Count)], new Vector3(Random.Range(-4f,4), Random.Range(1,4),25f), Quaternion.identity);
             spawnPosition.z += 50;
             timer = originalTimer;
-            if (PlayerBehaviourMagnus.speed == 5)
+            if (playerBehaviour.maxSpeed == 6)
             {
-                originalTimer = 1f;
+                originalTimer = 2f;
             }
         }
     }
 
     void SpawnObstacles()
     {
-        //newObstacle = Instantiate(obstacle[Random.Range(0, obstacle.Count)], new Vector3(Random.Range(-4f, 4), Random.Range(1, 4), 25f), Quaternion.identity);
         switch (Random.Range(0, obstacle.Count))
         {
             case 0:
