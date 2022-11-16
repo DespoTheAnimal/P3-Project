@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/winning scene.unity
     guid: 2d075d9a48c574c48a1b1e5d0f9f7bc1
+  - enabled: 1
+    path: Assets/Scenes/lever transition 1.unity
+    guid: 529558e2b54475647ad37a3b9a05ed19
+  - enabled: 1
+    path: Assets/Scenes/LeverPuzzle.unity
+    guid: 80a7f449e2546804d9c401e98de03098
   m_configObjects: {}
