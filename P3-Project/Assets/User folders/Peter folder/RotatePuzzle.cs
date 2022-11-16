@@ -2,27 +2,61 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class RotatePuzzle : MonoBehaviour
 {
     public GameObject uDPReceive;
     private GameObject player;
-    [SerializeField] private GameObject key;
+    private GameObject key;
     [SerializeField] private GameObject win;
     List<float> xList = new List<float>();
     public float xPosAdjust = 320;
 
-    private List<GameObject> KeyList = new List<GameObject>();
+    private bool isWin = false;
+    private int locksUnlocked = 0;
+
+    private List<GameObject> KeyList;
+    GameObject[] keyArray;
+    private GameObject newkey;
 
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         uDPReceive = GameObject.FindGameObjectWithTag("Server");
+        //key = GameObject.FindGameObjectWithTag("Keys");
+        keyArray = GameObject.FindGameObjectsWithTag("Keys");
+
+        keyArray.ToList<GameObject>();
+        Debug.Log(keyArray.Length);
+
+        RandomizeActiveComponent();
+    }
+    
+    private void RandomizeActiveComponent()
+    {
+        int randomNr = Random.Range(0, keyArray.Length);
+        newkey = keyArray[randomNr];
+        Debug.Log(newkey);
+
+        foreach (GameObject key in keyArray)
+        {
+            key.SetActive(false);
+
+            if (newkey == keyArray[randomNr])
+            {
+                newkey.SetActive(true);
+            }
+        }  
     }
 
     private void FixedUpdate()
     {
         Rotation();
+        if (locksUnlocked <= 3)
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
 
@@ -46,21 +80,20 @@ public class RotatePuzzle : MonoBehaviour
 
         player.transform.Rotate(player.transform.rotation.x, player.transform.rotation.y, zAverage, Space.Self);
     }
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("test");
         win.SetActive(true);
-        if (Input.GetButtonDown("Space"))
+        isWin = true;
+        if (Input.GetKeyDown(KeyCode.Space) && isWin)
         {
-            NewKey();
+            locksUnlocked++;
+            RandomizeActiveComponent();
         }
     }
-
-    private void NewKey()
+    private void OnTriggerExit(Collider other)
     {
-        key.SetActive(false);
-        int random = Random.Range(0, KeyList.Count);
-        
+        win.SetActive(false);
+        isWin = false;
     }
+
 }
