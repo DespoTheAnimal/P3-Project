@@ -1175,12 +1175,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c516d8fc37d943d981a69be9ef75d05, type: 3}
---- !u!1 &2171682767784576883 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4033023158259005457, guid: baab0893bd58be04c9a939806581a6c4,
-    type: 3}
-  m_PrefabInstance: {fileID: 3016128385862647650}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3016128385862647650
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1192,11 +1186,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BothWalls
-      objectReference: {fileID: 0}
-    - target: {fileID: 5837127620925722681, guid: baab0893bd58be04c9a939806581a6c4,
-        type: 3}
-      propertyPath: m_Center.x
-      value: 0.82
       objectReference: {fileID: 0}
     - target: {fileID: 8708506391904956250, guid: baab0893bd58be04c9a939806581a6c4,
         type: 3}
@@ -1261,15 +1250,3 @@ BoxCollider:
     type: 3}
   m_PrefabInstance: {fileID: 3016128385862647650}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5837127620925722685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2171682767784576883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1502ab08bb4b1d4c89634ed0d7ce8e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
