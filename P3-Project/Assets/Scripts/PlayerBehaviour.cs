@@ -12,10 +12,9 @@ public class PlayerBehaviour : MonoBehaviour
     public static float forwardMovement = 10f;
     public static float currentSpeed = 0f;
     private float minSpeed;
-    private float maxSpeed = 50f;
+    internal float maxSpeed = 50f;
     private float timeForSpeed;
     private int accelerationTime = 60;
-
 
     private Rigidbody rb;
     private int movementSpeed = 5;

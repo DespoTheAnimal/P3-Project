@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8239965526178470364}
   - component: {fileID: 2176635059992874887}
   - component: {fileID: 5920512337202465600}
+  - component: {fileID: 1225476832940964394}
   m_Layer: 0
   m_Name: JumpLog
   m_TagString: Obstacles
@@ -114,3 +115,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 0}
   clip: {fileID: 8300000, guid: fc522e3eae3545342baffbce2fc86ad0, type: 3}
+--- !u!95 &1225476832940964394
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7591591834044512265}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 587f1fbdd1940a747805a262e54ea148, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
