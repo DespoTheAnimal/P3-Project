@@ -6,6 +6,8 @@ public class EndlessSpawner : MonoBehaviour
 {
 
     PlayerBehaviour playerBehaviour;
+    [SerializeField]
+    Collider spawnWall;
 
     //The list of new gameobject in the scene
     public static List<GameObject> movables = new List<GameObject>();
@@ -58,16 +60,17 @@ public class EndlessSpawner : MonoBehaviour
         timerForSpeed -= Time.deltaTime;
         if (timer <= 0)
         {
-            newGround = Instantiate(ground, spawnPosition, Quaternion.identity);
-            newWall = Instantiate(wall, spawnPosition, Quaternion.identity);
+            //newGround = Instantiate(ground, spawnPosition, Quaternion.identity);
+            //newWall = Instantiate(wall, spawnPosition, Quaternion.identity);
             SpawnObstacles();
-            spawnPosition.z += 50;
+            //spawnPosition.z += 50;
             timer = originalTimer;
             if (playerBehaviour.maxSpeed == 6)
             {
                 originalTimer = 2f;
             }
         }
+        SpawnWall();
     }
 
     void SpawnObstacles()
@@ -90,5 +93,17 @@ public class EndlessSpawner : MonoBehaviour
                 break;
 
         }
+    }
+
+    void SpawnWall()
+    {
+        if(Collision.Equals(gameObject, spawnWall))
+        {
+            newGround = Instantiate(ground, spawnPosition, Quaternion.identity);
+            newWall = Instantiate(wall, spawnPosition, Quaternion.identity);
+            spawnPosition.z += 50;
+            spawnWall.transform.position = new Vector3(spawnWall.transform.position.x, spawnWall.transform.position.y, spawnPosition.z);
+        }
+        
     }
 }
