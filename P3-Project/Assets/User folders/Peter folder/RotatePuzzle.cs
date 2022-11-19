@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class RotatePuzzle : MonoBehaviour
 {
+    public bool keyBoardControl = true;
+    AudioSource audioSource;
+    public AudioClip lockSound;
+
     public GameObject uDPReceive;
     private GameObject player;
     private GameObject key;
@@ -24,8 +28,8 @@ public class RotatePuzzle : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         uDPReceive = GameObject.FindGameObjectWithTag("Server");
-        //key = GameObject.FindGameObjectWithTag("Keys");
         keyArray = GameObject.FindGameObjectsWithTag("Keys");
+        audioSource = GetComponent<AudioSource>();
 
         keyArray.ToList<GameObject>();
         Debug.Log(keyArray.Length);
@@ -50,17 +54,33 @@ public class RotatePuzzle : MonoBehaviour
         }  
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        Rotation();
-        if (locksUnlocked <= 3)
+        if(keyBoardControl)
         {
+            RotationKeyboard();
+        }
+        else
+        {
+            RotationHead();
+        }
+
+        if (locksUnlocked >= 3)
+        {
+            audioSource.PlayOneShot(lockSound, 1f);
             SceneManager.LoadScene(2);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && isWin == true)
+        {
+            audioSource.PlayOneShot(lockSound, 1f);
+            locksUnlocked++;
+            RandomizeActiveComponent();
+            win.SetActive(false);
         }
     }
 
-
-    private void Rotation()
+    private void RotationHead()
     {
         string data = uDPReceive.GetComponent<UDPReceive>().data;
         //The two below lines are removing the brackets in the first and last place
@@ -80,15 +100,23 @@ public class RotatePuzzle : MonoBehaviour
 
         player.transform.Rotate(player.transform.rotation.x, player.transform.rotation.y, zAverage, Space.Self);
     }
+
+    private void RotationKeyboard()
+    {
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            player.transform.Rotate(player.transform.rotation.x, player.transform.rotation.y, player.transform.rotation.z + 5, Space.Self);
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            player.transform.Rotate(player.transform.rotation.x, player.transform.rotation.y, player.transform.rotation.z + -5, Space.Self);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         win.SetActive(true);
         isWin = true;
-        if (Input.GetKeyDown(KeyCode.Space) && isWin)
-        {
-            locksUnlocked++;
-            RandomizeActiveComponent();
-        }
     }
     private void OnTriggerExit(Collider other)
     {
