@@ -3442,6 +3442,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2829f09f8243a4c36a77e631318be09a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHeadTracking: 0
+  moveSpeed: 5
   uDPReceive: {fileID: 0}
   xPosAdjust: 320
   yPosAdjust: 400
@@ -5211,6 +5213,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23032185154506822, guid: 0b3ad82551bcb3a4788f69b957f9022d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64180572484124916, guid: 0b3ad82551bcb3a4788f69b957f9022d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b3ad82551bcb3a4788f69b957f9022d, type: 3}
 --- !u!4 &1136387797 stripped
@@ -6561,6 +6573,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2829f09f8243a4c36a77e631318be09a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHeadTracking: 0
+  moveSpeed: 5
   uDPReceive: {fileID: 2134240384}
   xPosAdjust: 320
   yPosAdjust: 400

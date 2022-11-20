@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class MazeControl : MonoBehaviour
 {
+    public bool isHeadTracking = false;
+    public float moveSpeed = 25;
     public GameObject uDPReceive;
     private GameObject player;
     List<float> xList = new List<float>();
@@ -31,7 +33,13 @@ public class MazeControl : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        MoveControl();
+        if (isHeadTracking == false)
+        {
+            MoveControlKeyboard();
+        }
+        else
+        { MoveControlHead(); }
+
 
         /*
         Vector3 playerPos = player.transform.localPosition;
@@ -42,8 +50,32 @@ public class MazeControl : MonoBehaviour
 
     }
 
+    private void MoveControlKeyboard()
+    {
+        float hor = Input.GetAxis("Horizontal");
+        float ver = Input.GetAxis("Vertical");
+        Vector3 deltaMove = new Vector3(hor, ver, 0f) * moveSpeed * Time.deltaTime;
+        player.GetComponent<Rigidbody>().AddForce(deltaMove, ForceMode.Acceleration);
 
-    private void MoveControl()
+        /*if (Input.GetKeyDown(KeyCode.D))
+        {
+            player.GetComponent<Rigidbody>().AddForce(Vector3.right * 20f, ForceMode.Acceleration);
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            player.GetComponent<Rigidbody>().AddForce(Vector3.left * 20f, ForceMode.Acceleration);
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            player.GetComponent<Rigidbody>().AddForce(Vector3.up * 20f, ForceMode.Acceleration);
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            player.GetComponent<Rigidbody>().AddForce(Vector3.down * 20f, ForceMode.Acceleration);
+        }*/
+    }
+
+    private void MoveControlHead()
     {
         string data = uDPReceive.GetComponent<UDPReceive>().data;
         //The two below lines are removing the brackets in the first and last place
