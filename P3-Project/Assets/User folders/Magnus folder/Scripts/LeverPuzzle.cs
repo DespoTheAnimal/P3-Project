@@ -61,6 +61,4 @@ public class LeverPuzzle : MonoBehaviour
         Debug.Log(leverCheck3);
 
     }
-
-    //Lucas er fucking cool ez plebs 
 }

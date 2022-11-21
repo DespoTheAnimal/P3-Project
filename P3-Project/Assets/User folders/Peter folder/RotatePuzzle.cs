@@ -32,8 +32,6 @@ public class RotatePuzzle : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         keyArray.ToList<GameObject>();
-        Debug.Log(keyArray.Length);
-
         RandomizeActiveComponent();
     }
     
