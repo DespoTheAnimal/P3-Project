@@ -21,10 +21,9 @@ public class KeyTutorial : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine(FadeOutCR(firstText));
-            //firstText.enabled = false;
             secondText.enabled = true;
             StartCoroutine(FadeInKEY(secondText));
-
+            firstText.enabled = false;
             beginButton.gameObject.SetActive(true);
         }
     }
