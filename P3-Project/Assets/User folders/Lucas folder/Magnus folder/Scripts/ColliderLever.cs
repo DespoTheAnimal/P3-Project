@@ -11,6 +11,9 @@ public class ColliderLever : MonoBehaviour
 
     public bool enableClick;
 
+    AudioClip audioClip;
+    AudioSource audioSource;
+
     private void Start()
     {
         puzzler = GameObject.Find("Cube").GetComponent<LeverPuzzle>();
@@ -40,6 +43,7 @@ public class ColliderLever : MonoBehaviour
             if (puzzler.lever1 == 0)
             {
                 puzzler.lever1 = 1;
+                //audioSource.PlayOneShot(audioClip);
                 puzzler.leverb1.GetComponent<Animator>().Play("LeverUp");
             }
             else puzzler.lever1 = 0;
@@ -50,6 +54,7 @@ public class ColliderLever : MonoBehaviour
             if (puzzler.lever2 == 0)
             {
                 puzzler.lever2 = 1;
+                //audioSource.PlayOneShot(audioClip);
                 puzzler.leverb2.GetComponent<Animator>().Play("LeverUp");
             }
             else puzzler.lever2 = 0;
@@ -60,6 +65,7 @@ public class ColliderLever : MonoBehaviour
             if (puzzler.lever3 == 0)
             {
                 puzzler.lever3 = 1;
+                //audioSource.PlayOneShot(audioClip);
                 puzzler.leverb3.GetComponent<Animator>().Play("LeverUp");
             }
             else puzzler.lever3 = 0;

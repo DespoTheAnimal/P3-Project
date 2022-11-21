@@ -14,7 +14,7 @@ public class TransitionMaze : MonoBehaviour
 
     IEnumerator fade()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.5f);
         SceneManager.LoadScene(3);
 
     }
