@@ -4,23 +4,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneChangeTest : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            switch (EndlessCreator.indexOfScene)
+            SceneManager.LoadScene(6);
+            /*switch (EndlessCreator.indexOfScene)
             {
                 case 1:
                     SceneManager.LoadScene(5);
                     break;
-                case 2:
-                    
+                default:
+                    Debug.Log("Didn't Work");
                     break;
-                case 3:
-                    
-                    break;
-            }
-
+            }*/
         }
     }
 }

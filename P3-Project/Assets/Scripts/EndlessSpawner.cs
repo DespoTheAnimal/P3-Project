@@ -51,7 +51,7 @@ public class EndlessSpawner : MonoBehaviour
     // Test timer for the spawning of the levelchange 
     float timerr = 2f;
 
-    public static int indexOfScene = 1;
+    internal int indexOfScene = 1;
     //The spawn position of each new plane
     Vector3 spawnPosition;
 
@@ -151,7 +151,6 @@ public class EndlessSpawner : MonoBehaviour
                     Instantiate(newLevel2, spawnPosition, Quaternion.identity);
                     break;
             }
-
         }
     }
 }
