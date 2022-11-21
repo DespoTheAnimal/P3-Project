@@ -11,8 +11,8 @@ public class ColliderLever : MonoBehaviour
 
     public bool enableClick;
 
-    AudioClip audioClip;
-    AudioSource audioSource;
+    public AudioClip audioClip;
+    public AudioSource audioSource;
 
     private void Start()
     {
@@ -43,33 +43,42 @@ public class ColliderLever : MonoBehaviour
             if (puzzler.lever1 == 0)
             {
                 puzzler.lever1 = 1;
-                //audioSource.PlayOneShot(audioClip);
                 puzzler.leverb1.GetComponent<Animator>().Play("LeverUp");
+                new WaitForSeconds(0.7f);
+                audioSource.PlayOneShot(audioClip);
             }
             else puzzler.lever1 = 0;
             puzzler.leverb1.GetComponent<Animator>().Play("Idle");
+            new WaitForSeconds(0.7f);
+            audioSource.PlayOneShot(audioClip);
         }
         else if (enableClick && gameObject.tag == "Lever2")
         {
             if (puzzler.lever2 == 0)
             {
                 puzzler.lever2 = 1;
-                //audioSource.PlayOneShot(audioClip);
                 puzzler.leverb2.GetComponent<Animator>().Play("LeverUp");
+                new WaitForSeconds(0.7f);
+                audioSource.PlayOneShot(audioClip);
             }
             else puzzler.lever2 = 0;
             puzzler.leverb2.GetComponent<Animator>().Play("Idle");
+            new WaitForSeconds(0.7f);
+            audioSource.PlayOneShot(audioClip);
         }
         else if (enableClick && gameObject.tag == "Lever3")
         {
             if (puzzler.lever3 == 0)
             {
                 puzzler.lever3 = 1;
-                //audioSource.PlayOneShot(audioClip);
                 puzzler.leverb3.GetComponent<Animator>().Play("LeverUp");
+                new WaitForSeconds(0.7f);
+                audioSource.PlayOneShot(audioClip);
             }
             else puzzler.lever3 = 0;
             puzzler.leverb3.GetComponent<Animator>().Play("Idle");
+            new WaitForSeconds(0.7f);
+            audioSource.PlayOneShot(audioClip);
         }
     }
 }

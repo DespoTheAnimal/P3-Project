@@ -3878,8 +3878,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This is rather simple, turn the key either left or right, until you've
-    unlocked it. You've got to unlock 3 tumblers
+  m_text: 'In order to unlock the next stage, guide the metal ball towards the door.
+    It''s by the carpet there on the right. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f05b4a3e2f581474d9dc2eeb07d5dcfc, type: 2}
   m_sharedMaterial: {fileID: 7603198562790311786, guid: f05b4a3e2f581474d9dc2eeb07d5dcfc,
@@ -8486,8 +8486,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press A to turn left, or D to turn right. When you've reached a tumbler,
-    press Space to unlock it
+  m_text: Press A to turn left, or D to turn right. You can move vertically aswell,
+    by pressing W or S, to go either upwards or downwards
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f05b4a3e2f581474d9dc2eeb07d5dcfc, type: 2}
   m_sharedMaterial: {fileID: 7603198562790311786, guid: f05b4a3e2f581474d9dc2eeb07d5dcfc,

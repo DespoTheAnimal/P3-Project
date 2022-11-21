@@ -258,7 +258,6 @@ GameObject:
   - component: {fileID: 120352819}
   - component: {fileID: 120352818}
   - component: {fileID: 120352823}
-  - component: {fileID: 120352824}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Cursor
@@ -386,19 +385,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &120352824
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 120352817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63dbf8dfeac537e4498809abb2d73f4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enableClick: 0
 --- !u!1 &179166572 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2575938327731363396, guid: a0164d9c476080e449c72cf58e7709ab,
@@ -531,6 +517,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &179166577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179166572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63dbf8dfeac537e4498809abb2d73f4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableClick: 0
+  audioClip: {fileID: 8300000, guid: c3b2b839556b6ac40b12dc72f07389ce, type: 3}
+  audioSource: {fileID: 179166576}
 --- !u!1001 &278446973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -618,6 +619,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Lever1
       objectReference: {fileID: 0}
+    - target: {fileID: 5240167562397193625, guid: a0164d9c476080e449c72cf58e7709ab,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e75d554305b525f45a13bbf76b81b916, type: 2}
+    - target: {fileID: 7066963040038473936, guid: a0164d9c476080e449c72cf58e7709ab,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 25b2ba8ee7d544c419014a0dbf3c3e1f, type: 2}
+    - target: {fileID: 7066963040038473936, guid: a0164d9c476080e449c72cf58e7709ab,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 84915c941d235bf4d80c69807fa32c4a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0164d9c476080e449c72cf58e7709ab, type: 3}
 --- !u!1 &284381996
@@ -721,7 +737,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6436591170870349062, guid: 7b85b6477edc82240b543ad474b2eb7f, type: 3}
+  - {fileID: 2100000, guid: e75d554305b525f45a13bbf76b81b916, type: 2}
   - {fileID: 7626191068330388430, guid: 7b85b6477edc82240b543ad474b2eb7f, type: 3}
   - {fileID: 8290782892783832528, guid: 7b85b6477edc82240b543ad474b2eb7f, type: 3}
   m_StaticBatchInfo:
@@ -1208,9 +1224,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6436591170870349062, guid: 7b85b6477edc82240b543ad474b2eb7f, type: 3}
+  - {fileID: 2100000, guid: 25b2ba8ee7d544c419014a0dbf3c3e1f, type: 2}
   - {fileID: 8830196273332348141, guid: 7b85b6477edc82240b543ad474b2eb7f, type: 3}
-  - {fileID: 7626191068330388430, guid: 7b85b6477edc82240b543ad474b2eb7f, type: 3}
+  - {fileID: 2100000, guid: 84915c941d235bf4d80c69807fa32c4a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1389,6 +1405,7 @@ GameObject:
   - component: {fileID: 2048841129}
   - component: {fileID: 2048841128}
   - component: {fileID: 2048841132}
+  - component: {fileID: 2048841133}
   m_Layer: 0
   m_Name: Lever_Prefab (2)
   m_TagString: Lever3
@@ -1539,6 +1556,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2048841133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048841127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63dbf8dfeac537e4498809abb2d73f4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableClick: 0
+  audioClip: {fileID: 8300000, guid: c3b2b839556b6ac40b12dc72f07389ce, type: 3}
+  audioSource: {fileID: 2048841132}
 --- !u!1001 &2122140401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1633,6 +1665,7 @@ GameObject:
   - component: {fileID: 4151398953811022894}
   - component: {fileID: 4151398953811022893}
   - component: {fileID: 4151398953811022895}
+  - component: {fileID: 4151398953811022896}
   m_Layer: 0
   m_Name: Lever_Prefab (1)
   m_TagString: Lever2
@@ -1798,6 +1831,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4151398953811022896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137126481412187711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63dbf8dfeac537e4498809abb2d73f4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableClick: 0
+  audioClip: {fileID: 8300000, guid: c3b2b839556b6ac40b12dc72f07389ce, type: 3}
+  audioSource: {fileID: 4151398953811022895}
 --- !u!1 &5135939342297098224
 GameObject:
   m_ObjectHideFlags: 0
@@ -1836,9 +1884,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6436591170870349062, guid: 7b85b6477edc82240b543ad474b2eb7f, type: 3}
+  - {fileID: 2100000, guid: 25b2ba8ee7d544c419014a0dbf3c3e1f, type: 2}
   - {fileID: 8830196273332348141, guid: 7b85b6477edc82240b543ad474b2eb7f, type: 3}
-  - {fileID: 7626191068330388430, guid: 7b85b6477edc82240b543ad474b2eb7f, type: 3}
+  - {fileID: 2100000, guid: 84915c941d235bf4d80c69807fa32c4a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1915,7 +1963,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6436591170870349062, guid: 7b85b6477edc82240b543ad474b2eb7f, type: 3}
+  - {fileID: 2100000, guid: e75d554305b525f45a13bbf76b81b916, type: 2}
   - {fileID: 7626191068330388430, guid: 7b85b6477edc82240b543ad474b2eb7f, type: 3}
   - {fileID: 8290782892783832528, guid: 7b85b6477edc82240b543ad474b2eb7f, type: 3}
   m_StaticBatchInfo:
