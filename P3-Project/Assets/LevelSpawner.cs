@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LevelSpawner : MonoBehaviour
 {
+    // Reference to the EndlessSpawner Script for spawning the playarea 
     EndlessSpawner spawner;
 
     private void Start()
