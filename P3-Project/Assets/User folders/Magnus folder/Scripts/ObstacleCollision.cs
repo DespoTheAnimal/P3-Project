@@ -8,12 +8,12 @@ public class ObstacleCollision : MonoBehaviour
     // Audio source for the audio clip
     public AudioClip clip;
     private GameObject Maincamera;
-    private AudioSource audio;
+    private AudioSource audios;
     private void Start()
     {
-        particle = GetComponent<ParticleSystem>();
+        particle = GameObject.Find("Player").GetComponentInChildren<ParticleSystem>());
         Maincamera = GameObject.FindGameObjectWithTag("MainCamera");
-        audio = GameObject.Find("Player").GetComponent<AudioSource>();
+        audios = GameObject.Find("Player").GetComponent<AudioSource>();
 
     }
 
@@ -22,7 +22,8 @@ public class ObstacleCollision : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         { 
             GameLogic.lives -= 1;
-            audio.PlayOneShot(clip);
+            particle.Play();
+            audios.PlayOneShot(clip);
             Debug.Log(clip);
             // Her der skal være en linje kode med animatoren fra main camera så hver gang man bliver ramt så kommer der en animation
             EndlessCreator.movables.Remove(gameObject);
