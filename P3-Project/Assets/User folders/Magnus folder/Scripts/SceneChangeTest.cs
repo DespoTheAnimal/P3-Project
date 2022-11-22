@@ -14,8 +14,6 @@ public class SceneChangeTest : MonoBehaviour
     {
         _ES = GameObject.Find("GameManager").GetComponent<EndlessSpawner>();
         RandomScene();
-        Debug.Log(numberPicked);
-        Debug.Log(SceneIndex.Count);
 
     }
     private void OnTriggerEnter(Collider other)
@@ -43,11 +41,11 @@ public class SceneChangeTest : MonoBehaviour
 
     private void RandomScene()
     {
-        rand = Random.Range(0, 2);
+        rand = Random.Range(0, SceneIndex.Count);
         //int randomInt = SceneIndex[rand];
         //numberPicked = SceneIndex[randomInt];
         numberPicked = SceneIndex[rand];
-        //SceneIndex.Remove(numberPicked);
+        SceneIndex.Remove(numberPicked);
         SceneManager.LoadScene(numberPicked);
     }
 }

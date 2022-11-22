@@ -1018,6 +1018,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4766539639019257334}
   - component: {fileID: 1030906904323422753}
+  - component: {fileID: 8264992420647659233}
   m_Layer: 0
   m_Name: SkullBladeTheRealDeal
   m_TagString: Obstacles
@@ -1061,6 +1062,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8264992420647659233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7526065890326349821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93bcb82c0d382e0408c40cf39226543e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 0}
+  clip: {fileID: 8300000, guid: fc522e3eae3545342baffbce2fc86ad0, type: 3}
 --- !u!1 &7841168549645124937
 GameObject:
   m_ObjectHideFlags: 0
