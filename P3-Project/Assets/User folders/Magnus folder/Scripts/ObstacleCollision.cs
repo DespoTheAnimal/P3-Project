@@ -7,12 +7,14 @@ public class ObstacleCollision : MonoBehaviour
 {
 
     // Audio source for the audio clip
-    public AudioSource source;
     public AudioClip clip;
     private GameObject Maincamera;
+    private AudioSource audio;
     private void Start()
     {
         Maincamera = GameObject.FindGameObjectWithTag("MainCamera");
+        audio = GameObject.Find("Player").GetComponent<AudioSource>();
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -21,7 +23,7 @@ public class ObstacleCollision : MonoBehaviour
         { 
 
             GameLogic.lives -= 1;
-            source.PlayOneShot(clip);
+            audio.PlayOneShot(clip);
             Debug.Log(clip);
             // Her der skal være en linje kode med animatoren fra main camera så hver gang man bliver ramt så kommer der en animation
             EndlessCreator.movables.Remove(gameObject);
