@@ -14,7 +14,7 @@ public class movingwithsoundakaboogiewoogie : MonoBehaviour
     }
 
 
-    private void update ()
+    private void Update()
     {
         var diffVector = transform.position - lastTransformPos;
         if (diffVector.magnitude >= thresholdChange)
