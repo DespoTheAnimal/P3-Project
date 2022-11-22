@@ -11,7 +11,7 @@ public class ObstacleCollision : MonoBehaviour
     private AudioSource audios;
     private void Start()
     {
-        particle = GameObject.Find("Player").GetComponentInChildren<ParticleSystem>());
+        particle = GameObject.Find("Player").GetComponentInChildren<ParticleSystem>();
         Maincamera = GameObject.FindGameObjectWithTag("MainCamera");
         audios = GameObject.Find("Player").GetComponent<AudioSource>();
 
