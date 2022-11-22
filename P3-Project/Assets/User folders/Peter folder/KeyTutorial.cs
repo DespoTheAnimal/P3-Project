@@ -7,25 +7,53 @@ using UnityEngine.UI;
 public class KeyTutorial : MonoBehaviour
 {
     [SerializeField] private TMP_Text firstText, secondText;
+    [SerializeField] private TMP_Text firstHeadText, secondHeadText;
     private bool firstStep = false;
     [SerializeField] private Button beginButton;
+    [SerializeField] private Button beginHButton;
+    public bool isHeadTrack = false;
 
     private void Awake()
     {
         secondText.enabled = false;
         beginButton.gameObject.SetActive(false);
+        secondHeadText.enabled = false;
+        beginHButton.gameObject.SetActive(false);
+        if (isHeadTrack == true)
+        {
+            firstText.enabled = false;
+        }
+        else
+        {
+            firstHeadText.enabled = false;
+        }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (isHeadTrack == true)
         {
-            StartCoroutine(FadeOutCR(firstText));
-            secondText.enabled = true;
-            StartCoroutine(FadeInKEY(secondText));
-            firstText.enabled = false;
-            beginButton.gameObject.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                StartCoroutine(FadeOutCR(firstHeadText));
+                secondHeadText.enabled = true;
+                StartCoroutine(FadeInKEY(secondHeadText));
+                firstHeadText.enabled = false;
+                beginHButton.gameObject.SetActive(true);
+            }
         }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                StartCoroutine(FadeOutCR(firstText));
+                secondText.enabled = true;
+                StartCoroutine(FadeInKEY(secondText));
+                firstText.enabled = false;
+                beginButton.gameObject.SetActive(true);
+            }
+        }
+        
     }
 
     //https://stackoverflow.com/questions/27885201/fade-out-unity-ui-text
