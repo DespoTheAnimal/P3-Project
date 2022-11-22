@@ -5,10 +5,15 @@ using UnityEngine.SceneManagement;
 public class SceneChangeTest : MonoBehaviour
 {
     EndlessSpawner _ES;
+    List<int> SceneIndex = new List<int>();
+    private int rand;
 
     private void Start()
     {
         _ES = GameObject.Find("GameManager").GetComponent<EndlessSpawner>();
+        SceneIndex.Add(3);
+        SceneIndex.Add(4);
+        SceneIndex.Add(5);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -30,5 +35,12 @@ public class SceneChangeTest : MonoBehaviour
                 Debug.Log("Didn't Work");
                 break;
         }
+    }
+
+    private void RandomScene()
+    {
+        rand = Random.Range(0, SceneIndex.Count);
+        SceneIndex.Remove(rand);
+        SceneManager.LoadScene(rand);
     }
 }

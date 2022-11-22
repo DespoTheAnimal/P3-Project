@@ -17,16 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/User folders/Peter folder/MazePuzzle.unity
     guid: c4930d828b3aa410f90a3eb49e079efe
-  - enabled: 0
-    path: Assets/User folders/Trolle folder/farmands scene.unity
-    guid: 2269a82643b97c34e9a3004ec68db745
-  - enabled: 0
-    path: Assets/Scenes/StartScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Scenes/winning scene.unity
     guid: 2d075d9a48c574c48a1b1e5d0f9f7bc1
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/lock transition.unity
+    guid: 7ba7c9965ee548a4ab36999cb18f393f
+  - enabled: 1
     path: Assets/User folders/Peter folder/RotatingPuzzle.unity
     guid: 7f56e42e698e549849e68dc64ca954ea
   - enabled: 1
