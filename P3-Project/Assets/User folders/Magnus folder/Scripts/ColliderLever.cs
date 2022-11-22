@@ -21,7 +21,7 @@ public class ColliderLever : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Cursor"))
+        if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Hit");
             enableClick = true;
@@ -30,9 +30,17 @@ public class ColliderLever : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Cursor"))
+        if (other.gameObject.CompareTag("Player"))
         {
             enableClick = false;
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            KeyBoardTrig();
         }
     }
 
@@ -81,5 +89,50 @@ public class ColliderLever : MonoBehaviour
             audioSource.PlayOneShot(audioClip);
         }
     }
-}
 
+    private void KeyBoardTrig()
+    {
+        if (enableClick && gameObject.tag == "Lever1")
+        {
+            if (puzzler.lever1 == 0)
+            {
+                puzzler.lever1 = 1;
+                puzzler.leverb1.GetComponent<Animator>().Play("LeverUp");
+                new WaitForSeconds(0.7f);
+                audioSource.PlayOneShot(audioClip);
+            }
+            else puzzler.lever1 = 0;
+            puzzler.leverb1.GetComponent<Animator>().Play("Idle");
+            new WaitForSeconds(0.7f);
+            audioSource.PlayOneShot(audioClip);
+        }
+        else if (enableClick && gameObject.tag == "Lever2")
+        {
+            if (puzzler.lever2 == 0)
+            {
+                puzzler.lever2 = 1;
+                puzzler.leverb2.GetComponent<Animator>().Play("LeverUp");
+                new WaitForSeconds(0.7f);
+                audioSource.PlayOneShot(audioClip);
+            }
+            else puzzler.lever2 = 0;
+            puzzler.leverb2.GetComponent<Animator>().Play("Idle");
+            new WaitForSeconds(0.7f);
+            audioSource.PlayOneShot(audioClip);
+        }
+        else if (enableClick && gameObject.tag == "Lever3")
+        {
+            if (puzzler.lever3 == 0)
+            {
+                puzzler.lever3 = 1;
+                puzzler.leverb3.GetComponent<Animator>().Play("LeverUp");
+                new WaitForSeconds(0.7f);
+                audioSource.PlayOneShot(audioClip);
+            }
+            else puzzler.lever3 = 0;
+            puzzler.leverb3.GetComponent<Animator>().Play("Idle");
+            new WaitForSeconds(0.7f);
+            audioSource.PlayOneShot(audioClip);
+        }
+    }
+}
