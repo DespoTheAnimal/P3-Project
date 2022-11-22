@@ -7,13 +7,17 @@ using UnityEngine.SceneManagement;
 public class MazeControl : MonoBehaviour
 {
     public bool isHeadTracking = false;
-    public float moveSpeed = 25;
+    public float moveSpeed = 40;
     public GameObject uDPReceive;
     private GameObject player;
+    public Rigidbody Player;
     List<float> xList = new List<float>();
     List<float> yList = new List<float>();
     public float xPosAdjust = 320;
     public float yPosAdjust = 400;
+    public AudioClip clip;
+    public AudioSource audioSource;
+    public float velocity;
 
     [SerializeField] private GameObject winText;
     private bool isWinPossible;
@@ -29,6 +33,16 @@ public class MazeControl : MonoBehaviour
         if (isWinPossible && Input.GetKeyDown(KeyCode.Space))
         {
             SceneManager.LoadScene(1);
+        }
+
+        if (Player.velocity.magnitude >= 0.1 && audioSource.isPlaying == false)
+        {
+            audioSource.PlayOneShot(clip);
+            Debug.Log("sound");
+        }
+        else
+        {
+
         }
     }
     private void FixedUpdate()
