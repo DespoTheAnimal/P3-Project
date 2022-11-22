@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class ObstacleCollision : MonoBehaviour
 {
-
+    ParticleSystem particle;
     // Audio source for the audio clip
     public AudioSource source;
     public AudioClip clip;
     private GameObject Maincamera;
     private void Start()
     {
+        particle = GetComponent<ParticleSystem>();
         Maincamera = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
@@ -19,7 +19,6 @@ public class ObstacleCollision : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         { 
-
             GameLogic.lives -= 1;
             source.PlayOneShot(clip);
             Debug.Log(clip);
