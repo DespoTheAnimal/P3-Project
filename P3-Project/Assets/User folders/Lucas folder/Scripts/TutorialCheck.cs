@@ -19,6 +19,9 @@ public class TutorialCheck : MonoBehaviour
    
     void Update()
     {
-        Debug.Log("Player Positio =" + playerObject.transform.position.x);
+        Debug.Log("Player Position =" + playerObject.transform.position.x);
+
+        
+
     }
 }
