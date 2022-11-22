@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class ObstacleCollision : MonoBehaviour
 {
+
+    // Audio source for the audio clip
     public AudioSource source;
     public AudioClip clip;
     private GameObject Maincamera;

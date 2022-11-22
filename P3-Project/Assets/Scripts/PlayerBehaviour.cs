@@ -8,7 +8,7 @@ using Unity.VisualScripting;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-    //Gradually increase speed
+    //Gradually increase speed 
     public static float forwardMovement = 10f;
     public static float currentSpeed = 0f;
     private float minSpeed;
@@ -16,11 +16,12 @@ public class PlayerBehaviour : MonoBehaviour
     private float timeForSpeed;
     private int accelerationTime = 60;
 
+    // Character variables for controls
     private Rigidbody rb;
-    private int movementSpeed = 5;
-    private float distanceToGround = 1f;
-    private float gravityFactor = 10f;
-    private int jumpHeight = 10;
+    private int movementSpeed = 5; // Speed for side-to-side movement 
+    private float distanceToGround = 1f; // Raycast distance 
+    private float gravityFactor = 10f; // Constant force being applied to the player 
+    private int jumpHeight = 10; // The height the player jumps
 
     private void Awake()
     {
@@ -32,19 +33,20 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Start()
     {
-        timeForSpeed = 0f;
-        minSpeed = currentSpeed;
-        rb = GetComponent<Rigidbody>();
+        timeForSpeed = 0f; // Starts the timer at zero everytime the script has been started 
+        minSpeed = currentSpeed; // Sets the minimum speed to the current, making both zero at the start 
+        rb = GetComponent<Rigidbody>(); 
     }
 
     private void Update()
     {
-
+        // Jump of the player, need both the spacekey to be pressed, and the Jump method to be true 
         if (Input.GetKeyDown(KeyCode.Space) && Jump())
         {
             rb.AddForce(new Vector3(0, jumpHeight * rb.mass, 0), ForceMode.Impulse);
         }
 
+        // The method for increasing the forward speed of the player through time 
         IncreaseSpeed();
     }
 
@@ -66,6 +68,11 @@ public class PlayerBehaviour : MonoBehaviour
 
     }
 
+
+    /// <summary>
+    /// Checks if the player is currently grounded via a raycast
+    /// </summary>
+    /// <returns>True: if the player is grounded, else: False</returns>
     private bool Jump()
     {
         if(Physics.Raycast(transform.position, Vector3.down, distanceToGround))
@@ -78,6 +85,9 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Increases the speed of the player by setting the current forward speed to be interpolated 
+    /// </summary>
     void IncreaseSpeed()
     {
         currentSpeed = Mathf.Lerp(minSpeed, maxSpeed, timeForSpeed / accelerationTime);
