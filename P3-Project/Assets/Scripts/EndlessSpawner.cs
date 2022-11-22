@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndlessSpawner : MonoBehaviour
 {
@@ -36,6 +37,9 @@ public class EndlessSpawner : MonoBehaviour
     [SerializeField] GameObject newLevel2;
     [SerializeField] GameObject newLevel3;
 
+    private Scene currentScene;
+    private string sceneName;
+
 
     //The time for which the plane will be created
     float timer = 4f;
@@ -53,6 +57,9 @@ public class EndlessSpawner : MonoBehaviour
     {
         spawnPosition = new Vector3(0, 0, 0 + planeStartPoint);
         playerBehaviour = GameObject.Find("Player").GetComponent<PlayerBehaviour>();
+
+        currentScene = SceneManager.GetActiveScene();
+        sceneName = currentScene.name;
     }
 
     void Update()
@@ -60,16 +67,24 @@ public class EndlessSpawner : MonoBehaviour
         //This controls the time for when a new obstacle will be instantiated 
         timer -= Time.deltaTime;
         timerr -= Time.deltaTime; // timer for the change of scene THIS IS A TEST
-        if (timer <= 0)
+
+        if (currentScene.name != "HeadTrackingTutorial")
         {
-            SpawnObstacles(); //Spawns the obstacles 
-            timer = originalTimer; // sets the time back to it's original value 
-            if (playerBehaviour.maxSpeed == 6) //Speeds up the time for which the obstacles will spawn 
+            if (timer <= 0)
             {
-                originalTimer = 2f;
+                SpawnObstacles(); //Spawns the obstacles 
+                timer = originalTimer; // sets the time back to it's original value 
+                if (playerBehaviour.maxSpeed == 6) //Speeds up the time for which the obstacles will spawn 
+                {
+                    originalTimer = 2f;
+                }
             }
+            ChangeSceneSpawn(); // Change of scene
         }
-        ChangeSceneSpawn(); // Change of scene THIS IS A TEST 
+        else
+        {
+            return;
+        }    
     }
 
     /// <summary>
