@@ -556,7 +556,7 @@ MonoBehaviour:
   xPosAdjust: 320
   yPosAdjust: 400
   offset: 3
-  isHeadTrack: 1
+  isHeadTrack: 0
   lever1: 0
   lever2: 0
   lever3: 0
