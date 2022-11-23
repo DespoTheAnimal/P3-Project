@@ -18,6 +18,8 @@ public class TutorialCheck : MonoBehaviour
     private GameObject jumpHeadImage;
     [SerializeField]
     private GameObject moveBodyText1;
+    [SerializeField]
+    private GameObject jumpHeadText1;
 
     [SerializeField]
     private GameObject keyboardMoveImage;
@@ -25,6 +27,8 @@ public class TutorialCheck : MonoBehaviour
     //private GameObject keyboardJumpImage;
     [SerializeField]
     private GameObject moveKeyboardText1;
+    //[SerializeField]
+    //private GameObject keyboardJumpText1;
 
     private bool canAdd = true;
     private bool headControl;
@@ -33,13 +37,15 @@ public class TutorialCheck : MonoBehaviour
 
     private void Start()
     {
+        jumpHeadText1.SetActive(false);
+        jumpHeadImage.SetActive(false);
+
         if (UDPReceive.getStartRecieving == true)
         {
             headControl = true;
             moveHeadImage.SetActive(true);
             moveBodyText1.SetActive(true);
 
-            jumpHeadImage.SetActive(false);
             //keyboardJumpImage.SetActive(false);
             keyboardMoveImage.SetActive(false);
             moveKeyboardText1.SetActive(false);
@@ -51,7 +57,6 @@ public class TutorialCheck : MonoBehaviour
 
             moveHeadImage.SetActive(false);
             moveBodyText1.SetActive(false);
-            jumpHeadImage?.SetActive(false);
             //keyboardJumpImage.SetActive(false);
         }
     }
@@ -119,9 +124,11 @@ public class TutorialCheck : MonoBehaviour
 
     void PointsChecker()
     {
-        if (tutorialPoints == 4)
+        if (tutorialPoints == 4 && UDPReceive.getStartRecieving == true)
         {
-            // switch to jump thingie
+            jumpHeadImage.SetActive(true);
+            jumpHeadText1.SetActive(true);
         }
+
     }
 }
