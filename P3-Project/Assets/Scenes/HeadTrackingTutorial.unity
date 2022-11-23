@@ -1367,6 +1367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerObject: {fileID: 796563634}
   moveImage: {fileID: 1865222962}
+  infoText1: {fileID: 433038323}
 --- !u!1 &1459391369
 GameObject:
   m_ObjectHideFlags: 0
