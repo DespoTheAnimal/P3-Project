@@ -10,12 +10,13 @@ public class LeverPuzzle : MonoBehaviour
 {
     public GameObject uDPReceive;
     private GameObject player;
+    
+
     List<float> xList = new List<float>();
     List<float> yList = new List<float>();
     public float xPosAdjust = 320;
     public float yPosAdjust = 400;
     public float offset = 3f;
-    public bool isHeadTrack = true;
 
     public int lever1;
     public int lever2;
@@ -61,7 +62,7 @@ public class LeverPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isHeadTrack == true)
+        if (UDPReceive.getStartRecieving == true)
         {
             HeadControl();
         }

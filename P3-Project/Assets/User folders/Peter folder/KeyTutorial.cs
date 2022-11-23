@@ -11,7 +11,6 @@ public class KeyTutorial : MonoBehaviour
     private bool firstStep = false;
     [SerializeField] private Button beginButton;
     [SerializeField] private Button beginHButton;
-    public bool isHeadTrack = false;
 
     private void Awake()
     {
@@ -19,7 +18,7 @@ public class KeyTutorial : MonoBehaviour
         beginButton.gameObject.SetActive(false);
         secondHeadText.enabled = false;
         beginHButton.gameObject.SetActive(false);
-        if (isHeadTrack == true)
+        if (UDPReceive.getStartRecieving == true)
         {
             firstText.enabled = false;
         }
@@ -31,7 +30,7 @@ public class KeyTutorial : MonoBehaviour
 
     private void Update()
     {
-        if (isHeadTrack == true)
+        if (UDPReceive.getStartRecieving == true)
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {

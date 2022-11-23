@@ -1414,7 +1414,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &652555213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1431,6 +1431,7 @@ MonoBehaviour:
   startRecieving: 1
   printToConsole: 0
   data: 
+  PuzzleIndex: 030000000400000005000000
 --- !u!4 &652555214
 Transform:
   m_ObjectHideFlags: 0

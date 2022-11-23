@@ -12,7 +12,7 @@ public class PlayerBehaviour : MonoBehaviour
     public static float forwardMovement = 10f;
     public static float currentSpeed = 0f;
     private float minSpeed = 0;
-    internal float maxSpeed = 50f;
+    private float maxSpeed = 50f;
     private float timeForSpeed;
     private int accelerationTime = 60;
 
@@ -45,8 +45,8 @@ public class PlayerBehaviour : MonoBehaviour
         // Jump of the player, need both the spacekey to be pressed, and the Jump method to be true 
         if (Input.GetKeyDown(KeyCode.Space) && Jump())
         {
-            anim.Play("Male Jump Up");
             rb.AddForce(new Vector3(0, jumpHeight * rb.mass, 0), ForceMode.Impulse);
+            anim.Play("Male Jump Up");
         }
 
         // The method for increasing the forward speed of the player through time 
