@@ -39,6 +39,7 @@ public class TutorialCheck : MonoBehaviour
     {
         jumpHeadText1.SetActive(false);
         jumpHeadImage.SetActive(false);
+        keyboardJumpImage.SetActive(false);
 
         if (UDPReceive.getStartRecieving == true)
         {
@@ -46,7 +47,6 @@ public class TutorialCheck : MonoBehaviour
             moveHeadImage.SetActive(true);
             moveBodyText1.SetActive(true);
 
-            keyboardJumpImage.SetActive(false);
             keyboardMoveImage.SetActive(false);
             moveKeyboardText1.SetActive(false);
         }
@@ -57,7 +57,6 @@ public class TutorialCheck : MonoBehaviour
 
             moveHeadImage.SetActive(false);
             moveBodyText1.SetActive(false);
-            keyboardJumpImage.SetActive(false);
         }
     }
 
@@ -129,6 +128,9 @@ public class TutorialCheck : MonoBehaviour
             jumpHeadImage.SetActive(true);
             jumpHeadText1.SetActive(true);
         }
-
+        else if (tutorialPoints == 4 && UDPReceive.getStartRecieving == false)
+        {
+            keyboardJumpImage.SetActive(true);
+        }
     }
 }
