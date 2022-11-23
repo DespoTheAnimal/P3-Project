@@ -13,14 +13,47 @@ public class TutorialCheck : MonoBehaviour
     [SerializeField]
     private GameObject playerObject;
     [SerializeField]
-    private GameObject moveImage;
+    private GameObject moveHeadImage;
     [SerializeField]
-    private GameObject infoText1;
+    private GameObject jumpHeadImage;
+    [SerializeField]
+    private GameObject moveBodyText1;
+
+    [SerializeField]
+    private GameObject keyboardMoveImage;
+    //[SerializeField]
+    //private GameObject keyboardJumpImage;
+    [SerializeField]
+    private GameObject moveKeyboardText1;
 
     private bool canAdd = true;
 
     private int tutorialPoints = 0;
- 
+
+    private void Start()
+    {
+        if (UDPReceive.getStartRecieving == true)
+        {
+            moveHeadImage.SetActive(true);
+            moveBodyText1.SetActive(true);
+
+            jumpHeadImage.SetActive(false);
+            //keyboardJumpImage.SetActive(false);
+            keyboardMoveImage.SetActive(false);
+            moveKeyboardText1.SetActive(false);
+        }
+        else
+        {
+            keyboardMoveImage.SetActive(true);
+            moveKeyboardText1.SetActive(true);
+
+            moveHeadImage.SetActive(false);
+            moveBodyText1.SetActive(false);
+            jumpHeadImage?.SetActive(false);
+            //keyboardJumpImage.SetActive(false);
+        }
+    }
+
     void Update()
     {
         SideChecker();
@@ -48,7 +81,7 @@ public class TutorialCheck : MonoBehaviour
     {
         if (playerObject.transform.position.x <= imageLeftPosition || playerObject.transform.position.x >= imageRightPosition)
         {
-            moveImage.SetActive(false);
+            moveHeadImage.SetActive(false);
         } 
     }
 
@@ -56,7 +89,7 @@ public class TutorialCheck : MonoBehaviour
     {
         if (playerObject.transform.position.x <= imageLeftPosition || playerObject.transform.position.x >= imageRightPosition)
         {
-            infoText1.SetActive(false);
+            moveBodyText1.SetActive(false);
         }
     }
 }
