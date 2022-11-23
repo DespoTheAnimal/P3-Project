@@ -4,6 +4,7 @@ using System.Text;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
+using System.Collections.Generic;
 
 //Script downloaded from: https://www.computervision.zone/courses/3d-head-tracking-with-car-movement/
 public class UDPReceive : MonoBehaviour
@@ -16,7 +17,7 @@ public class UDPReceive : MonoBehaviour
     public static bool getStartRecieving; 
     public bool printToConsole = false;
     public string data;
-    
+    public List<int> PuzzleIndex = new List<int> { 3, 4, 5 };
 
     public void Start()
     {
