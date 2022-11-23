@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class MazeControl : MonoBehaviour
 {
-    public bool isHeadTracking = false;
     public float moveSpeed = 40;
     public GameObject uDPReceive;
     private GameObject player;
@@ -47,13 +46,14 @@ public class MazeControl : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (isHeadTracking == false)
+        if (UDPReceive.getStartRecieving == true)
+        {
+            MoveControlHead();
+        }
+        else
         {
             MoveControlKeyboard();
         }
-        else
-        { MoveControlHead(); }
-
 
         /*
         Vector3 playerPos = player.transform.localPosition;

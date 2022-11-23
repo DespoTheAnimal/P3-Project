@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class RotatePuzzle : MonoBehaviour
 {
-    public bool keyBoardControl = true;
     AudioSource audioSource;
     public AudioClip lockSound;
 
@@ -54,13 +53,13 @@ public class RotatePuzzle : MonoBehaviour
 
     private void Update()
     {
-        if(keyBoardControl)
+        if(UDPReceive.getStartRecieving == true)
         {
-            RotationKeyboard();
+            RotationHead();
         }
         else
         {
-            RotationHead();
+            RotationKeyboard();
         }
 
         if (locksUnlocked >= 3)
