@@ -22,6 +22,7 @@ public class PlayerBehaviour : MonoBehaviour
     private float distanceToGround = 1f; // Raycast distance 
     private float gravityFactor = 10f; // Constant force being applied to the player 
     private int jumpHeight = 10; // The height the player jumps
+    Animation anim;
 
     private void Awake()
     {
@@ -36,6 +37,7 @@ public class PlayerBehaviour : MonoBehaviour
         timeForSpeed = 0f; // Starts the timer at zero everytime the script has been started 
         currentSpeed = minSpeed; // Sets the minimum speed to the current, making both zero at the start 
         rb = GetComponent<Rigidbody>(); 
+        anim = GetComponent<Animation>();
     }
 
     private void Update()
@@ -43,6 +45,7 @@ public class PlayerBehaviour : MonoBehaviour
         // Jump of the player, need both the spacekey to be pressed, and the Jump method to be true 
         if (Input.GetKeyDown(KeyCode.Space) && Jump())
         {
+            anim.Play("Male Jump Up");
             rb.AddForce(new Vector3(0, jumpHeight * rb.mass, 0), ForceMode.Impulse);
         }
 
