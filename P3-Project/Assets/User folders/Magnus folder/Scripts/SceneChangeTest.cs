@@ -6,14 +6,18 @@ using System.Linq;
 public class SceneChangeTest : MonoBehaviour
 {
     EndlessSpawner _ES;
-    List<int> SceneIndex = new List<int>{3,4,5};
+    GameObject uDP;
+    List<int> PuzzlesLeft;
     private int rand;
     private int numberPicked;
 
     private void Start()
     {
         _ES = GameObject.Find("GameManager").GetComponent<EndlessSpawner>();
-        RandomScene();
+        uDP = GameObject.FindGameObjectWithTag("Server");
+        PuzzlesLeft = uDP.GetComponent<UDPReceive>().PuzzleIndex;
+        Debug.Log(PuzzlesLeft.Count);
+        //RandomScene();
 
     }
     private void OnTriggerEnter(Collider other)
@@ -41,11 +45,12 @@ public class SceneChangeTest : MonoBehaviour
 
     private void RandomScene()
     {
-        rand = Random.Range(0, SceneIndex.Count);
+        rand = Random.Range(0, PuzzlesLeft.Count);
         //int randomInt = SceneIndex[rand];
         //numberPicked = SceneIndex[randomInt];
-        numberPicked = SceneIndex[rand];
-        SceneIndex.Remove(numberPicked);
+        numberPicked = PuzzlesLeft[rand];
+        uDP.GetComponent<UDPReceive>().PuzzleIndex.Remove(numberPicked);
+        Debug.Log(uDP.GetComponent<UDPReceive>().PuzzleIndex.Count);
         SceneManager.LoadScene(numberPicked);
     }
 }

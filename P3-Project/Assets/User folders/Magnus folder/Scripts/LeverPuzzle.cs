@@ -50,6 +50,12 @@ public class LeverPuzzle : MonoBehaviour
         leverCheck1 = Random.Range(0, 2);
         leverCheck2 = Random.Range(0, 2);
         leverCheck3 = Random.Range(0, 2);
+
+        if(lever2 == leverCheck2)
+        {
+            lever2 = Random.Range(0, 2);
+            leverCheck2 = Random.Range(0, 2);
+        }
     }
 
     // Update is called once per frame
