@@ -42,8 +42,8 @@ public class EndlessSpawner : MonoBehaviour
 
 
     //The time for which the plane will be created
-    float timer = 4f;
-    float originalTimer = 4f;
+    float timer = 1f;
+    float originalTimer = 1f;
 
     // Test timer for the spawning of the levelchange 
     float timerr = 100f;
@@ -67,7 +67,7 @@ public class EndlessSpawner : MonoBehaviour
         //This controls the time for when a new obstacle will be instantiated 
         timer -= Time.deltaTime;
         timerr -= Time.deltaTime; // timer for the change of scene THIS IS A TEST
-
+        Debug.Log(playerBehaviour.maxSpeed);
         if (currentScene.name != "HeadTrackingTutorial")
         {
             if (timer <= 0)
@@ -76,7 +76,7 @@ public class EndlessSpawner : MonoBehaviour
                 timer = originalTimer; // sets the time back to it's original value 
                 if (playerBehaviour.maxSpeed == 6) //Speeds up the time for which the obstacles will spawn 
                 {
-                    originalTimer = 2f;
+                    originalTimer = 1f;
                 }
             }
             ChangeSceneSpawn(); // Change of scene
