@@ -5,13 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class EndlessSpawner : MonoBehaviour
 {
-    // Reference to player object
-    PlayerBehaviour playerBehaviour;
-
     //The list of new gameobject in the scene
-    public static List<GameObject> movables = new List<GameObject>();
+    ///public static List<GameObject> movables = new List<GameObject>();
     // The speed at which the ground is traveling
-    public int speed = 5;
+    // public int speed = 5;
 
     //The original Prefab of the ground
     public GameObject ground;
@@ -56,7 +53,6 @@ public class EndlessSpawner : MonoBehaviour
     void Start()
     {
         spawnPosition = new Vector3(0, 0, 0 + planeStartPoint);
-        playerBehaviour = GameObject.Find("Player").GetComponent<PlayerBehaviour>();
 
         currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
