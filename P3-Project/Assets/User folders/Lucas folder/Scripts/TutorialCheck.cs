@@ -23,8 +23,8 @@ public class TutorialCheck : MonoBehaviour
 
     [SerializeField]
     private GameObject keyboardMoveImage;
-    //[SerializeField]
-    //private GameObject keyboardJumpImage;
+    [SerializeField]
+    private GameObject keyboardJumpImage;
     [SerializeField]
     private GameObject moveKeyboardText1;
     //[SerializeField]
@@ -46,7 +46,7 @@ public class TutorialCheck : MonoBehaviour
             moveHeadImage.SetActive(true);
             moveBodyText1.SetActive(true);
 
-            //keyboardJumpImage.SetActive(false);
+            keyboardJumpImage.SetActive(false);
             keyboardMoveImage.SetActive(false);
             moveKeyboardText1.SetActive(false);
         }
@@ -57,7 +57,7 @@ public class TutorialCheck : MonoBehaviour
 
             moveHeadImage.SetActive(false);
             moveBodyText1.SetActive(false);
-            //keyboardJumpImage.SetActive(false);
+            keyboardJumpImage.SetActive(false);
         }
     }
 
