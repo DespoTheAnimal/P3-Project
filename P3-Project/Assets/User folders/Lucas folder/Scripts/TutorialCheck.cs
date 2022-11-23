@@ -27,6 +27,7 @@ public class TutorialCheck : MonoBehaviour
     private GameObject moveKeyboardText1;
 
     private bool canAdd = true;
+    private bool headControl;
 
     private int tutorialPoints = 0;
 
@@ -34,6 +35,7 @@ public class TutorialCheck : MonoBehaviour
     {
         if (UDPReceive.getStartRecieving == true)
         {
+            headControl = true;
             moveHeadImage.SetActive(true);
             moveBodyText1.SetActive(true);
 
@@ -59,6 +61,7 @@ public class TutorialCheck : MonoBehaviour
         SideChecker();
         ImageController();
         TextController();
+        PointsChecker();
         Debug.Log("lol points" + tutorialPoints);
         Debug.Log(canAdd);
     }
@@ -79,17 +82,46 @@ public class TutorialCheck : MonoBehaviour
 
     void ImageController()
     {
-        if (playerObject.transform.position.x <= imageLeftPosition || playerObject.transform.position.x >= imageRightPosition)
+        if (headControl == true)
         {
-            moveHeadImage.SetActive(false);
-        } 
+            if (playerObject.transform.position.x <= imageLeftPosition || playerObject.transform.position.x >= imageRightPosition)
+            {
+                moveHeadImage.SetActive(false);
+            }
+        }
+        else
+        {
+            if (playerObject.transform.position.x <= imageLeftPosition || playerObject.transform.position.x >= imageRightPosition)
+            {
+                keyboardMoveImage.SetActive(false);
+            }
+        }
+        
     }
 
     void TextController()
     {
-        if (playerObject.transform.position.x <= imageLeftPosition || playerObject.transform.position.x >= imageRightPosition)
+        if (headControl == true)
         {
-            moveBodyText1.SetActive(false);
+            if (playerObject.transform.position.x <= imageLeftPosition || playerObject.transform.position.x >= imageRightPosition)
+            {
+                moveBodyText1.SetActive(false);
+            }
+        }
+        else
+        {
+            if (playerObject.transform.position.x <= imageLeftPosition || playerObject.transform.position.x >= imageRightPosition)
+            {
+                moveKeyboardText1.SetActive(false);
+            }
+        }
+    }
+
+    void PointsChecker()
+    {
+        if (tutorialPoints == 4)
+        {
+            // switch to jump thingie
         }
     }
 }
