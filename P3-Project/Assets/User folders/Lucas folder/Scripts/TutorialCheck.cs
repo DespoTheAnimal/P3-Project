@@ -17,33 +17,30 @@ public class TutorialCheck : MonoBehaviour
     [SerializeField]
     private GameObject infoText1;
 
-    private bool canAdd;
+    private bool canAdd = true;
 
     private int tutorialPoints = 0;
-
-    
-    void Start()
-    {
-        
-    }
-
-   
+ 
     void Update()
     {
         SideChecker();
         ImageController();
         TextController();
         Debug.Log("lol points" + tutorialPoints);
+        Debug.Log(canAdd);
     }
 
     void SideChecker()
     {
-        // skal lige fikses så tutorialpoints ikke tilføjer for meget hele tiden
-        if (playerObject.transform.position.x <= scoreLeftPosition || playerObject.transform.position.x >= scoreRightPositon)
+        if (canAdd && playerObject.transform.position.x <= scoreLeftPosition || canAdd && playerObject.transform.position.x >= scoreRightPositon)
         {
             Debug.Log("hey sexy");
             tutorialPoints++;
             canAdd = false;
+        }
+        else if (!canAdd && playerObject.transform.position.x > scoreLeftPosition && playerObject.transform.position.x < scoreRightPositon)
+        {
+            canAdd = true;
         }
     }
 
