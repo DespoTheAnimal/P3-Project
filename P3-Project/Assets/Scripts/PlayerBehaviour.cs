@@ -22,7 +22,14 @@ public class PlayerBehaviour : MonoBehaviour
     private float distanceToGround = 1f; // Raycast distance 
     private float gravityFactor = 10f; // Constant force being applied to the player 
     private int jumpHeight = 10; // The height the player jumps
-    Animation anim;
+    private bool isJumping;
+    private bool isHit;
+    private bool isHearts0;
+    private bool isRunning;
+    private bool isFalling;
+    private bool isLanding;
+    private bool isGrounded;
+    private Animator animator;
 
     private void Awake()
     {
@@ -37,7 +44,6 @@ public class PlayerBehaviour : MonoBehaviour
         timeForSpeed = 0f; // Starts the timer at zero everytime the script has been started 
         currentSpeed = minSpeed; // Sets the minimum speed to the current, making both zero at the start 
         rb = GetComponent<Rigidbody>(); 
-        anim = GetComponent<Animation>();
     }
 
     private void Update()
@@ -46,7 +52,27 @@ public class PlayerBehaviour : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && Jump())
         {
             rb.AddForce(new Vector3(0, jumpHeight * rb.mass, 0), ForceMode.Impulse);
-            anim.Play("Male Jump Up");
+            animator.SetBool("isJumping", true);
+            isJumping = true;
+            animator.SetBool("isGrounded", false);
+            isGrounded = false;
+            animator.SetBool("isFalling", false);
+            isFalling = false;
+            
+            
+        }
+        else if(isJumping && jumpHeight < 0) {
+            animator.SetBool("isFalling", true);
+            isFalling = true;
+            animator.SetBool("isJumping", false);
+            isJumping = false;
+        } else if(isGrounded && jumpHeight == 0) {
+            animator.SetBool("isGrounded", true);
+            isGrounded = true; 
+            animator.SetBool("isJumping", false);
+            isJumping = false;
+            isGrounded = true;
+
         }
 
         // The method for increasing the forward speed of the player through time 
