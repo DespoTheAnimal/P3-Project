@@ -29,6 +29,8 @@ public class TutorialCheck : MonoBehaviour
     void Update()
     {
         SideChecker();
+        MoveImageDisabler();
+        Debug.Log(tutorialPoints);
     }
 
 
@@ -38,9 +40,10 @@ public class TutorialCheck : MonoBehaviour
     {
         Debug.Log("Player Position =" + playerObject.transform.position.x);
 
+        // skal lige fikses så tutorialpoints ikke tilføjer for meget hele tiden
         if (playerObject.transform.position.x <= scoreLeftPosition || playerObject.transform.position.x >= scoreRightPositon && canAdd)
         {
-            tutorialPoints++;
+            tutorialPoints +=1;
             canAdd = false;
         }
         else
@@ -55,7 +58,7 @@ public class TutorialCheck : MonoBehaviour
     {
         if (playerObject.transform.position.x <= imageLeftPosition || playerObject.transform.position.x >= imageRightPosition)
         {
-
+            moveImage.SetActive(false);
         } 
     }
 }
