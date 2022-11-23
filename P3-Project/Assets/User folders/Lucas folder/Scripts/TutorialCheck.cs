@@ -14,6 +14,8 @@ public class TutorialCheck : MonoBehaviour
     private GameObject playerObject;
     [SerializeField]
     private GameObject moveImage;
+    [SerializeField]
+    private GameObject infoText1;
 
     private bool canAdd;
 
@@ -29,36 +31,34 @@ public class TutorialCheck : MonoBehaviour
     void Update()
     {
         SideChecker();
-        MoveImageDisabler();
-        Debug.Log(tutorialPoints);
+        ImageController();
+        TextController();
+        Debug.Log("lol points" + tutorialPoints);
     }
-
-
-
 
     void SideChecker()
     {
-        Debug.Log("Player Position =" + playerObject.transform.position.x);
-
         // skal lige fikses så tutorialpoints ikke tilføjer for meget hele tiden
-        if (playerObject.transform.position.x <= scoreLeftPosition || playerObject.transform.position.x >= scoreRightPositon && canAdd)
+        if (canAdd && playerObject.transform.position.x <= scoreLeftPosition || canAdd && playerObject.transform.position.x >= scoreRightPositon)
         {
-            tutorialPoints +=1;
+            tutorialPoints++;
             canAdd = false;
-        }
-        else
-        {
-            canAdd = true;
         }
     }
 
-
-
-    void MoveImageDisabler()
+    void ImageController()
     {
         if (playerObject.transform.position.x <= imageLeftPosition || playerObject.transform.position.x >= imageRightPosition)
         {
             moveImage.SetActive(false);
         } 
+    }
+
+    void TextController()
+    {
+        if (playerObject.transform.position.x <= imageLeftPosition || playerObject.transform.position.x >= imageRightPosition)
+        {
+            infoText1.SetActive(false);
+        }
     }
 }
