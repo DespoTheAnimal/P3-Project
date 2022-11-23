@@ -39,8 +39,9 @@ public class TutorialCheck : MonoBehaviour
     void SideChecker()
     {
         // skal lige fikses så tutorialpoints ikke tilføjer for meget hele tiden
-        if (canAdd && playerObject.transform.position.x <= scoreLeftPosition || canAdd && playerObject.transform.position.x >= scoreRightPositon)
+        if (playerObject.transform.position.x <= scoreLeftPosition || playerObject.transform.position.x >= scoreRightPositon)
         {
+            Debug.Log("hey sexy");
             tutorialPoints++;
             canAdd = false;
         }
