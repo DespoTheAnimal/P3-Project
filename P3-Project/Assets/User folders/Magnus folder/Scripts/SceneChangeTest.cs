@@ -45,12 +45,18 @@ public class SceneChangeTest : MonoBehaviour
 
     private void RandomScene()
     {
-        rand = Random.Range(0, PuzzlesLeft.Count);
-        //int randomInt = SceneIndex[rand];
-        //numberPicked = SceneIndex[randomInt];
-        numberPicked = PuzzlesLeft[rand];
-        uDP.GetComponent<UDPReceive>().PuzzleIndex.Remove(numberPicked);
-        Debug.Log(uDP.GetComponent<UDPReceive>().PuzzleIndex.Count);
-        SceneManager.LoadScene(numberPicked);
+        if (PuzzlesLeft.Count != 0)
+        {
+            rand = Random.Range(0, PuzzlesLeft.Count);
+            //int randomInt = SceneIndex[rand];
+            //numberPicked = SceneIndex[randomInt];
+            numberPicked = PuzzlesLeft[rand];
+            uDP.GetComponent<UDPReceive>().PuzzleIndex.Remove(numberPicked);
+            SceneManager.LoadScene(numberPicked);
+        }
+        else
+        {
+            SceneManager.LoadScene("winning scene");
+        }
     }
 }
