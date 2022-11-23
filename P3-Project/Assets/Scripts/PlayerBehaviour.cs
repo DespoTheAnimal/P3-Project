@@ -45,8 +45,8 @@ public class PlayerBehaviour : MonoBehaviour
         // Jump of the player, need both the spacekey to be pressed, and the Jump method to be true 
         if (Input.GetKeyDown(KeyCode.Space) && Jump())
         {
-            anim.Play("Male Jump Up");
             rb.AddForce(new Vector3(0, jumpHeight * rb.mass, 0), ForceMode.Impulse);
+            anim.Play("Male Jump Up");
         }
 
         // The method for increasing the forward speed of the player through time 
