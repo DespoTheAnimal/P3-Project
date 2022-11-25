@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/winning scene.unity
     guid: 2d075d9a48c574c48a1b1e5d0f9f7bc1
+  - enabled: 1
+    path: Assets/Scenes/HeadTrackingTutorial.unity
+    guid: 9f3ede7d6eda5474fbe444005e935686
   m_configObjects: {}

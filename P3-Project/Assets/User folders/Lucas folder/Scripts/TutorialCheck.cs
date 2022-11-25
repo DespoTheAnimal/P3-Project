@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialCheck : MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class TutorialCheck : MonoBehaviour
     private TextMeshProUGUI actualPointText;
 
     private bool canAdd = true;
+    private bool canJump = true;
     private bool headControl;
 
     private bool firstStageComplete = false;
@@ -80,6 +82,17 @@ public class TutorialCheck : MonoBehaviour
         PointsChecker();
         Debug.Log("lol points" + tutorialPoints);
         Debug.Log(canAdd);
+
+        if (firstStageComplete)
+        {
+            JumpChecker();
+        }
+        if (tutorialPoints == 4 && firstStageComplete)
+        {
+            //Tutorial is over, we can display text or changescene.
+            SceneManager.LoadScene(1);
+            Debug.Log("skift scene");
+        }
     }
 
     void SideChecker()
@@ -87,7 +100,6 @@ public class TutorialCheck : MonoBehaviour
         if (canAdd && playerObject.transform.position.x <= scoreLeftPosition && !firstStageComplete|| canAdd && playerObject.transform.position.x >= scoreRightPositon && !firstStageComplete)
         {
             tutorialPoints++;
-            pointText1.SetActive(true);
             actualPointText.gameObject.SetActive(true);
             canAdd = false;
         }
@@ -123,6 +135,11 @@ public class TutorialCheck : MonoBehaviour
             if (playerObject.transform.position.x <= imageLeftPosition || playerObject.transform.position.x >= imageRightPosition)
             {
                 moveBodyText1.SetActive(false);
+                if (!firstStageComplete)
+                {
+                    pointText1.SetActive(true);
+                }
+
             }
         }
         else
@@ -130,8 +147,26 @@ public class TutorialCheck : MonoBehaviour
             if (playerObject.transform.position.x <= imageLeftPosition || playerObject.transform.position.x >= imageRightPosition)
             {
                 moveKeyboardText1.SetActive(false);
+                if (!firstStageComplete)
+                {
+                    pointText1.SetActive(true);
+                }
             }
         }
+    }
+
+    void JumpChecker()
+    {
+        if(canJump && playerObject.transform.position.y > 3 && firstStageComplete)
+        {
+            canJump = false;
+            tutorialPoints++;
+        }
+        else if(!canJump && playerObject.transform.position.y < 3 && firstStageComplete)
+        {
+            canJump = true;
+        }
+
     }
 
     void PointsChecker()
