@@ -80,8 +80,6 @@ public class TutorialCheck : MonoBehaviour
         ImageController();
         TextController();
         PointsChecker();
-        Debug.Log("lol points" + tutorialPoints);
-        Debug.Log(canAdd);
 
         if (firstStageComplete)
         {
@@ -91,7 +89,6 @@ public class TutorialCheck : MonoBehaviour
         {
             //Tutorial is over, we can display text or changescene.
             SceneManager.LoadScene(1);
-            Debug.Log("skift scene");
         }
     }
 

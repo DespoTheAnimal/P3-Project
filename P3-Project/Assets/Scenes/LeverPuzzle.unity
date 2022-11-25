@@ -556,7 +556,6 @@ MonoBehaviour:
   xPosAdjust: 320
   yPosAdjust: 400
   offset: 3
-  isHeadTrack: 0
   lever1: 0
   lever2: 0
   lever3: 0
@@ -849,7 +848,6 @@ MonoBehaviour:
   secondHeadText: {fileID: 92895119}
   beginButton: {fileID: 1209800112}
   beginHButton: {fileID: 1439765166}
-  isHeadTrack: 1
 --- !u!114 &186805896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2686,7 +2684,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 65dcc5948c87e4c75959ffbfaf118887, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.599
+  m_Volume: 0.03
   m_Pitch: 1
   Loop: 1
   Mute: 0
