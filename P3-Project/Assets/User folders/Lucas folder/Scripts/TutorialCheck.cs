@@ -39,6 +39,8 @@ public class TutorialCheck : MonoBehaviour
     private bool canAdd = true;
     private bool headControl;
 
+    private bool firstStageComplete = false;
+
     private int tutorialPoints = 0;
 
     private void Start()
@@ -82,7 +84,7 @@ public class TutorialCheck : MonoBehaviour
 
     void SideChecker()
     {
-        if (canAdd && playerObject.transform.position.x <= scoreLeftPosition || canAdd && playerObject.transform.position.x >= scoreRightPositon)
+        if (canAdd && playerObject.transform.position.x <= scoreLeftPosition && !firstStageComplete|| canAdd && playerObject.transform.position.x >= scoreRightPositon && !firstStageComplete)
         {
             tutorialPoints++;
             pointText1.SetActive(true);
@@ -141,6 +143,7 @@ public class TutorialCheck : MonoBehaviour
             jumpHeadText1.SetActive(true);
 
             tutorialPoints = 0;
+            firstStageComplete = true;
         }
         else if (tutorialPoints == 4 && UDPReceive.getStartRecieving == false)
         {
@@ -149,6 +152,7 @@ public class TutorialCheck : MonoBehaviour
             keyboardJumpText1.SetActive(true);
 
             tutorialPoints = 0;
+            firstStageComplete = true;
         }
     }
 
