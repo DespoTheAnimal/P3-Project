@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class TutorialCheck : MonoBehaviour
@@ -30,6 +31,11 @@ public class TutorialCheck : MonoBehaviour
     [SerializeField]
     private GameObject keyboardJumpText1;
 
+    [SerializeField]
+    private GameObject pointText1;
+    [SerializeField]
+    private TextMeshProUGUI actualPointText;
+
     private bool canAdd = true;
     private bool headControl;
 
@@ -37,10 +43,12 @@ public class TutorialCheck : MonoBehaviour
 
     private void Start()
     {
+        pointText1.SetActive(false);
         jumpHeadText1.SetActive(false);
         jumpHeadImage.SetActive(false);
         keyboardJumpImage.SetActive(false);
         keyboardJumpText1.SetActive(false);
+        actualPointText.gameObject.SetActive(false);
 
         if (UDPReceive.getStartRecieving == true)
         {
@@ -63,6 +71,7 @@ public class TutorialCheck : MonoBehaviour
 
     void Update()
     {
+        AddPointsText();
         SideChecker();
         ImageController();
         TextController();
@@ -75,8 +84,9 @@ public class TutorialCheck : MonoBehaviour
     {
         if (canAdd && playerObject.transform.position.x <= scoreLeftPosition || canAdd && playerObject.transform.position.x >= scoreRightPositon)
         {
-            Debug.Log("hey sexy");
             tutorialPoints++;
+            pointText1.SetActive(true);
+            actualPointText.gameObject.SetActive(true);
             canAdd = false;
         }
         else if (!canAdd && playerObject.transform.position.x > scoreLeftPosition && playerObject.transform.position.x < scoreRightPositon)
@@ -126,13 +136,24 @@ public class TutorialCheck : MonoBehaviour
     {
         if (tutorialPoints == 4 && UDPReceive.getStartRecieving == true)
         {
+            pointText1.SetActive(false);
             jumpHeadImage.SetActive(true);
             jumpHeadText1.SetActive(true);
+
+            tutorialPoints = 0;
         }
         else if (tutorialPoints == 4 && UDPReceive.getStartRecieving == false)
         {
+            pointText1.SetActive(false);
             keyboardJumpImage.SetActive(true);
             keyboardJumpText1.SetActive(true);
+
+            tutorialPoints = 0;
         }
+    }
+
+    void AddPointsText()
+    {
+        actualPointText.text = tutorialPoints+" out of 4";
     }
 }
