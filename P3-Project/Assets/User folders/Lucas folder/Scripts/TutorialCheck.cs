@@ -85,6 +85,8 @@ public class TutorialCheck : MonoBehaviour
         if (canAdd && playerObject.transform.position.x <= scoreLeftPosition || canAdd && playerObject.transform.position.x >= scoreRightPositon)
         {
             tutorialPoints++;
+            pointText1.SetActive(true);
+            actualPointText.gameObject.SetActive(true);
             canAdd = false;
         }
         else if (!canAdd && playerObject.transform.position.x > scoreLeftPosition && playerObject.transform.position.x < scoreRightPositon)
@@ -100,8 +102,6 @@ public class TutorialCheck : MonoBehaviour
             if (playerObject.transform.position.x <= imageLeftPosition || playerObject.transform.position.x >= imageRightPosition)
             {
                 moveHeadImage.SetActive(false);
-                pointText1.SetActive(true);
-                actualPointText.gameObject.SetActive(true);
             }
         }
         else
@@ -109,8 +109,6 @@ public class TutorialCheck : MonoBehaviour
             if (playerObject.transform.position.x <= imageLeftPosition || playerObject.transform.position.x >= imageRightPosition)
             {
                 keyboardMoveImage.SetActive(false);
-                pointText1.SetActive(true);
-                actualPointText.gameObject.SetActive(true);
             }
         }
         
