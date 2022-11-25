@@ -27,8 +27,8 @@ public class TutorialCheck : MonoBehaviour
     private GameObject keyboardJumpImage;
     [SerializeField]
     private GameObject moveKeyboardText1;
-    //[SerializeField]
-    //private GameObject keyboardJumpText1;
+    [SerializeField]
+    private GameObject keyboardJumpText1;
 
     private bool canAdd = true;
     private bool headControl;
@@ -40,6 +40,7 @@ public class TutorialCheck : MonoBehaviour
         jumpHeadText1.SetActive(false);
         jumpHeadImage.SetActive(false);
         keyboardJumpImage.SetActive(false);
+        keyboardJumpText1.SetActive(false);
 
         if (UDPReceive.getStartRecieving == true)
         {
@@ -131,6 +132,7 @@ public class TutorialCheck : MonoBehaviour
         else if (tutorialPoints == 4 && UDPReceive.getStartRecieving == false)
         {
             keyboardJumpImage.SetActive(true);
+            keyboardJumpText1.SetActive(true);
         }
     }
 }
