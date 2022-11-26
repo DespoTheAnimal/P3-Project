@@ -43,7 +43,7 @@ public class EndlessSpawner : MonoBehaviour
     float originalTimer = 4f;
 
     // Test timer for the spawning of the levelchange 
-    float timerr = 20f;
+    float timerr = 100f;
 
     internal int indexOfScene = 1;
     //The spawn position of each new plane
