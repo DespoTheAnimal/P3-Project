@@ -1,5 +1,30 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8005478104227081006
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf1aba9553839d41ae37dd52e9ebcce, type: 3}
+  m_Name: MotionBlur
+  m_EditorClassIdentifier: 
+  active: 1
+  mode:
+    m_OverrideState: 0
+    m_Value: 0
+  quality:
+    m_OverrideState: 1
+    m_Value: 0
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.107
+  clamp:
+    m_OverrideState: 0
+    m_Value: 0.05
 --- !u!114 &-2192116282340941723
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -15,13 +40,13 @@ MonoBehaviour:
   active: 1
   mode:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 2
   gaussianStart:
     m_OverrideState: 1
     m_Value: 10
   gaussianEnd:
     m_OverrideState: 1
-    m_Value: 30
+    m_Value: 38.66
   gaussianMaxRadius:
     m_OverrideState: 0
     m_Value: 1
@@ -29,14 +54,14 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   focusDistance:
-    m_OverrideState: 0
-    m_Value: 10
+    m_OverrideState: 1
+    m_Value: 6.56
   aperture:
-    m_OverrideState: 0
-    m_Value: 5.6
+    m_OverrideState: 1
+    m_Value: 4
   focalLength:
-    m_OverrideState: 0
-    m_Value: 50
+    m_OverrideState: 1
+    m_Value: 85
   bladeCount:
     m_OverrideState: 0
     m_Value: 5
@@ -64,16 +89,16 @@ MonoBehaviour:
     m_Value: 0.9
   intensity:
     m_OverrideState: 1
-    m_Value: 2.73
+    m_Value: 4.5
   scatter:
     m_OverrideState: 1
-    m_Value: 0.7
+    m_Value: 0.858
   clamp:
     m_OverrideState: 0
     m_Value: 65472
   tint:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value: {r: 0.8018868, g: 0.62140733, b: 0.49550554, a: 1}
   highQualityFiltering:
     m_OverrideState: 0
     m_Value: 0
@@ -105,7 +130,7 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.072
+    m_Value: 0.133
   response:
     m_OverrideState: 0
     m_Value: 0.8
@@ -129,6 +154,7 @@ MonoBehaviour:
   - {fileID: -2192116282340941723}
   - {fileID: 274555290011825468}
   - {fileID: -913724268628998861}
+  - {fileID: -8005478104227081006}
 --- !u!114 &274555290011825468
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -144,10 +170,10 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 0.9782075, y: 0.98873854, z: 1, w: -0.047847003}
+    m_Value: {x: 0.9782075, y: 0.98873854, z: 1, w: -0.2986831}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: 0.05947824}
+    m_Value: {x: 1, y: 1, z: 1, w: 0.21739145}
   highlights:
     m_OverrideState: 1
     m_Value: {x: 1, y: 1, z: 1, w: 0.1728662}

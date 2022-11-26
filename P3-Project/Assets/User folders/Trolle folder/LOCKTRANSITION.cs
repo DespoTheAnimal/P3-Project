@@ -15,7 +15,7 @@ public class LOCKTRANSITION : MonoBehaviour
     IEnumerator ChangEtransition()
     {
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene("RotatingPuzzle");
 
     }
 }

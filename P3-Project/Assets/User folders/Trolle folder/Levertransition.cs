@@ -15,7 +15,7 @@ public class Levertransition : MonoBehaviour
     IEnumerator Changetransition()
     {
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene("LeverPuzzle");
 
     }
 }

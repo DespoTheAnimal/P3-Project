@@ -85,10 +85,10 @@ public class TutorialCheck : MonoBehaviour
         {
             JumpChecker();
         }
-        if (tutorialPoints == 4 && firstStageComplete)
+        if (tutorialPoints >= 4 && firstStageComplete)
         {
             //Tutorial is over, we can display text or changescene.
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("TheActualGame");
         }
     }
 
@@ -182,7 +182,6 @@ public class TutorialCheck : MonoBehaviour
             pointText1.SetActive(false);
             keyboardJumpImage.SetActive(true);
             keyboardJumpText1.SetActive(true);
-
             tutorialPoints = 0;
             firstStageComplete = true;
         }
