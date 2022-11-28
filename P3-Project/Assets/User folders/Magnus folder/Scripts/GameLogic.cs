@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class GameLogic : MonoBehaviour
 {
 
-    public static int lives = 3;
+    public static int lives;
     public TextMeshProUGUI text;
     public GameObject[] Hearts;
     private int score;
@@ -16,7 +16,7 @@ public class GameLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lives = 3;
+        lives = PlayerPrefs.GetInt("livesPrefs");
     }
 
     // Update is called once per frame
@@ -24,6 +24,7 @@ public class GameLogic : MonoBehaviour
     {
         UpdateHealth();
         LoseCondition();
+        PlayerPrefs.SetInt("livesPrefs", lives);
     }
 
     void UpdateHealth()

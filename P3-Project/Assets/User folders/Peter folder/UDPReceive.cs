@@ -9,7 +9,6 @@ using System.Collections.Generic;
 //Script downloaded from: https://www.computervision.zone/courses/3d-head-tracking-with-car-movement/
 public class UDPReceive : MonoBehaviour
 {
-
     Thread receiveThread;
     UdpClient client;
     public int port = 5052;
@@ -30,6 +29,7 @@ public class UDPReceive : MonoBehaviour
             new ThreadStart(ReceiveData));
         receiveThread.IsBackground = true;
         receiveThread.Start();
+        PlayerPrefs.SetInt("livesPrefs", 3);
     }
 
     private void Update()
