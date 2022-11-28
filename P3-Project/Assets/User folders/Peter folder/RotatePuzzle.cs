@@ -95,7 +95,7 @@ public class RotatePuzzle : MonoBehaviour
 
         Vector3 playerPos = player.transform.localPosition;
 
-        player.transform.Rotate(player.transform.rotation.x, player.transform.rotation.y, zAverage, Space.Self);
+        player.transform.Rotate(player.transform.rotation.x, player.transform.rotation.y, zAverage/2, Space.Self);
     }
 
     private void RotationKeyboard()
