@@ -30,26 +30,23 @@ public class KeyTutorial : MonoBehaviour
 
     private void Update()
     {
-        if (UDPReceive.getStartRecieving == true)
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (UDPReceive.getStartRecieving == true)
             {
-                StartCoroutine(FadeOutCR(firstHeadText));
-                secondHeadText.enabled = true;
-                StartCoroutine(FadeInKEY(secondHeadText));
-                firstHeadText.enabled = false;
-                beginHButton.gameObject.SetActive(true);
+                    StartCoroutine(FadeOutCR(firstText));
+                    secondHeadText.enabled = true;
+                    firstText.enabled = false;
+                    StartCoroutine(FadeInKEY(secondHeadText));
+                    beginHButton.gameObject.SetActive(true);
             }
-        }
-        else
-        {
-            if (Input.GetKeyDown(KeyCode.Return))
+            else
             {
-                StartCoroutine(FadeOutCR(firstText));
-                secondText.enabled = true;
-                StartCoroutine(FadeInKEY(secondText));
-                firstText.enabled = false;
-                beginButton.gameObject.SetActive(true);
+                    StartCoroutine(FadeOutCR(firstText));
+                    secondText.enabled = true;
+                    firstText.enabled = false;
+                    StartCoroutine(FadeInKEY(secondText));
+                    beginButton.gameObject.SetActive(true);
             }
         }
         

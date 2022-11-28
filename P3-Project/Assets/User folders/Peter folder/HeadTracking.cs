@@ -53,7 +53,7 @@ public class HeadTracking : MonoBehaviour
 
             string[] points = data.Split(',');
 
-            float x = (xPosAdjust - float.Parse(points[0])) / 100;
+            float x = (xPosAdjust - float.Parse(points[0])) / 35;
             float y = (yPosAdjust - float.Parse(points[1])) / 100;
             xList.Add(x);
             yList.Add(y);
@@ -70,7 +70,7 @@ public class HeadTracking : MonoBehaviour
             }
 
             // this vector clamps the x-values and gets the position of the player
-            Vector3 playerPos = new Vector3(Mathf.Clamp(xAverage, -4f, 4f), player.transform.position.y, player.transform.position.z);
+            Vector3 playerPos = new Vector3(Mathf.Clamp(xAverage, -9f, 9f), player.transform.position.y, player.transform.position.z);
 
             //xAverage = Mathf.Clamp(xAverage, -4f, 4f);
             //player.transform.localPosition = new Vector3(xAverage, playerPos.y, playerPos.z);
