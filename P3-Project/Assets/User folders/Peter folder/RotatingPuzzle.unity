@@ -2538,7 +2538,7 @@ MonoBehaviour:
   m_text: 'Repeatedly press A to turn left, or D to turn right. When you''ve reached
     a tumbler, press Space to unlock it
 
-    Press Enter'
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f05b4a3e2f581474d9dc2eeb07d5dcfc, type: 2}
   m_sharedMaterial: {fileID: 7603198562790311786, guid: f05b4a3e2f581474d9dc2eeb07d5dcfc,
