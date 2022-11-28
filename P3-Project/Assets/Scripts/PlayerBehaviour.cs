@@ -15,6 +15,7 @@ public class PlayerBehaviour : MonoBehaviour
     private float maxSpeed = 50f;
     private float timeForSpeed;
     private int accelerationTime = 60;
+    GameObject player;
 
     // Character variables for controls
     private Rigidbody rb;
@@ -33,6 +34,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void Awake()
     {
+        animator = GetComponent<Animator>();
         if(UDPReceive.getStartRecieving == true) // Happens before anything else, checks if UDP is active, if so then this script will not be active.
         {
             gameObject.GetComponent<PlayerBehaviour>().enabled = false;
@@ -61,11 +63,13 @@ public class PlayerBehaviour : MonoBehaviour
             
             
         }
-        else if(isJumping && jumpHeight < 0) {
+        else if() {
+           // transform.position == new Vector3(transform.position.x, , transform.position.z
             animator.SetBool("isFalling", true);
             isFalling = true;
             animator.SetBool("isJumping", false);
             isJumping = false;
+
         } else if(isGrounded && jumpHeight == 0) {
             animator.SetBool("isGrounded", true);
             isGrounded = true; 
