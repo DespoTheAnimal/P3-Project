@@ -26,7 +26,6 @@ public class PlayerBehaviour : MonoBehaviour
     private bool isJumping;
     private bool isHit;
     private bool isHearts0;
-    private bool isRunning;
     private bool isFalling;
     private bool isLanding;
     private bool isGrounded;
@@ -50,37 +49,31 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void Update()
     {
+        IncreaseSpeed();
         // Jump of the player, need both the spacekey to be pressed, and the Jump method to be true 
         if (Input.GetKeyDown(KeyCode.Space) && Jump())
         {
+            Debug.Log("test1");
             rb.AddForce(new Vector3(0, jumpHeight * rb.mass, 0), ForceMode.Impulse);
-            animator.SetBool("isJumping", true);
-            isJumping = true;
             animator.SetBool("isGrounded", false);
             isGrounded = false;
-            animator.SetBool("isFalling", false);
-            isFalling = false;
-            
-            
+            Debug.Log(isGrounded);
+            animator.SetBool("isJumping", true);
+            isJumping = false;
+            Debug.Log(isJumping);
         }
-        else if(isFalling && jumpHeight <= 0) {
-           // transform.position == new Vector3(transform.position.x, , transform.position.z
-            animator.SetBool("isFalling", true);
-            isFalling = true;
-            animator.SetBool("isJumping", false);
+        else if (Jump())
+        {
             isJumping = false;
-
-        } else if(isGrounded && jumpHeight == 0) {
+            animator.SetBool("isJumping", false);
+            
             animator.SetBool("isGrounded", true);
-            isGrounded = true; 
-            animator.SetBool("isJumping", false);
-            isJumping = false;
+            Debug.Log(isGrounded);
             isGrounded = true;
-
         }
 
         // The method for increasing the forward speed of the player through time 
-        IncreaseSpeed();
+        
     }
 
     private void FixedUpdate()
@@ -102,11 +95,11 @@ public class PlayerBehaviour : MonoBehaviour
     }
 
 
-    /// <summary>
-    /// Checks if the player is currently grounded via a raycast
-    /// </summary>
-    /// <returns>True: if the player is grounded, else: False</returns>
-    private bool Jump()
+/// <summary>
+/// Checks if the player is currently grounded via a raycast
+/// </summary>
+/// <returns>True: if the player is grounded, else: False</returns>
+private bool Jump()
     {
         if(Physics.Raycast(transform.position, Vector3.down, distanceToGround))
         {
