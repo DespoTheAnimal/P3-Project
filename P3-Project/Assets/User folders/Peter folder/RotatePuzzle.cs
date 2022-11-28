@@ -65,7 +65,7 @@ public class RotatePuzzle : MonoBehaviour
         if (locksUnlocked >= 3)
         {
             audioSource.PlayOneShot(lockSound, 1f);
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene("TheActualGame");
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && isWin == true)

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialCheck : MonoBehaviour
 {
@@ -18,29 +20,46 @@ public class TutorialCheck : MonoBehaviour
     private GameObject jumpHeadImage;
     [SerializeField]
     private GameObject moveBodyText1;
+    [SerializeField]
+    private GameObject jumpHeadText1;
 
     [SerializeField]
     private GameObject keyboardMoveImage;
-    //[SerializeField]
-    //private GameObject keyboardJumpImage;
+    [SerializeField]
+    private GameObject keyboardJumpImage;
     [SerializeField]
     private GameObject moveKeyboardText1;
+    [SerializeField]
+    private GameObject keyboardJumpText1;
+
+    [SerializeField]
+    private GameObject pointText1;
+    [SerializeField]
+    private TextMeshProUGUI actualPointText;
 
     private bool canAdd = true;
+    private bool canJump = true;
     private bool headControl;
+
+    private bool firstStageComplete = false;
 
     private int tutorialPoints = 0;
 
     private void Start()
     {
+        pointText1.SetActive(false);
+        jumpHeadText1.SetActive(false);
+        jumpHeadImage.SetActive(false);
+        keyboardJumpImage.SetActive(false);
+        keyboardJumpText1.SetActive(false);
+        actualPointText.gameObject.SetActive(false);
+
         if (UDPReceive.getStartRecieving == true)
         {
             headControl = true;
             moveHeadImage.SetActive(true);
             moveBodyText1.SetActive(true);
 
-            jumpHeadImage.SetActive(false);
-            //keyboardJumpImage.SetActive(false);
             keyboardMoveImage.SetActive(false);
             moveKeyboardText1.SetActive(false);
         }
@@ -51,27 +70,34 @@ public class TutorialCheck : MonoBehaviour
 
             moveHeadImage.SetActive(false);
             moveBodyText1.SetActive(false);
-            jumpHeadImage?.SetActive(false);
-            //keyboardJumpImage.SetActive(false);
         }
     }
 
     void Update()
     {
+        AddPointsText();
         SideChecker();
         ImageController();
         TextController();
         PointsChecker();
-        Debug.Log("lol points" + tutorialPoints);
-        Debug.Log(canAdd);
+
+        if (firstStageComplete)
+        {
+            JumpChecker();
+        }
+        if (tutorialPoints >= 4 && firstStageComplete)
+        {
+            //Tutorial is over, we can display text or changescene.
+            SceneManager.LoadScene("TheActualGame");
+        }
     }
 
     void SideChecker()
     {
-        if (canAdd && playerObject.transform.position.x <= scoreLeftPosition || canAdd && playerObject.transform.position.x >= scoreRightPositon)
+        if (canAdd && playerObject.transform.position.x <= scoreLeftPosition && !firstStageComplete|| canAdd && playerObject.transform.position.x >= scoreRightPositon && !firstStageComplete)
         {
-            Debug.Log("hey sexy");
             tutorialPoints++;
+            actualPointText.gameObject.SetActive(true);
             canAdd = false;
         }
         else if (!canAdd && playerObject.transform.position.x > scoreLeftPosition && playerObject.transform.position.x < scoreRightPositon)
@@ -106,6 +132,11 @@ public class TutorialCheck : MonoBehaviour
             if (playerObject.transform.position.x <= imageLeftPosition || playerObject.transform.position.x >= imageRightPosition)
             {
                 moveBodyText1.SetActive(false);
+                if (!firstStageComplete)
+                {
+                    pointText1.SetActive(true);
+                }
+
             }
         }
         else
@@ -113,15 +144,51 @@ public class TutorialCheck : MonoBehaviour
             if (playerObject.transform.position.x <= imageLeftPosition || playerObject.transform.position.x >= imageRightPosition)
             {
                 moveKeyboardText1.SetActive(false);
+                if (!firstStageComplete)
+                {
+                    pointText1.SetActive(true);
+                }
             }
         }
     }
 
+    void JumpChecker()
+    {
+        if(canJump && playerObject.transform.position.y > 3 && firstStageComplete)
+        {
+            canJump = false;
+            tutorialPoints++;
+        }
+        else if(!canJump && playerObject.transform.position.y < 3 && firstStageComplete)
+        {
+            canJump = true;
+        }
+
+    }
+
     void PointsChecker()
     {
-        if (tutorialPoints == 4)
+        if (tutorialPoints == 4 && UDPReceive.getStartRecieving == true)
         {
-            // switch to jump thingie
+            pointText1.SetActive(false);
+            jumpHeadImage.SetActive(true);
+            jumpHeadText1.SetActive(true);
+
+            tutorialPoints = 0;
+            firstStageComplete = true;
         }
+        else if (tutorialPoints == 4 && UDPReceive.getStartRecieving == false)
+        {
+            pointText1.SetActive(false);
+            keyboardJumpImage.SetActive(true);
+            keyboardJumpText1.SetActive(true);
+            tutorialPoints = 0;
+            firstStageComplete = true;
+        }
+    }
+
+    void AddPointsText()
+    {
+        actualPointText.text = tutorialPoints+" out of 4";
     }
 }

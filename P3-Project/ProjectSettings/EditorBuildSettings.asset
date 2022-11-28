@@ -15,14 +15,17 @@ EditorBuildSettings:
     path: Assets/Scenes/YouDied.unity
     guid: ffb05618d5ceb43cfb7e9c19652f4892
   - enabled: 1
-    path: Assets/User folders/Peter folder/MazePuzzle.unity
-    guid: c4930d828b3aa410f90a3eb49e079efe
+    path: Assets/Scenes/Maze transition.unity
+    guid: 9a6f5f7870721be4b843cc9545b8ff01
   - enabled: 1
     path: Assets/Scenes/lock transition.unity
     guid: 7ba7c9965ee548a4ab36999cb18f393f
   - enabled: 1
     path: Assets/Scenes/lever transition 1.unity
     guid: 529558e2b54475647ad37a3b9a05ed19
+  - enabled: 1
+    path: Assets/User folders/Peter folder/MazePuzzle.unity
+    guid: c4930d828b3aa410f90a3eb49e079efe
   - enabled: 1
     path: Assets/Scenes/LeverPuzzle.unity
     guid: 80a7f449e2546804d9c401e98de03098
@@ -32,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/winning scene.unity
     guid: 2d075d9a48c574c48a1b1e5d0f9f7bc1
+  - enabled: 1
+    path: Assets/Scenes/HeadTrackingTutorial.unity
+    guid: 9f3ede7d6eda5474fbe444005e935686
   m_configObjects: {}
