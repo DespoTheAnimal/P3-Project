@@ -63,7 +63,7 @@ public class PlayerBehaviour : MonoBehaviour
             
             
         }
-        else if() {
+        else if(isfalling && jumpHeight < 0) {
            // transform.position == new Vector3(transform.position.x, , transform.position.z
             animator.SetBool("isFalling", true);
             isFalling = true;
