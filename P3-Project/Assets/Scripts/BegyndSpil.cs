@@ -16,7 +16,7 @@ public class BegyndSpil : MonoBehaviour
 
     private void Next()
     {
-        SceneManager.LoadScene("TheActualGame");
+        SceneManager.LoadScene("HeadTrackingTutorial");
 
     }
 
