@@ -66,7 +66,7 @@ public class HeadTracking : MonoBehaviour
 
             if (yAverage > 1.75f && Grounded())
             {
-                player.GetComponent<Rigidbody>().AddForce(Vector3.up * 10, ForceMode.Impulse);
+                player.GetComponent<Rigidbody>().AddForce(Vector3.up * 7, ForceMode.Impulse);
             }
 
             // this vector clamps the x-values and gets the position of the player

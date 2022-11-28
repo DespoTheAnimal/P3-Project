@@ -23,14 +23,15 @@ public class ObstacleCollision : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
-        { 
+        {
+            Debug.Log(particle);
             GameLogic.lives -= 1;
             particle.Play();
             animator.SetBool("isHit", true);
             isHit = true;
             audios.PlayOneShot(clip);
             Debug.Log(clip);
-            // Her der skal være en linje kode med animatoren fra main camera så hver gang man bliver ramt så kommer der en animation
+            // Her der skal v?re en linje kode med animatoren fra main camera s? hver gang man bliver ramt s? kommer der en animation
             EndlessCreator.movables.Remove(gameObject);
             Destroy(gameObject);
         }

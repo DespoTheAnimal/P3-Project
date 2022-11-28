@@ -722,7 +722,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 171796255}
   serializedVersion: 2
-  m_Mass: 2
+  m_Mass: 7
   m_Drag: 1
   m_AngularDrag: 0.2
   m_UseGravity: 1
@@ -1634,12 +1634,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 968738419}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.58515555, z: -0.19907354}
+  m_LocalScale: {x: 0.7099083, y: 0.7099083, z: 0.7099083}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2091208153}
-  m_RootOrder: 0
+  m_Father: {fileID: 171796256}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!199 &968738421
 ParticleSystemRenderer:
@@ -9182,7 +9182,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1253086935255656, guid: 60e8218091f83244c9bf9c8c2569a009, type: 3}
       propertyPath: m_Name
-      value: Player (1)
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1253086935255656, guid: 60e8218091f83244c9bf9c8c2569a009, type: 3}
       propertyPath: m_TagString
@@ -9620,8 +9620,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1.1768, y: 1.1768, z: 1.1768}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 968738420}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
