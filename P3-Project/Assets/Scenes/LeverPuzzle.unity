@@ -1441,7 +1441,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &572547909
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1655,7 +1655,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1036597495
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1701,7 +1701,7 @@ MonoBehaviour:
     Find the right combination
     of levers
 
-    Press Enter'
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f05b4a3e2f581474d9dc2eeb07d5dcfc, type: 2}
   m_sharedMaterial: {fileID: 7603198562790311786, guid: f05b4a3e2f581474d9dc2eeb07d5dcfc,
@@ -2164,7 +2164,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -185}
+  m_AnchoredPosition: {x: 0, y: -118.9}
   m_SizeDelta: {x: 450, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1439765164
