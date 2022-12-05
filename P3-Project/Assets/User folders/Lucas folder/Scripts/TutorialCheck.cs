@@ -9,8 +9,8 @@ public class TutorialCheck : MonoBehaviour
     private float scoreLeftPosition = -7.5f;
     private float scoreRightPositon = 7.5f;
 
-    private float imageLeftPosition = -2.5f;
-    private float imageRightPosition = 2.5f;
+    private float imageLeftPosition = -1.5f;
+    private float imageRightPosition = 1.5f;
 
     [SerializeField]
     private GameObject playerObject;
