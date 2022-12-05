@@ -8,16 +8,17 @@ public class KeyTutorial : MonoBehaviour
 {
     [SerializeField] private TMP_Text firstText, secondText;
     [SerializeField] private TMP_Text firstHeadText, secondHeadText;
+    [SerializeField] private GameObject tutorialObject;
     private bool firstStep = false;
-    [SerializeField] private Button beginButton;
-    [SerializeField] private Button beginHButton;
+    //[SerializeField] private Button beginButton;
+    //[SerializeField] private Button beginHButton;
 
     private void Awake()
     {
         secondText.enabled = false;
-        beginButton.gameObject.SetActive(false);
+       // beginButton.gameObject.SetActive(false);
         secondHeadText.enabled = false;
-        beginHButton.gameObject.SetActive(false);
+       // beginHButton.gameObject.SetActive(false);
         if (UDPReceive.getStartRecieving == true)
         {
             firstText.enabled = false;
@@ -38,7 +39,8 @@ public class KeyTutorial : MonoBehaviour
                     secondHeadText.enabled = true;
                     firstText.enabled = false;
                     StartCoroutine(FadeInKEY(secondHeadText));
-                    beginHButton.gameObject.SetActive(true);
+                    //beginHButton.gameObject.SetActive(true);
+                    firstStep = true;
             }
             else
             {
@@ -46,7 +48,20 @@ public class KeyTutorial : MonoBehaviour
                     secondText.enabled = true;
                     firstText.enabled = false;
                     StartCoroutine(FadeInKEY(secondText));
-                    beginButton.gameObject.SetActive(true);
+                    //beginButton.gameObject.SetActive(true);
+                firstStep = true;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && firstStep)
+        {
+            if (UDPReceive.getStartRecieving == true)
+            {
+                tutorialObject.SetActive(false);
+            }
+            else
+            {
+                tutorialObject.SetActive(false);
             }
         }
         

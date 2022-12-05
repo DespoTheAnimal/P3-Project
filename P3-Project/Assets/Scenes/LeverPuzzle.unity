@@ -434,8 +434,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Use your head to control the cursor, and press space when alligned with
+  m_text: 'Use your head to control the cursor, and press space when alligned with
     a lever to change its position
+
+    Press Space'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f05b4a3e2f581474d9dc2eeb07d5dcfc, type: 2}
   m_sharedMaterial: {fileID: 7603198562790311786, guid: f05b4a3e2f581474d9dc2eeb07d5dcfc,
@@ -846,8 +848,7 @@ MonoBehaviour:
   secondText: {fileID: 208387344}
   firstHeadText: {fileID: 1036597496}
   secondHeadText: {fileID: 92895119}
-  beginButton: {fileID: 1209800112}
-  beginHButton: {fileID: 1439765166}
+  tutorialObject: {fileID: 186805894}
 --- !u!114 &186805896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -921,8 +922,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 572547909}
   - {fileID: 1945254883}
+  - {fileID: 572547909}
   - {fileID: 1542192224}
   - {fileID: 208387342}
   - {fileID: 1036597495}
@@ -1002,7 +1003,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Use the mouse and click on the levers to change their position. '
+  m_text: "Use the mouse and click on the levers to change their position. \nPress
+    Space"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f05b4a3e2f581474d9dc2eeb07d5dcfc, type: 2}
   m_sharedMaterial: {fileID: 7603198562790311786, guid: f05b4a3e2f581474d9dc2eeb07d5dcfc,
@@ -1441,7 +1443,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &572547909
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1455,7 +1457,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 186805899}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1701,7 +1703,7 @@ MonoBehaviour:
     Find the right combination
     of levers
 
-'
+    Press Enter'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f05b4a3e2f581474d9dc2eeb07d5dcfc, type: 2}
   m_sharedMaterial: {fileID: 7603198562790311786, guid: f05b4a3e2f581474d9dc2eeb07d5dcfc,
@@ -2051,7 +2053,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1209800112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2185,7 +2187,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1439765165
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2858,7 +2860,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1945254883
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2866,17 +2868,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945254882}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 186805899}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -206}
+  m_AnchoredPosition: {x: 0, y: -205.99997}
   m_SizeDelta: {x: 750, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1945254884
