@@ -22,7 +22,7 @@ public class PlayerBehaviour : MonoBehaviour
     private int movementSpeed = 5; // Speed for side-to-side movement 
     private float distanceToGround = 1f; // Raycast distance 
     private float gravityFactor = 10f; // Constant force being applied to the player 
-    private int jumpHeight = 10; // The height the player jumps
+    private int jumpHeight = 12; // The height the player jumps
     private bool isJumping;
     private bool isHit;
     private bool isHearts0;

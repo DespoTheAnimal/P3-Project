@@ -154,12 +154,12 @@ public class TutorialCheck : MonoBehaviour
 
     void JumpChecker()
     {
-        if(canJump && playerObject.transform.position.y > 3 && firstStageComplete)
+        if(canJump && playerObject.transform.position.y > 2.5 && firstStageComplete)
         {
             canJump = false;
             tutorialPoints++;
         }
-        else if(!canJump && playerObject.transform.position.y < 3 && firstStageComplete)
+        else if(!canJump && playerObject.transform.position.y < 2.5 && firstStageComplete)
         {
             canJump = true;
         }
