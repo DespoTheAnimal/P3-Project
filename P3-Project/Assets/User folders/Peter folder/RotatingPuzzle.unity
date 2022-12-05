@@ -260,7 +260,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &71684090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -768,8 +768,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tilt your head left or right to turn the key. When you've reached a tumbler,
+  m_text: 'Tilt your head left or right to turn the key. When you''ve reached a tumbler,
     press Space to unlock it
+
+    Press Space'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f05b4a3e2f581474d9dc2eeb07d5dcfc, type: 2}
   m_sharedMaterial: {fileID: 7603198562790311786, guid: f05b4a3e2f581474d9dc2eeb07d5dcfc,
@@ -901,7 +903,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &249451356
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1651,7 +1653,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &843524611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1805,8 +1807,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This is rather simple, turn the key either left or right, until you've
-    unlocked it. You've got to unlock 3 tumblers
+  m_text: 'This is rather simple, turn the key either left or right, until you''ve
+    unlocked it. You''ve got to unlock 3 tumblers
+
+    Press Enter'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f05b4a3e2f581474d9dc2eeb07d5dcfc, type: 2}
   m_sharedMaterial: {fileID: 7603198562790311786, guid: f05b4a3e2f581474d9dc2eeb07d5dcfc,
@@ -2537,6 +2541,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Repeatedly press A to turn left, or D to turn right. When you''ve reached
     a tumbler, press Space to unlock it
+
+    Press Space
 
 '
   m_isRightToLeft: 0
@@ -3667,7 +3673,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1937541906
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4102,8 +4108,7 @@ MonoBehaviour:
   secondText: {fileID: 1318480175}
   firstHeadText: {fileID: 845743991}
   secondHeadText: {fileID: 214646736}
-  beginButton: {fileID: 71684090}
-  beginHButton: {fileID: 843524611}
+  tutorialObject: {fileID: 2010271477}
 --- !u!114 &2010271479
 MonoBehaviour:
   m_ObjectHideFlags: 0
