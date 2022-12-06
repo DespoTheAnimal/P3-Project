@@ -28,7 +28,7 @@ public class WatiBonSon : MonoBehaviour
         //watiBonSon = GetComponent<AudioSource>();
         watiBonSon.clip = startScreenSong;
         watiBonSon.Play();
-        watiBonSon.volume = 0.2f;
+        watiBonSon.volume = 0.5f;
     }
 
 
