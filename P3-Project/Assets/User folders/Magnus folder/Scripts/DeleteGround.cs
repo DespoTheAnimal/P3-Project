@@ -18,7 +18,7 @@ public class DeleteGround : MonoBehaviour
 
     private void Update()
     {
-        transform.position = new Vector3(0f,0f, player.position.z - 71f);
+        transform.position = new Vector3(0f,0f, player.position.z - 80f);
     }
     private void OnTriggerEnter(Collider other)
     {
