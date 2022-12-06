@@ -102,7 +102,7 @@ public class EndlessSpawner : MonoBehaviour
                     break;
                 //Case 2 the morningstar, new vector represents the spawn position being random on X axis, 10 on Y to fit the ceiling, and z in relation to the player
                 case 2:
-                    newObstacle = Instantiate(obstacle[2], new Vector3(Random.Range(-4f, -8), 10, spawnPosition.z), Quaternion.identity);
+                    newObstacle = Instantiate(obstacle[2], new Vector3(Random.Range(-4f, -8), 12, spawnPosition.z), Quaternion.identity);
                     break;
 
             }
@@ -117,8 +117,8 @@ public class EndlessSpawner : MonoBehaviour
     public void SpawnWall()
     {
         { 
-            newGround = Instantiate(ground, new Vector3(spawnPosition.x,spawnPosition.y, spawnPosition.z + 24.5f), Quaternion.identity);
-            newWall = Instantiate(wall, spawnPosition, Quaternion.identity);
+            newGround = Instantiate(ground, new Vector3(spawnPosition.x,spawnPosition.y, spawnPosition.z + 25f), Quaternion.identity);
+            newWall = Instantiate(wall, new Vector3(spawnPosition.x, spawnPosition.y, spawnPosition.z), Quaternion.identity);
             spawnPosition.z += 50;
         }
         
