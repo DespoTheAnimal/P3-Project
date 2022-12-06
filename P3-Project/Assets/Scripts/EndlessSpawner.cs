@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -60,27 +61,10 @@ public class EndlessSpawner : MonoBehaviour
 
     void Update()
     {
-        //This controls the time for when a new obstacle will be instantiated 
-        timer -= Time.deltaTime;
-        timerr -= Time.deltaTime; // timer for the change of scene THIS IS A TEST
-        //Debug.Log(PlayerBehaviour.currentSpeed);
-        if (currentScene.name != "HeadTrackingTutorial")
-        {
-            if (timer <= 0)
-            {
-                SpawnObstacles(); //Spawns the obstacles 
-                timer = originalTimer; // sets the time back to it's original value 
-                if (PlayerBehaviour.currentSpeed == 10) //Speeds up the time for which the obstacles will spawn 
-                {
-                    originalTimer = 1f;
-                }
-            }
-            ChangeSceneSpawn(); // Change of scene
-        }
-        else
-        {
-            return;
-        }    
+        TimerMethod(ref timer, ref originalTimer);
+        Debug.Log(originalTimer);
+        Debug.Log(PlayerBehaviour.currentSpeed);
+
     }
 
     /// <summary>
@@ -146,6 +130,31 @@ public class EndlessSpawner : MonoBehaviour
                     Instantiate(newLevel2, spawnPosition, Quaternion.identity);
                     break;
             }
+        }
+    }
+
+    void TimerMethod(ref float timer, ref float originalTimer)
+    {
+        //This controls the time for when a new obstacle will be instantiated 
+        timer -= Time.deltaTime;
+        timerr -= Time.deltaTime; // timer for the change of scene THIS IS A TEST
+        //Debug.Log(PlayerBehaviour.currentSpeed);
+        if (currentScene.name != "HeadTrackingTutorial")
+        {
+            if (timer <= 0)
+            {
+                SpawnObstacles(); //Spawns the obstacles 
+                if (PlayerBehaviour.currentSpeed > 10) //Speeds up the time for which the obstacles will spawn 
+                {
+                    originalTimer = 2f;
+                }
+                timer = originalTimer; // sets the time back to it's original value 
+            }
+            ChangeSceneSpawn(); // Change of scene
+        }
+        else
+        {
+            return;
         }
     }
 }
