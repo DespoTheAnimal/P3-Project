@@ -22,6 +22,15 @@ public class RotatePuzzle : MonoBehaviour
     private List<GameObject> KeyList;
     GameObject[] keyArray;
     private GameObject newkey;
+    private bool unlocked;
+    private Animator animator;
+
+    Animator KeyLock;
+
+    private void Start()
+    {
+        KeyLock = GameObject.Find("Puzzle").GetComponentInChildren<Animator>();
+    }
 
     private void Awake()
     {
@@ -32,6 +41,8 @@ public class RotatePuzzle : MonoBehaviour
 
         keyArray.ToList<GameObject>();
         RandomizeActiveComponent();
+
+        animator = GetComponent<Animator>();
     }
     
     private void RandomizeActiveComponent()
@@ -121,4 +132,5 @@ public class RotatePuzzle : MonoBehaviour
         isWin = false;
     }
 
+   
 }
