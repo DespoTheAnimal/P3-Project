@@ -58,13 +58,13 @@ public class HeadTracking : MonoBehaviour
             xList.Add(x);
             yList.Add(y);
 
-            if (xList.Count > 10) { xList.RemoveAt(0); }
-            if (yList.Count > 10) { yList.RemoveAt(0); }
+            if (xList.Count > 5) { xList.RemoveAt(0); }
+            if (yList.Count > 5) { yList.RemoveAt(0); }
 
             float xAverage = Queryable.Average(xList.AsQueryable());
             float yAverage = Queryable.Average(yList.AsQueryable());
 
-            if (yAverage > 1.75f && Grounded())
+            if (yAverage > 1.5f && Grounded())
             {
                 player.GetComponent<Rigidbody>().AddForce(Vector3.up * 7, ForceMode.Impulse);
             }
