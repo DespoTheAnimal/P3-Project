@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -61,9 +60,27 @@ public class EndlessSpawner : MonoBehaviour
 
     void Update()
     {
-        TimerMethod(ref timer, ref originalTimer);
-        Debug.Log(originalTimer);
-
+        //This controls the time for when a new obstacle will be instantiated 
+        timer -= Time.deltaTime;
+        timerr -= Time.deltaTime; // timer for the change of scene THIS IS A TEST
+        //Debug.Log(PlayerBehaviour.currentSpeed);
+        if (currentScene.name != "HeadTrackingTutorial")
+        {
+            if (timer <= 0)
+            {
+                SpawnObstacles(); //Spawns the obstacles 
+                timer = originalTimer; // sets the time back to it's original value 
+                if (PlayerBehaviour.currentSpeed == 10) //Speeds up the time for which the obstacles will spawn 
+                {
+                    originalTimer = 1f;
+                }
+            }
+            ChangeSceneSpawn(); // Change of scene
+        }
+        else
+        {
+            return;
+        }    
     }
 
     /// <summary>
@@ -100,8 +117,8 @@ public class EndlessSpawner : MonoBehaviour
     public void SpawnWall()
     {
         { 
-            newGround = Instantiate(ground, new Vector3(spawnPosition.x,spawnPosition.y, spawnPosition.z + 24.1f), Quaternion.identity); // the 24.1f refers to the offset of the prefab meaning it is now aligned 
-            newWall = Instantiate(wall, new Vector3(spawnPosition.x, spawnPosition.y, spawnPosition.z - 0.7f), Quaternion.identity); // The 0.7f refers to the offset of the prefab meaning it is now aligned
+            newGround = Instantiate(ground, new Vector3(spawnPosition.x,spawnPosition.y, spawnPosition.z + 24.1f), Quaternion.identity);
+            newWall = Instantiate(wall, new Vector3(spawnPosition.x, spawnPosition.y, spawnPosition.z - 0.7f), Quaternion.identity);
             spawnPosition.z += 50;
         }
         
@@ -129,37 +146,6 @@ public class EndlessSpawner : MonoBehaviour
                     Instantiate(newLevel2, spawnPosition, Quaternion.identity);
                     break;
             }
-        }
-    }
-
-
-    /// <summary>
-    /// Method for adding additional obstacles through time. 
-    /// </summary>
-    /// <param name="timer">The parameter for the starting time</param>
-    /// <param name="originalTimer">After player exceeds 10 in speed, this will be the new timer</param>
-    void TimerMethod(ref float timer, ref float originalTimer)
-    {
-        //This controls the time for when a new obstacle will be instantiated 
-        timer -= Time.deltaTime;
-        timerr -= Time.deltaTime; // timer for the change of scene THIS IS A TEST
-        //Debug.Log(PlayerBehaviour.currentSpeed);
-        if (currentScene.name != "HeadTrackingTutorial")
-        {
-            if (timer <= 0)
-            {
-                SpawnObstacles(); //Spawns the obstacles 
-                if (PlayerBehaviour.currentSpeed > 10) //Speeds up the time for which the obstacles will spawn 
-                {
-                    originalTimer = 2f;
-                }
-                timer = originalTimer; // sets the time back to it's original value 
-            }
-            ChangeSceneSpawn(); // Change of scene
-        }
-        else
-        {
-            return;
         }
     }
 }

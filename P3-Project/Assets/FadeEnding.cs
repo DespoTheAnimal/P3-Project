@@ -17,7 +17,7 @@ public class FadeEnding : MonoBehaviour
         yield return new WaitForSeconds(6f);
         Fade.gameObject.SetActive(true);
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(10);
 
     }
 }
