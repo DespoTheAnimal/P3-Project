@@ -26081,6 +26081,9 @@ Transform:
   - {fileID: 1620033095349899773}
   - {fileID: 3362287369472392278}
   - {fileID: 2012735800775438643}
+<<<<<<< HEAD
+>>>>>>> parent of f64fbd7 (lol)
+=======
 >>>>>>> parent of f64fbd7 (lol)
   m_Father: {fileID: 0}
   m_RootOrder: 0
