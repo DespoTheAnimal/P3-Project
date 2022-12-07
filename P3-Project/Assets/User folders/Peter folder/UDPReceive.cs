@@ -16,7 +16,7 @@ public class UDPReceive : MonoBehaviour
     public static bool getStartRecieving; 
     public bool printToConsole = false;
     public string data;
-    public List<int> PuzzleIndex = new List<int> { 3, 4 };
+    public List<int> PuzzleIndex = new List<int> { 3, 4, 5 };
 
     public void Start()
     {
