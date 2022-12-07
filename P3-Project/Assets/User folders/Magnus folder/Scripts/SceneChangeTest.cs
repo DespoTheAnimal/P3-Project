@@ -56,7 +56,7 @@ public class SceneChangeTest : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("winning scene");
+            SceneManager.LoadScene("end scene");
         }
     }
 }
