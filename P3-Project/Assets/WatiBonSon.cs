@@ -41,6 +41,7 @@ public class WatiBonSon : MonoBehaviour
             watiBonSon.Stop();
             watiBonSon.clip = inGameSong;
             watiBonSon.PlayOneShot(inGameSong);
+            watiBonSon.loop = true;
             isPlaying = true;
         }
 
