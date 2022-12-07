@@ -9,13 +9,15 @@ public class WatiBonSon : MonoBehaviour
     [SerializeField] private AudioSource watiBonSon;
     [SerializeField] private AudioClip startScreenSong;
     [SerializeField] private AudioClip inGameSong;
-    [SerializeField] private AudioClip endScreenSong;
+    [SerializeField] private AudioClip deathScreenSong;
+    [SerializeField] private AudioClip winScreenSong;
     private bool isPlaying = false;
     private bool isDead = false;
 
     void Start()
     {
-        
+        watiBonSon.Play();
+        watiBonSon.volume = 0.5f;
     }
 
     private void Awake()
@@ -24,10 +26,9 @@ public class WatiBonSon : MonoBehaviour
         DontDestroyOnLoad(startScreenSong);
         DontDestroyOnLoad(inGameSong);
         DontDestroyOnLoad(watiBonSon);
-        DontDestroyOnLoad(endScreenSong);
+        DontDestroyOnLoad(deathScreenSong);
+        DontDestroyOnLoad(winScreenSong);
         watiBonSon.clip = startScreenSong;
-        watiBonSon.Play();
-        watiBonSon.volume = 0.5f;
     }
 
 
@@ -47,8 +48,17 @@ public class WatiBonSon : MonoBehaviour
         if (y == 2 && !isDead)
         {
             watiBonSon.Stop();
-            watiBonSon.clip = endScreenSong;
-            watiBonSon.PlayOneShot(endScreenSong);
+            watiBonSon.clip = deathScreenSong;
+            watiBonSon.PlayOneShot(deathScreenSong);
+            isDead = true;
+        }
+
+        //Winscene music
+        if (y == 10 && !isDead)
+        {
+            watiBonSon.Stop();
+            watiBonSon.clip = deathScreenSong;
+            watiBonSon.PlayOneShot(deathScreenSong);
             isDead = true;
         }
     }
