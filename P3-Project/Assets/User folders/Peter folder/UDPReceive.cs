@@ -16,7 +16,7 @@ public class UDPReceive : MonoBehaviour
     public static bool getStartRecieving; 
     public bool printToConsole = false;
     public string data;
-    public List<int> PuzzleIndexNew = new List<int> { 3, 4 };
+    public List<int> PuzzleIndex = new List<int> { 3, 4, 5 };
 
     public void Start()
     {
@@ -35,7 +35,7 @@ public class UDPReceive : MonoBehaviour
     private void Update()
     {
         getStartRecieving = startRecieving;
-        Debug.Log("Puzzles left: " + PuzzleIndexNew.Count);
+        Debug.Log("Puzzles left: " + PuzzleIndex.Count);
     }
 
 
