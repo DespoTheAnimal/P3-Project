@@ -53,7 +53,7 @@ public class KeyTutorial : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && firstStep)
+        if (Input.GetKeyDown(KeyCode.Return) && firstStep)
         {
             if (UDPReceive.getStartRecieving == true)
             {
