@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/LeverPuzzle.unity
     guid: 80a7f449e2546804d9c401e98de03098
   - enabled: 1
-    path: Assets/User folders/Peter folder/RotatingPuzzle.unity
+    path: Assets/Scenes/RotatingPuzzle.unity
     guid: 7f56e42e698e549849e68dc64ca954ea
   - enabled: 1
     path: Assets/Scenes/end scene.unity
