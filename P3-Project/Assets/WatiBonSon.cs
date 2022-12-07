@@ -36,7 +36,7 @@ public class WatiBonSon : MonoBehaviour
     {
         int y = SceneManager.GetActiveScene().buildIndex;
         //Actual game scenes after tutorial
-        if (y >= 2 && !isPlaying)
+        if (y > 1 && !isPlaying)
         {
             watiBonSon.Stop();
             watiBonSon.clip = inGameSong;
@@ -46,7 +46,7 @@ public class WatiBonSon : MonoBehaviour
         }
 
         //Deathscene music
-        if (y == 2 && !isDead)
+        if (y == 1 && !isDead)
         {
             watiBonSon.Stop();
             watiBonSon.clip = deathScreenSong;
