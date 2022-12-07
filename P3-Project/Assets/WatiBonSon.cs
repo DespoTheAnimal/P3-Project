@@ -57,6 +57,7 @@ public class WatiBonSon : MonoBehaviour
         //Winscene music
         if (y == 10 && !isDead)
         {
+            isPlaying = false;
             watiBonSon.Stop();
             watiBonSon.clip = deathScreenSong;
             watiBonSon.PlayOneShot(deathScreenSong);
