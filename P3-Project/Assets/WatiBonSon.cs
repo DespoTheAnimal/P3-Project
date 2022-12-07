@@ -25,7 +25,6 @@ public class WatiBonSon : MonoBehaviour
         DontDestroyOnLoad(inGameSong);
         DontDestroyOnLoad(watiBonSon);
         DontDestroyOnLoad(endScreenSong);
-        //watiBonSon = GetComponent<AudioSource>();
         watiBonSon.clip = startScreenSong;
         watiBonSon.Play();
         watiBonSon.volume = 0.5f;
