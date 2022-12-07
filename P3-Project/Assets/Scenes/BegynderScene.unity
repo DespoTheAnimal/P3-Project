@@ -16978,7 +16978,8 @@ MonoBehaviour:
   watiBonSon: {fileID: 2057370854}
   startScreenSong: {fileID: 8300000, guid: c3320a5fa227eff4792e21787cbab5cc, type: 3}
   inGameSong: {fileID: 8300000, guid: 65dcc5948c87e4c75959ffbfaf118887, type: 3}
-  endScreenSong: {fileID: 8300000, guid: da457d7c3715a014d9564dc8275782cc, type: 3}
+  deathScreenSong: {fileID: 8300000, guid: da457d7c3715a014d9564dc8275782cc, type: 3}
+  winScreenSong: {fileID: 8300000, guid: 6ef43a7535e85fd4babe10abcb21848f, type: 3}
 --- !u!1 &2128453669
 GameObject:
   m_ObjectHideFlags: 0
