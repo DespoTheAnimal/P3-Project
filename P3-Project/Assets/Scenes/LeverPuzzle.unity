@@ -1366,7 +1366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textOneHead: {fileID: 1170760972}
   textOneKeyboard: {fileID: 597863989}
-  cube: {fileID: 0}
+  cube: {fileID: 120352817}
 --- !u!1 &342197425
 GameObject:
   m_ObjectHideFlags: 0
