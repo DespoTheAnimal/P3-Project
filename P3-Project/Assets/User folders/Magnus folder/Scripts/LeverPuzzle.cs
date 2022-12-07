@@ -34,6 +34,12 @@ public class LeverPuzzle : MonoBehaviour
     [SerializeField] public GameObject leverb2;
     [SerializeField] public GameObject leverb3;
 
+    [SerializeField] public GameObject IndicationSphere1;
+    [SerializeField] public GameObject IndicationSphere2;
+    [SerializeField] public GameObject IndicationSphere3;
+    [SerializeField] private Material IndicationColourRed;
+    [SerializeField] private Material IndicationColourGreen;
+
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -77,15 +83,38 @@ public class LeverPuzzle : MonoBehaviour
             SceneManager.LoadScene(1);
         }
 
+        IndicationDisplayer();
 
-        Debug.Log(lever1);
-        Debug.Log(lever2);
-        Debug.Log(lever3);
+    }
 
-        Debug.Log(leverCheck1);
-        Debug.Log(leverCheck2);
-        Debug.Log(leverCheck3);
+    private void IndicationDisplayer()
+    {
+        if (lever1 == leverCheck1)
+        {
+            IndicationSphere1.GetComponent<Renderer>().material = IndicationColourGreen;
+        }
+        else
+        {
+            IndicationSphere1.GetComponent<Renderer>().material = IndicationColourRed;
+        }
 
+        if (lever2 == leverCheck2)
+        {
+            IndicationSphere2.GetComponent<Renderer>().material = IndicationColourGreen;
+        }
+        else
+        {
+            IndicationSphere2.GetComponent<Renderer>().material = IndicationColourRed;
+        }
+
+        if (lever3 == leverCheck3)
+        {
+            IndicationSphere3.GetComponent<Renderer>().material = IndicationColourGreen;
+        }
+        else
+        {
+            IndicationSphere3.GetComponent<Renderer>().material = IndicationColourRed;
+        }
     }
 
     private void MouseControl()
