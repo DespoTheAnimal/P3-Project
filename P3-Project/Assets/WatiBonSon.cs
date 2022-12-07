@@ -36,6 +36,12 @@ public class WatiBonSon : MonoBehaviour
     void Update()
     {
         int y = SceneManager.GetActiveScene().buildIndex;
+        if (y <= 1 && !isPlaying)
+        {
+            return;
+        }
+
+
         //Actual game scenes after tutorial
         if (y > 1 && !isPlaying)
         {
