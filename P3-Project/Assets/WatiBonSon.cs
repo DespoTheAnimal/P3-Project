@@ -17,7 +17,8 @@ public class WatiBonSon : MonoBehaviour
     void Start()
     {
         watiBonSon.Play();
-        watiBonSon.volume = 0.5f;
+        watiBonSon.loop = true;
+        watiBonSon.volume = 0.3f;
     }
 
     private void Awake()
@@ -40,7 +41,7 @@ public class WatiBonSon : MonoBehaviour
         {
             watiBonSon.Stop();
             watiBonSon.clip = inGameSong;
-            watiBonSon.PlayOneShot(inGameSong);
+            watiBonSon.Play();
             watiBonSon.loop = true;
             isPlaying = true;
         }
@@ -50,7 +51,7 @@ public class WatiBonSon : MonoBehaviour
         {
             watiBonSon.Stop();
             watiBonSon.clip = deathScreenSong;
-            watiBonSon.PlayOneShot(deathScreenSong);
+            watiBonSon.Play();
             isDead = true;
         }
 
@@ -60,7 +61,7 @@ public class WatiBonSon : MonoBehaviour
             isPlaying = false;
             watiBonSon.Stop();
             watiBonSon.clip = deathScreenSong;
-            watiBonSon.PlayOneShot(deathScreenSong);
+            watiBonSon.Play();
             isDead = true;
         }
     }
