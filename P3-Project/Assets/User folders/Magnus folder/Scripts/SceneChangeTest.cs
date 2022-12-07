@@ -15,7 +15,7 @@ public class SceneChangeTest : MonoBehaviour
     {
         _ES = GameObject.Find("GameManager").GetComponent<EndlessSpawner>();
         uDP = GameObject.FindGameObjectWithTag("Server");
-        PuzzlesLeft = uDP.GetComponent<UDPReceive>().PuzzleIndexNew;
+        PuzzlesLeft = uDP.GetComponent<UDPReceive>().PuzzleIndex;
         Debug.Log(PuzzlesLeft.Count);
         //RandomScene();
 
@@ -51,7 +51,7 @@ public class SceneChangeTest : MonoBehaviour
             //int randomInt = SceneIndex[rand];
             //numberPicked = SceneIndex[randomInt];
             numberPicked = PuzzlesLeft[rand];
-            uDP.GetComponent<UDPReceive>().PuzzleIndexNew.Remove(numberPicked);
+            uDP.GetComponent<UDPReceive>().PuzzleIndex.Remove(numberPicked);
             SceneManager.LoadScene(numberPicked);
         }
         else
