@@ -12,7 +12,9 @@ public class PuzzleText : MonoBehaviour
     private bool tutorialFollowed = false;
     [SerializeField] private GameObject item;
 
-    private float timer = 7;
+    private float timerLever = 7;
+    private float timerRotating = 7;
+    private float timerMaze = 7;
     private void Awake()
     {
         //Rotating puzzle
@@ -49,7 +51,8 @@ public class PuzzleText : MonoBehaviour
         //Rotating puzzle scene
         if(SceneManager.GetActiveScene().buildIndex == 10)
         {
-            if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || item.transform.rotation.z > 20 || item.transform.rotation.z < -20)
+            timerRotating = timerRotating - Time.deltaTime;
+            if (timerRotating <= 0.5f)
             {
                 textOneHead.SetActive(false);
                 textOneKeyboard.SetActive(false);
@@ -58,8 +61,8 @@ public class PuzzleText : MonoBehaviour
         //Lever puzzle scene
         if(SceneManager.GetActiveScene().buildIndex == 9)
         {
-            timer = timer - Time.deltaTime;
-            if (timer <= 0.5f)
+            timerLever = timerLever - Time.deltaTime;
+            if (timerLever <= 0.5f)
             {
                 textOneHead.SetActive(false);
                 textOneKeyboard.SetActive(false);
@@ -68,7 +71,8 @@ public class PuzzleText : MonoBehaviour
         //Maze puzzle scene
         if (SceneManager.GetActiveScene().buildIndex == 8)
         {
-            if (item.transform.position.x > -9 || item.transform.position.x < -15 || item.transform.position.y < 0.75f || item.transform.position.y > 6f)
+            timerMaze = timerMaze - Time.deltaTime;
+            if (timerMaze <= 0.5f)
             {
                 textOneHead.SetActive(false);
                 textOneKeyboard.SetActive(false);
