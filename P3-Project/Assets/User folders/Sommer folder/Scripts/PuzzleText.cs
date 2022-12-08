@@ -12,18 +12,20 @@ public class PuzzleText : MonoBehaviour
     private bool tutorialFollowed = false;
     [SerializeField] private GameObject item;
 
+    private float timer = 5;
     private void Awake()
     {
+        //Rotating puzzle
         if (SceneManager.GetActiveScene().buildIndex == 10)
         {
             item = GameObject.Find("Player");
         }
-
+        //Lever puzzle
         if (SceneManager.GetActiveScene().buildIndex == 9)
         {
             item = GameObject.Find("Cube");
         }
-        
+        //Maze puzzle
         if (SceneManager.GetActiveScene().buildIndex == 8)
         {
             item = GameObject.Find("Player");
@@ -56,13 +58,14 @@ public class PuzzleText : MonoBehaviour
         //Lever puzzle scene
         if(SceneManager.GetActiveScene().buildIndex == 9)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0) || item.transform.position.x > -3f || item.transform.position.x < 3f)
+            timer = timer - Time.deltaTime;
+            if (timer <= 0.5f)
             {
                 textOneHead.SetActive(false);
                 textOneKeyboard.SetActive(false);
             }
         }
-
+        //Maze puzzle scene
         if (SceneManager.GetActiveScene().buildIndex == 8)
         {
             if (item.transform.position.x > -9 || item.transform.position.x < -15 || item.transform.position.y < 0.75f || item.transform.position.y > 6f)
