@@ -36,7 +36,7 @@ public class WatiBonSon : MonoBehaviour
     void Update()
     {
         int y = SceneManager.GetActiveScene().buildIndex;
-        if (y <= 1 && y !<= 2 && !isPlaying)
+        if (y <= 0 && y !<= 2 && !isPlaying)
         {
             watiBonSon.Play();
             return;
