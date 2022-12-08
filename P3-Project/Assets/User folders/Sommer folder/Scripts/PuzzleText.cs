@@ -26,7 +26,7 @@ public class PuzzleText : MonoBehaviour
         
         if (SceneManager.GetActiveScene().buildIndex == 7)
         {
-
+            item = GameObject.Find("Player");
         }
     }
     void Start()
@@ -62,6 +62,14 @@ public class PuzzleText : MonoBehaviour
                 textOneKeyboard.SetActive(false);
             }
         }
-        
+
+        if (SceneManager.GetActiveScene().buildIndex == 7)
+        {
+            if (item.transform.position.x > -9 || item.transform.position.x < -15 || item.transform.position.y < 0.75f || item.transform.position.y > 6f)
+            {
+                textOneHead.SetActive(false);
+                textOneKeyboard.SetActive(false);
+            }
+        }
     }
 }
