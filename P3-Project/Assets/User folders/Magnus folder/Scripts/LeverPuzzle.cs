@@ -80,7 +80,7 @@ public class LeverPuzzle : MonoBehaviour
         if(lever1 == leverCheck1 &&  lever2 == leverCheck2 && lever3 == leverCheck3)
         {
             doorOpen=true;
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene("TheActualGame");
         }
 
         IndicationDisplayer();

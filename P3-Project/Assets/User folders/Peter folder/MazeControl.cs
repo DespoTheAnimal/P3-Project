@@ -31,7 +31,7 @@ public class MazeControl : MonoBehaviour
     {
         if (isWinPossible && Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene("TheActualGame");
         }
 
         if (Player.velocity.magnitude >= 0.1 && audioSource.isPlaying == false)
