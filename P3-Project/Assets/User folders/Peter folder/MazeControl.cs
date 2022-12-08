@@ -29,9 +29,13 @@ public class MazeControl : MonoBehaviour
 
     private void Update()
     {
-        if (isWinPossible && Input.GetKeyDown(KeyCode.Space))
+        if (isWinPossible && Input.GetKeyDown(KeyCode.Space) && uDPReceive.GetComponent<UDPReceive>().PuzzleIndex.Count > 0)
         {
             SceneManager.LoadScene("TheActualGame");
+        }
+        else if(isWinPossible && Input.GetKeyDown(KeyCode.Space) && uDPReceive.GetComponent<UDPReceive>().PuzzleIndex.Count == 0)
+        {
+            SceneManager.LoadScene("end scene");
         }
 
         if (Player.velocity.magnitude >= 0.1 && audioSource.isPlaying == false)

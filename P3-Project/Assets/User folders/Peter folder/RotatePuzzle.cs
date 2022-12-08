@@ -73,10 +73,14 @@ public class RotatePuzzle : MonoBehaviour
             RotationKeyboard();
         }
 
-        if (locksUnlocked >= 3)
+        if (locksUnlocked >= 3 && uDPReceive.GetComponent<UDPReceive>().PuzzleIndex.Count > 0)
         {
             audioSource.PlayOneShot(lockSound, 1f);
             SceneManager.LoadScene("TheActualGame");
+        }
+        else if (locksUnlocked >= 3 && uDPReceive.GetComponent<UDPReceive>().PuzzleIndex.Count == 0)
+        {
+            SceneManager.LoadScene("end scene");
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && isWin == true)
