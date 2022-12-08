@@ -2712,7 +2712,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Move the character to the edges four times
+  m_text: Move the character to the edges twice
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 350f0549f3c434aa2a573a6442100bc8, type: 2}
   m_sharedMaterial: {fileID: 2565639882940362048, guid: 350f0549f3c434aa2a573a6442100bc8,

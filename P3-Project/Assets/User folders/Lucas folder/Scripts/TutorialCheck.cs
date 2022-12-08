@@ -85,7 +85,7 @@ public class TutorialCheck : MonoBehaviour
         {
             JumpChecker();
         }
-        if (tutorialPoints >= 4 && firstStageComplete)
+        if (tutorialPoints >= 2 && firstStageComplete)
         {
             //Tutorial is over, we can display text or changescene.
             SceneManager.LoadScene("TheActualGame");
@@ -168,7 +168,7 @@ public class TutorialCheck : MonoBehaviour
 
     void PointsChecker()
     {
-        if (tutorialPoints == 4 && UDPReceive.getStartRecieving == true)
+        if (tutorialPoints == 2 && UDPReceive.getStartRecieving == true)
         {
             pointText1.SetActive(false);
             jumpHeadImage.SetActive(true);
@@ -177,7 +177,7 @@ public class TutorialCheck : MonoBehaviour
             tutorialPoints = 0;
             firstStageComplete = true;
         }
-        else if (tutorialPoints == 4 && UDPReceive.getStartRecieving == false)
+        else if (tutorialPoints == 2 && UDPReceive.getStartRecieving == false)
         {
             pointText1.SetActive(false);
             keyboardJumpImage.SetActive(true);
@@ -189,6 +189,6 @@ public class TutorialCheck : MonoBehaviour
 
     void AddPointsText()
     {
-        actualPointText.text = tutorialPoints+" out of 4";
+        actualPointText.text = tutorialPoints+" out of 2";
     }
 }
