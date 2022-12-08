@@ -36,14 +36,15 @@ public class WatiBonSon : MonoBehaviour
     void Update()
     {
         int y = SceneManager.GetActiveScene().buildIndex;
-        if (y <= 1 && !isPlaying)
+        if (y <= 1 && y !<= 2 && !isPlaying)
         {
+            watiBonSon.Play();
             return;
         }
 
 
         //Actual game scenes after tutorial
-        if (y >= 1 && !isPlaying)
+        if (y >= 4 && y < 12 && !isPlaying)
         {
             watiBonSon.Stop();
             watiBonSon.clip = inGameSong;
@@ -62,17 +63,17 @@ public class WatiBonSon : MonoBehaviour
         }
 
         //Winscene music
-        if (y == 10 && !isDead)
+        if (y == 12 && !isDead)
         {
             isPlaying = false;
             watiBonSon.Stop();
-            watiBonSon.clip = deathScreenSong;
+            watiBonSon.clip = winScreenSong;
             watiBonSon.Play();
             isDead = true;
         }
         if (y == 13)
         {
-            watiBonSon.Stop();
+            watiBonSon.Pause();
         }
     }
 }
