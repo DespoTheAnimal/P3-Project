@@ -12,7 +12,7 @@ public class PuzzleText : MonoBehaviour
     private bool tutorialFollowed = false;
     [SerializeField] private GameObject item;
 
-    private float timer = 5;
+    private float timer = 7;
     private void Awake()
     {
         //Rotating puzzle

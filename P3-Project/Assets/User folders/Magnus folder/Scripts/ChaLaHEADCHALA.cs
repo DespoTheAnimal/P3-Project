@@ -20,5 +20,10 @@ public class ChaLaHEADCHALA : MonoBehaviour
         {
             SceneManager.LoadScene("HeadTrackingTutorial");
         }
+
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("HeadTrackingTutorial");
+        }
     }
 }

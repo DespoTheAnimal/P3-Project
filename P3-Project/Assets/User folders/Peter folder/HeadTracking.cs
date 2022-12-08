@@ -47,40 +47,39 @@ public class HeadTracking : MonoBehaviour
         Debug.DrawRay(player.transform.position, Vector3.down, Color.cyan);
 
         string data = uDPReceive.GetComponent<UDPReceive>().data;
-            //The two below lines are removing the brackets in the first and last place
-            data = data.Remove(0, 1);
-            data = data.Remove(data.Length - 1, 1);
+        //The two below lines are removing the brackets in the first and last place
+        data = data.Remove(0, 1);
+        data = data.Remove(data.Length - 1, 1);
 
-            string[] points = data.Split(',');
+        string[] points = data.Split(',');
 
-            float x = (xPosAdjust - float.Parse(points[0])) / 35;
-            float y = (yPosAdjust - float.Parse(points[1])) / 100;
-            xList.Add(x);
-            yList.Add(y);
+        float x = (xPosAdjust - float.Parse(points[0])) / 35;
+        float y = (yPosAdjust - float.Parse(points[1])) / 100;
+        xList.Add(x);
+        yList.Add(y);
 
-            if (xList.Count > 10) { xList.RemoveAt(0); }
-            if (yList.Count > 3) { yList.RemoveAt(0); }
+        if (xList.Count > 10) { xList.RemoveAt(0); }
+        if (yList.Count > 3) { yList.RemoveAt(0); }
 
-            float xAverage = Queryable.Average(xList.AsQueryable());
-            float yAverage = Queryable.Average(yList.AsQueryable());
+        float xAverage = Queryable.Average(xList.AsQueryable());
+        float yAverage = Queryable.Average(yList.AsQueryable());
 
-            if (yAverage > 1.5f && Grounded())
-            {
-                player.GetComponent<Rigidbody>().AddForce(Vector3.up * 7, ForceMode.Impulse);
-            }
+        if (yAverage > 1.5f && Grounded())
+        {
+            player.GetComponent<Rigidbody>().AddForce(Vector3.up * 7, ForceMode.Impulse);
+        }
 
-            // this vector clamps the x-values and gets the position of the player
-            Vector3 playerPos = new Vector3(Mathf.Clamp(xAverage, -9f, 9f), player.transform.position.y, player.transform.position.z);
+        // this vector clamps the x-values and gets the position of the player
+        Vector3 playerPos = new Vector3(Mathf.Clamp(xAverage, -9f, 9f), player.transform.position.y, player.transform.position.z);
 
-            //xAverage = Mathf.Clamp(xAverage, -4f, 4f);
-            //player.transform.localPosition = new Vector3(xAverage, playerPos.y, playerPos.z);
-            //player.transform.localPosition = new Vector3(xAverage, player.transform.localPosition.y, transform.localPosition.z);
+        //xAverage = Mathf.Clamp(xAverage, -4f, 4f);
+        //player.transform.localPosition = new Vector3(xAverage, playerPos.y, playerPos.z);
+        //player.transform.localPosition = new Vector3(xAverage, player.transform.localPosition.y, transform.localPosition.z);
 
-            // Here the player's rigidbody gets moved by using its position in addition to a vector that moves the Player-GameObject forward with the currentSpeed 
-            player.GetComponent<Rigidbody>().MovePosition(playerPos + new Vector3(0f, 0f, currentSpeed) * Time.deltaTime);
+        // Here the player's rigidbody gets moved by using its position in addition to a vector that moves the Player-GameObject forward with the currentSpeed 
+        player.GetComponent<Rigidbody>().MovePosition(playerPos + new Vector3(0f, 0f, currentSpeed) * Time.deltaTime);
 
         Debug.Log(Grounded());
-
     }
 
     private void Update()
