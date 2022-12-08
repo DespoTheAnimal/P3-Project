@@ -52,7 +52,18 @@ public class SceneChangeTest : MonoBehaviour
             //numberPicked = SceneIndex[randomInt];
             numberPicked = PuzzlesLeft[rand];
             uDP.GetComponent<UDPReceive>().PuzzleIndex.Remove(numberPicked);
-            SceneManager.LoadScene(numberPicked);
+            if(numberPicked == 3)
+            {
+                SceneManager.LoadScene(4);
+            }
+            else if ( numberPicked == 2)
+            {
+                SceneManager.LoadScene(5);
+            }
+            else if (numberPicked == 1)
+            {
+                SceneManager.LoadScene(6);
+            }
         }
         else
         {
