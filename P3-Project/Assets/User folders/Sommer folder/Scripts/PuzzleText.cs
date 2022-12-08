@@ -3,15 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PuzzleText : MonoBehaviour
 {
     [SerializeField] private GameObject textOneHead;
     [SerializeField] private GameObject textOneKeyboard;
     private bool tutorialFollowed = false;
-    [SerializeField] private GameObject cube;
+    [SerializeField] private GameObject item;
 
+    private void Awake()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 9)
+        {
+            item = GameObject.Find("Player");
+        }
 
+        if (SceneManager.GetActiveScene().buildIndex == 8)
+        {
+            item = GameObject.Find("Cube");
+        }
+        
+        if (SceneManager.GetActiveScene().buildIndex == 7)
+        {
+
+        }
+    }
     void Start()
     {
         if (UDPReceive.getStartRecieving == true && !tutorialFollowed)
@@ -27,10 +44,24 @@ public class PuzzleText : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) || cube.transform.position.x > -3f || cube.transform.position.x < 3f)
+        //Rotating puzzle scene
+        if(SceneManager.GetActiveScene().buildIndex == 9)
         {
-            textOneHead.SetActive(false);
-            textOneKeyboard.SetActive(false);
+            if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || item.transform.rotation.z > 20 || item.transform.rotation.z < -20)
+            {
+                textOneHead.SetActive(false);
+                textOneKeyboard.SetActive(false);
+            }
         }
+        //Lever puzzle scene
+        if(SceneManager.GetActiveScene().buildIndex == 8)
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse0) || item.transform.position.x > -3f || item.transform.position.x < 3f)
+            {
+                textOneHead.SetActive(false);
+                textOneKeyboard.SetActive(false);
+            }
+        }
+        
     }
 }

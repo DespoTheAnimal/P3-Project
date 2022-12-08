@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/BegynderScene.unity
     guid: 1031f04d746d146ffb9b6403039e10d7
   - enabled: 1
+    path: Assets/Scenes/HeadTrackingTutorial.unity
+    guid: 9f3ede7d6eda5474fbe444005e935686
+  - enabled: 1
     path: Assets/Scenes/YouDied.unity
     guid: ffb05618d5ceb43cfb7e9c19652f4892
   - enabled: 1
@@ -41,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/winning scene.unity
     guid: 2d075d9a48c574c48a1b1e5d0f9f7bc1
+  - enabled: 1
+    path: Assets/Scenes/IntroScene.unity
+    guid: cee062781a98a42f5bfe7358829cedab
   m_configObjects: {}
