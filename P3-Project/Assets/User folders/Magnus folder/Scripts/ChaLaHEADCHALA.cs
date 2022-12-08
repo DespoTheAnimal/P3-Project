@@ -18,7 +18,7 @@ public class ChaLaHEADCHALA : MonoBehaviour
         timer -= Time.deltaTime;
         if(timer <= 0)
         {
-            SceneManager.LoadScene("HeadTrackingTutorial");
+            SceneManager.LoadScene(1);
         }
 
         if (Input.GetKeyUp(KeyCode.Escape))
