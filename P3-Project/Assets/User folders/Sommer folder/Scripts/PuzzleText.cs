@@ -14,17 +14,17 @@ public class PuzzleText : MonoBehaviour
 
     private void Awake()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 9)
+        if (SceneManager.GetActiveScene().buildIndex == 10)
         {
             item = GameObject.Find("Player");
         }
 
-        if (SceneManager.GetActiveScene().buildIndex == 8)
+        if (SceneManager.GetActiveScene().buildIndex == 9)
         {
             item = GameObject.Find("Cube");
         }
         
-        if (SceneManager.GetActiveScene().buildIndex == 7)
+        if (SceneManager.GetActiveScene().buildIndex == 8)
         {
             item = GameObject.Find("Player");
         }
@@ -45,7 +45,7 @@ public class PuzzleText : MonoBehaviour
     void Update()
     {
         //Rotating puzzle scene
-        if(SceneManager.GetActiveScene().buildIndex == 9)
+        if(SceneManager.GetActiveScene().buildIndex == 10)
         {
             if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || item.transform.rotation.z > 20 || item.transform.rotation.z < -20)
             {
@@ -54,7 +54,7 @@ public class PuzzleText : MonoBehaviour
             }
         }
         //Lever puzzle scene
-        if(SceneManager.GetActiveScene().buildIndex == 8)
+        if(SceneManager.GetActiveScene().buildIndex == 9)
         {
             if (Input.GetKeyDown(KeyCode.Mouse0) || item.transform.position.x > -3f || item.transform.position.x < 3f)
             {
@@ -63,7 +63,7 @@ public class PuzzleText : MonoBehaviour
             }
         }
 
-        if (SceneManager.GetActiveScene().buildIndex == 7)
+        if (SceneManager.GetActiveScene().buildIndex == 8)
         {
             if (item.transform.position.x > -9 || item.transform.position.x < -15 || item.transform.position.y < 0.75f || item.transform.position.y > 6f)
             {

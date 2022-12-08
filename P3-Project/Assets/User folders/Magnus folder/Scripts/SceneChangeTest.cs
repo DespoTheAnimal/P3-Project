@@ -15,7 +15,7 @@ public class SceneChangeTest : MonoBehaviour
     {
         _ES = GameObject.Find("GameManager").GetComponent<EndlessSpawner>();
         uDP = GameObject.FindGameObjectWithTag("Server");
-        PuzzlesLeft = uDP.GetComponent<UDPReceive>().PuzzleIndex;
+        PuzzlesLeft = uDP.GetComponent<UDPReceive>().PuzzleIndexFinal;
         Debug.Log(PuzzlesLeft.Count);
         //RandomScene();
 
@@ -26,6 +26,7 @@ public class SceneChangeTest : MonoBehaviour
         {
             //SwitchSceneEz();
             RandomScene();
+            ChangeTheFuckingSceneShittyUnity();
         }
     }
 
@@ -51,23 +52,28 @@ public class SceneChangeTest : MonoBehaviour
             //int randomInt = SceneIndex[rand];
             //numberPicked = SceneIndex[randomInt];
             numberPicked = PuzzlesLeft[rand];
-            uDP.GetComponent<UDPReceive>().PuzzleIndex.Remove(numberPicked);
-            if(numberPicked == 3)
-            {
-                SceneManager.LoadScene(4);
-            }
-            else if ( numberPicked == 2)
-            {
-                SceneManager.LoadScene(5);
-            }
-            else if (numberPicked == 1)
-            {
-                SceneManager.LoadScene(6);
-            }
+            uDP.GetComponent<UDPReceive>().PuzzleIndexFinal.Remove(numberPicked);
+            Debug.Log(numberPicked);
         }
         else
         {
             SceneManager.LoadScene("end scene");
+        }
+    }
+
+    private void ChangeTheFuckingSceneShittyUnity()
+    {
+        if (numberPicked == 3)
+        {
+            SceneManager.LoadScene(5);
+        }
+        else if (numberPicked == 2)
+        {
+            SceneManager.LoadScene(6);
+        }
+        else if (numberPicked == 1)
+        {
+            SceneManager.LoadScene(7);
         }
     }
 }

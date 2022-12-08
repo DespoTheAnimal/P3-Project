@@ -29,11 +29,11 @@ public class MazeControl : MonoBehaviour
 
     private void Update()
     {
-        if (isWinPossible && Input.GetKeyDown(KeyCode.Space) && uDPReceive.GetComponent<UDPReceive>().PuzzleIndex.Count > 0)
+        if (isWinPossible && Input.GetKeyDown(KeyCode.Space) && uDPReceive.GetComponent<UDPReceive>().PuzzleIndexFinal.Count > 0)
         {
             SceneManager.LoadScene("TheActualGame");
         }
-        else if(isWinPossible && Input.GetKeyDown(KeyCode.Space) && uDPReceive.GetComponent<UDPReceive>().PuzzleIndex.Count == 0)
+        else if(isWinPossible && Input.GetKeyDown(KeyCode.Space) && uDPReceive.GetComponent<UDPReceive>().PuzzleIndexFinal.Count == 0)
         {
             SceneManager.LoadScene("end scene");
         }

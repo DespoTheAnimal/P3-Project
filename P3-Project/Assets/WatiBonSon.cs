@@ -43,7 +43,7 @@ public class WatiBonSon : MonoBehaviour
 
 
         //Actual game scenes after tutorial
-        if (y > 1 && !isPlaying)
+        if (y >= 1 && !isPlaying)
         {
             watiBonSon.Stop();
             watiBonSon.clip = inGameSong;
@@ -53,7 +53,7 @@ public class WatiBonSon : MonoBehaviour
         }
 
         //Deathscene music
-        if (y == 1 && !isDead)
+        if (y == 2 && !isDead)
         {
             watiBonSon.Stop();
             watiBonSon.clip = deathScreenSong;
@@ -69,6 +69,10 @@ public class WatiBonSon : MonoBehaviour
             watiBonSon.clip = deathScreenSong;
             watiBonSon.Play();
             isDead = true;
+        }
+        if (y == 13)
+        {
+            watiBonSon.Stop();
         }
     }
 }

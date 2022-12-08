@@ -65,7 +65,7 @@ public class LeverPuzzle : MonoBehaviour
             lever2 = Random.Range(0, 2);
             leverCheck2 = Random.Range(0, 2);
         }
-        udp = GameObject.Find("UDPort").GetComponent<UDPReceive>();
+        udp = GameObject.Find("UDPport").GetComponent<UDPReceive>();
     }
 
     // Update is called once per frame
@@ -80,13 +80,14 @@ public class LeverPuzzle : MonoBehaviour
             MouseControl();
         }
 
-        if(lever1 == leverCheck1 &&  lever2 == leverCheck2 && lever3 == leverCheck3 && udp.PuzzleIndex.Count > 0)
+        if(lever1 == leverCheck1 &&  lever2 == leverCheck2 && lever3 == leverCheck3 && udp.PuzzleIndexFinal.Count > 0)
         {
             doorOpen=true;
             SceneManager.LoadScene("TheActualGame");
         }
-        else if (lever1 == leverCheck1 && lever2 == leverCheck2 && lever3 == leverCheck3 && udp.PuzzleIndex.Count == 0)
+        else if (lever1 == leverCheck1 && lever2 == leverCheck2 && lever3 == leverCheck3 && udp.PuzzleIndexFinal.Count == 0)
         {
+            doorOpen = true;
             SceneManager.LoadScene("end scene");
         }
 

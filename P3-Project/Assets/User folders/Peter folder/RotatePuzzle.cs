@@ -73,12 +73,12 @@ public class RotatePuzzle : MonoBehaviour
             RotationKeyboard();
         }
 
-        if (locksUnlocked >= 3 && uDPReceive.GetComponent<UDPReceive>().PuzzleIndex.Count > 0)
+        if (locksUnlocked >= 3 && uDPReceive.GetComponent<UDPReceive>().PuzzleIndexFinal.Count > 0)
         {
             audioSource.PlayOneShot(lockSound, 1f);
             SceneManager.LoadScene("TheActualGame");
         }
-        else if (locksUnlocked >= 3 && uDPReceive.GetComponent<UDPReceive>().PuzzleIndex.Count == 0)
+        else if (locksUnlocked >= 3 && uDPReceive.GetComponent<UDPReceive>().PuzzleIndexFinal.Count == 0)
         {
             SceneManager.LoadScene("end scene");
         }
