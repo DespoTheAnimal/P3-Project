@@ -18,10 +18,12 @@ public class ShortcutButton : MonoBehaviour
         {
             SceneManager.LoadScene(4);
         }
+        // Lock Transition
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             SceneManager.LoadScene(5);
         }
+        // Lever Transition
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             SceneManager.LoadScene(6);
