@@ -18,17 +18,17 @@ public class PuzzleText : MonoBehaviour
     private void Awake()
     {
         //Rotating puzzle
-        if (SceneManager.GetActiveScene().buildIndex == 10)
+        if (SceneManager.GetActiveScene().buildIndex == 9)
         {
             item = GameObject.Find("Player");
         }
         //Lever puzzle
-        if (SceneManager.GetActiveScene().buildIndex == 9)
+        if (SceneManager.GetActiveScene().buildIndex == 8)
         {
             item = GameObject.Find("Cube");
         }
         //Maze puzzle
-        if (SceneManager.GetActiveScene().buildIndex == 8)
+        if (SceneManager.GetActiveScene().buildIndex == 7)
         {
             item = GameObject.Find("Player");
         }
@@ -49,7 +49,7 @@ public class PuzzleText : MonoBehaviour
     void Update()
     {
         //Rotating puzzle scene
-        if(SceneManager.GetActiveScene().buildIndex == 10)
+        if(SceneManager.GetActiveScene().buildIndex == 9)
         {
             timerRotating = timerRotating - Time.deltaTime;
             if (timerRotating <= 0.5f)
@@ -59,7 +59,7 @@ public class PuzzleText : MonoBehaviour
             }
         }
         //Lever puzzle scene
-        if(SceneManager.GetActiveScene().buildIndex == 9)
+        if(SceneManager.GetActiveScene().buildIndex == 8)
         {
             timerLever = timerLever - Time.deltaTime;
             if (timerLever <= 0.5f)
@@ -69,7 +69,7 @@ public class PuzzleText : MonoBehaviour
             }
         }
         //Maze puzzle scene
-        if (SceneManager.GetActiveScene().buildIndex == 8)
+        if (SceneManager.GetActiveScene().buildIndex == 7)
         {
             timerMaze = timerMaze - Time.deltaTime;
             if (timerMaze <= 0.5f)

@@ -16,9 +16,9 @@ public class WatiBonSon : MonoBehaviour
 
     void Start()
     {
+        watiBonSon.volume = 0.3f;
         watiBonSon.Play();
         watiBonSon.loop = true;
-        watiBonSon.volume = 0.3f;
     }
 
     private void Awake()
@@ -36,15 +36,14 @@ public class WatiBonSon : MonoBehaviour
     void Update()
     {
         int y = SceneManager.GetActiveScene().buildIndex;
-        if (y <= 0 && y !<= 2 && !isPlaying)
+        if (y == 1 && y !>= 2 && !isPlaying)
         {
             watiBonSon.Play();
-            return;
         }
 
 
         //Actual game scenes after tutorial
-        if (y >= 4 && y < 12 && !isPlaying)
+        if (y == 3 && y < 11 && !isPlaying)
         {
             watiBonSon.Stop();
             watiBonSon.clip = inGameSong;
@@ -63,7 +62,7 @@ public class WatiBonSon : MonoBehaviour
         }
 
         //Winscene music
-        if (y == 12 && !isDead)
+        if (y == 11 && !isDead)
         {
             isPlaying = false;
             watiBonSon.Stop();
@@ -71,7 +70,7 @@ public class WatiBonSon : MonoBehaviour
             watiBonSon.Play();
             isDead = true;
         }
-        if (y == 13)
+        if (y == 12)
         {
             watiBonSon.Pause();
         }

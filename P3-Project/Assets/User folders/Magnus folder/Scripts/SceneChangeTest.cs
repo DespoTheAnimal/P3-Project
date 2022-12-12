@@ -65,15 +65,15 @@ public class SceneChangeTest : MonoBehaviour
     {
         if (numberPicked == 3)
         {
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene(4);
         }
         else if (numberPicked == 2)
         {
-            SceneManager.LoadScene(6);
+            SceneManager.LoadScene(5);
         }
         else if (numberPicked == 1)
         {
-            SceneManager.LoadScene(7);
+            SceneManager.LoadScene(6);
         }
     }
 }
