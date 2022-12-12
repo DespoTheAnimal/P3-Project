@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/YouDied.unity
     guid: ffb05618d5ceb43cfb7e9c19652f4892
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/HeadTrackingTutorial.unity
     guid: 9f3ede7d6eda5474fbe444005e935686
   - enabled: 1
