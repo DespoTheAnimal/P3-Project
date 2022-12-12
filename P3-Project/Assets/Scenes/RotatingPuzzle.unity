@@ -854,7 +854,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Find three sweetspots to unlock the padlock.
 
-    Press spavebar to confirm
+    Press spacebar to confirm
     each sweetspot
 
     Press A or D to rotate the key'
@@ -1131,7 +1131,7 @@ MonoBehaviour:
   startRecieving: 1
   printToConsole: 0
   data: 
-  PuzzleIndex: 030000000400000005000000
+  PuzzleIndexFinal: 010000000200000003000000
 --- !u!4 &652555214
 Transform:
   m_ObjectHideFlags: 0
@@ -1370,7 +1370,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Find three sweetspots to unlock the padlock.
 
-    Press spavebar to confirm
+    Press spacebar to confirm
     each sweetspot
 
     Move your head left or right to rotate the key'
