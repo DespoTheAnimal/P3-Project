@@ -39,7 +39,7 @@ public class RotatePuzzle : MonoBehaviour
         keyArray = GameObject.FindGameObjectsWithTag("Keys");
         audioSource = GetComponent<AudioSource>();
 
-        keyArray.ToList<GameObject>();
+        //keyArray.ToList<GameObject>();
         RandomizeActiveComponent();
 
         animator = GetComponent<Animator>();
